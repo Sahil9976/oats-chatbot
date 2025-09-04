@@ -1,5 +1,17 @@
 {
-  "status": "initialized",
-  "last_update": "2025-09-04T11:54:08.238824",
-  "current_memory": {}
+  "status": "monitoring",
+  "last_update": "2025-09-04T14:57:34.487949",
+  "current_memory": {
+    "conversations": 4,
+    "cached_data": 4,
+    "memory_usage_mb": 101.77,
+    "latest_query": {
+      "id": 4,
+      "query": "how to perform advance search?...",
+      "timestamp": 1756977982.9485126,
+      "endpoints_used": [
+        "flow_manager"
+      ]
+    }
+  }
 }

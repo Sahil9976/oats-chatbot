@@ -1417,6 +1417,8 @@
                 messageDiv.appendChild(contentDiv);
                 
                 // Add workflow buttons if provided
+                // COMMENTED OUT: Quick Actions section - User doesn't want this UI element
+                /*
                 if (workflowButtons && workflowButtons.length > 0) {
                     const buttonsDiv = document.createElement('div');
                     buttonsDiv.className = 'workflow-buttons';
@@ -1441,6 +1443,7 @@
                     buttonsDiv.appendChild(buttonContainer);
                     messageDiv.appendChild(buttonsDiv);
                 }
+                */
                 
                 this.chatMessages.appendChild(messageDiv);
                 this.chatMessages.scrollTop = this.chatMessages.scrollHeight;

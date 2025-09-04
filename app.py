@@ -437,12 +437,14 @@ class OATSChatbot:
         interaction = {
             "id": interaction_id,
             "timestamp": time.time(),
+            "datetime": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "user_query": user_query,
             "endpoints_used": endpoints_used or [],
             "data_types_returned": list(response_data.keys()) if response_data else [],
             "record_counts": {k: len(v.get('data', [])) if isinstance(v, dict) and 'data' in v else 0 
                              for k, v in (response_data or {}).items()},
-            "ai_response_preview": ai_response[:200] + "..." if ai_response and len(ai_response) > 200 else ai_response
+            "ai_response_preview": ai_response[:200] + "..." if ai_response and len(ai_response) > 200 else ai_response,
+            "ai_response_full": ai_response  # Store full response for memory monitoring
         }
         
         self.conversation_history.append(interaction)
@@ -615,6 +617,47 @@ class OATSChatbot:
                 return True
         
         return False
+    
+    def store_chat_history(self, chat_entry: Dict):
+        """Store chat in rolling buffer of 30 entries, maintaining exact UI format."""
+        try:
+            # Initialize chat history file if it doesn't exist
+            chat_history_file = "chat_history.json"
+            
+            # Load existing chat history
+            try:
+                with open(chat_history_file, 'r', encoding='utf-8') as f:
+                    chat_history = json.load(f)
+            except (FileNotFoundError, json.JSONDecodeError):
+                chat_history = []
+            
+            # Add new chat entry
+            chat_history.append(chat_entry)
+            
+            # Maintain rolling buffer of 30 entries
+            if len(chat_history) > 30:
+                chat_history = chat_history[-30:]  # Keep last 30 entries
+            
+            # Save back to file
+            with open(chat_history_file, 'w', encoding='utf-8') as f:
+                json.dump(chat_history, f, indent=2, ensure_ascii=False)
+                
+            logger.info(f"Chat history stored successfully. Total entries: {len(chat_history)}")
+            
+        except Exception as e:
+            logger.error(f"Error storing chat history: {e}")
+
+    def get_chat_history(self) -> List[Dict]:
+        """Retrieve chat history for memory monitor."""
+        try:
+            chat_history_file = "chat_history.json"
+            with open(chat_history_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return []
+        except Exception as e:
+            logger.error(f"Error loading chat history: {e}")
+            return []
     
     def _generate_conversation_aware_response(self, user_query: str, conversation_search: Dict, search_id: str = None) -> str:
         """Generate response using conversation context for follow-up questions."""
@@ -2934,6 +2977,173 @@ The OATS system normally provides comprehensive data about jobs, candidates, das
         
         return f"<div class='ai-response'>{greeting}<br><br>🤔 {follow_up}</div>"
 
+    def _is_history_inquiry(self, user_query: str) -> bool:
+        """Check if the user is asking about chat history or previous questions."""
+        query_lower = user_query.lower().strip()
+        
+        history_phrases = [
+            'what did i ask', 'what have i asked', 'what was my last question',
+            'previous question', 'previous questions', 'chat history', 'conversation history',
+            'what did we discuss', 'what we talked about', 'our conversation',
+            'my last query', 'earlier question', 'before i asked', 'previously asked',
+            'show my questions', 'show chat', 'show conversation', 'show history',
+            'remind me what', 'what questions did i', 'my previous', 'our previous'
+        ]
+        
+        return any(phrase in query_lower for phrase in history_phrases)
+
+    def _generate_history_response(self, user_query: str) -> str:
+        """Generate a smart response about chat history using stored conversation data."""
+        
+        # Get chat history from file
+        chat_history = self.get_chat_history()
+        
+        if not chat_history:
+            return """<div class='ai-response'>
+                <h3>📚 Chat History</h3>
+                <p>This is the beginning of our conversation! You haven't asked me any questions yet.</p>
+                <p>Feel free to ask me about:</p>
+                <ul>
+                    <li>📊 Job postings and openings</li>
+                    <li>👥 Candidates and applicants</li>
+                    <li>🏢 Client information</li>
+                    <li>📈 Recruitment analytics</li>
+                    <li>📋 Dashboard metrics</li>
+                </ul>
+            </div>"""
+        
+        # Get recent conversation history (last 5-10 interactions)
+        recent_history = chat_history[-10:]
+        
+        # Create a formatted history summary using Gemini AI
+        history_text = []
+        for i, chat in enumerate(recent_history, 1):
+            timestamp = chat.get('timestamp', 'Unknown time')[:19]  # Format: YYYY-MM-DD HH:MM:SS
+            user_q = chat['user_query']
+            bot_response = chat['bot_response'][:200] + "..." if len(chat['bot_response']) > 200 else chat['bot_response']
+            
+            history_text.append(f"{i}. [{timestamp}] You asked: '{user_q}'\n   I responded about: {bot_response}\n")
+        
+        # Use Gemini to create a smart summary
+        try:
+            gemini_prompt = f"""Based on this chat history, create a friendly, helpful summary for the user who asked "{user_query}". 
+
+Recent conversation history:
+{chr(10).join(history_text)}
+
+Please provide:
+1. A brief overview of what topics were discussed
+2. Highlight 2-3 most recent or important questions
+3. Format it as HTML with proper headings and styling
+4. Be conversational and helpful
+5. Use emojis and nice formatting
+6. Keep it concise but informative
+7. DO NOT include any "Quick Actions" buttons or sections
+8. DO NOT include any action buttons or clickable elements
+
+Format as a complete HTML response with <div class='ai-response'> wrapper. End with a closing </div> tag."""
+
+            response = self.gemini_model.generate_content(gemini_prompt)
+            
+            # Clean up any Quick Actions that might still appear
+            cleaned_response = response.text
+            
+            # Remove Quick Actions sections (comprehensive patterns)
+            import re
+            # Remove entire Quick Actions sections with various delimiters
+            cleaned_response = re.sub(r'<[^>]*>\s*🖊\s*Quick Actions?:.*?</[^>]*>', '', cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+            cleaned_response = re.sub(r'🖊\s*Quick Actions?:.*?(?=<(?:h[1-6]|div|p|br|$)|$)', '', cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+            cleaned_response = re.sub(r'Quick Actions?:.*?(?=<(?:h[1-6]|div|p|br|$)|$)', '', cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+            
+            # Remove all button elements and action buttons
+            cleaned_response = re.sub(r'<button[^>]*>.*?</button>', '', cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+            cleaned_response = re.sub(r'<a[^>]*class[^>]*btn[^>]*>.*?</a>', '', cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+            
+            # Remove green box/panel sections that contain actions
+            cleaned_response = re.sub(r'<[^>]*style[^>]*background[^>]*green[^>]*>.*?</[^>]*>', '', cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+            cleaned_response = re.sub(r'<[^>]*class[^>]*action[^>]*>.*?</[^>]*>', '', cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+            
+            # Remove any remaining action-related content
+            cleaned_response = re.sub(r'Show Job Creation Steps', '', cleaned_response, flags=re.IGNORECASE)
+            cleaned_response = re.sub(r'📝.*?Show.*?Steps', '', cleaned_response, flags=re.IGNORECASE)
+            
+            # Clean up extra whitespace and empty lines
+            cleaned_response = re.sub(r'\n\s*\n\s*\n', '\n\n', cleaned_response)
+            cleaned_response = re.sub(r'<p>\s*</p>', '', cleaned_response)
+            
+            return cleaned_response
+        except Exception as e:
+            logger.error(f"Error generating AI history summary: {e}")
+            
+            # Fallback: Create a simple formatted history
+            history_html = """<div class='ai-response'>
+                <h3>📚 Your Recent Chat History</h3>
+                <div style='max-height: 400px; overflow-y: auto; padding: 10px; background: #f8f9fa; border-radius: 8px;'>"""
+            
+            for i, chat in enumerate(recent_history[-5:], 1):
+                timestamp = chat.get('timestamp', 'Unknown time')[:16]  # Format: YYYY-MM-DD HH:MM
+                user_q = chat['user_query']
+                
+                history_html += f"""
+                    <div style='margin-bottom: 15px; padding: 10px; background: white; border-radius: 6px; border-left: 3px solid #007bff;'>
+                        <strong>🕒 {timestamp}</strong><br>
+                        <strong>You:</strong> {user_q}<br>
+                        <small style='color: #666;'>✅ I provided information about this topic</small>
+                    </div>"""
+            
+            history_html += """</div>
+                <p><em>💡 You can ask me for more details about any of these topics, or ask something new!</em></p>
+            </div>"""
+            
+            return history_html
+            ai_resp = interaction.get('ai_response_full', interaction.get('ai_response_preview', ''))
+            endpoints = interaction.get('endpoints_used', [])
+            
+            conversation_summary += f"\n{i}. At {timestamp}, you asked: \"{user_q}\""
+            if endpoints:
+                conversation_summary += f" (I used: {', '.join(endpoints)})"
+        
+        # Generate intelligent response using AI
+        prompt = f"""
+You are the OATS recruitment chatbot. A user is asking about their chat history. Here's our recent conversation:
+
+{conversation_summary}
+
+Generate a helpful response that:
+1. Summarizes what they've asked about recently
+2. Highlights key topics or patterns
+3. Offers to continue or expand on any previous topic
+4. Keep it conversational and helpful
+
+User's current question: "{user_query}"
+"""
+
+        try:
+            model = genai.GenerativeModel('gemini-1.5-flash')
+            ai_response = model.generate_content(prompt).text
+            
+            return f"""<div class='ai-response'>
+                <h3>📚 Our Conversation History</h3>
+                {ai_response}
+                <br><br>
+                <strong>Recent Questions Summary:</strong>
+                <div style='background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;'>
+                {conversation_summary}
+                </div>
+                <em>💡 I can expand on any of these topics or help you with something new!</em>
+            </div>"""
+        except Exception as e:
+            # Fallback response if AI fails
+            return f"""<div class='ai-response'>
+                <h3>📚 Our Conversation History</h3>
+                <p>Here's what you've asked me recently:</p>
+                <div style='background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;'>
+                {conversation_summary}
+                </div>
+                <p>You've had <strong>{len(self.conversation_history)}</strong> total interactions with me.</p>
+                <p>💡 I can expand on any of these topics or help you with something new!</p>
+            </div>"""
+
     def _is_oats_related_query(self, user_query: str) -> bool:
         """Check if the query is related to OATS recruitment system data."""
         query_lower = user_query.lower().strip()
@@ -3009,6 +3219,11 @@ The OATS system normally provides comprehensive data about jobs, candidates, das
         if self._is_greeting(user_query):
             print("👋 Greeting detected, providing friendly welcome")
             return self._generate_greeting_response(user_query)
+        
+        # Check if user is asking about chat history/previous questions
+        if self._is_history_inquiry(user_query):
+            print("📚 Chat history inquiry detected")
+            return self._generate_history_response(user_query)
         
         # Check if query is OATS-related
         if not self._is_oats_related_query(user_query):
@@ -3450,6 +3665,19 @@ def query_route():
                 'message': 'Request timed out. The API might be slow or returning too much data. Try a more specific query.'
             }), 504
         
+        # Store chat in history (maintain rolling buffer of 30)
+        try:
+            chat_entry = {
+                'timestamp': datetime.now().isoformat(),
+                'user_query': user_query,
+                'bot_response': response,
+                'success': True,
+                'workflow_buttons': extract_workflow_buttons(response)
+            }
+            chatbot.store_chat_history(chat_entry)
+        except Exception as e:
+            logger.error(f"Error storing chat history: {e}")
+        
         return jsonify({
             'success': True,
             'response': response,
@@ -3879,6 +4107,62 @@ def get_chatbot():
         chatbot = OATSChatbot()
     return chatbot
 
+@app.route('/api/chat-history')
+def chat_history_api():
+    """API endpoint to serve chat history for memory monitor"""
+    try:
+        chatbot = get_chatbot()
+        chat_history = chatbot.get_chat_history()
+        
+        return jsonify({
+            'success': True,
+            'chat_history': chat_history,
+            'total_chats': len(chat_history)
+        })
+        
+    except Exception as e:
+        logger.error(f"Error retrieving chat history: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'chat_history': [],
+            'total_chats': 0
+        }), 500
+
+@app.route('/api/chat-history-formatted')
+def chat_history_formatted_api():
+    """API endpoint to serve formatted chat history for memory monitor"""
+    try:
+        chatbot = get_chatbot()
+        chat_history = chatbot.get_chat_history()
+        
+        # Format chat history for display
+        formatted_history = []
+        for entry in chat_history:
+            formatted_entry = {
+                'id': entry.get('timestamp', ''),
+                'timestamp': entry.get('timestamp', ''),
+                'user_query': entry.get('user_query', ''),
+                'bot_response': entry.get('bot_response', ''),
+                'success': entry.get('success', True),
+                'formatted_time': entry.get('timestamp', '').replace('T', ' ').replace('Z', '') if entry.get('timestamp') else ''
+            }
+            formatted_history.append(formatted_entry)
+        
+        return jsonify({
+            'success': True,
+            'chat_history': formatted_history,
+            'total_chats': len(formatted_history)
+        })
+        
+    except Exception as e:
+        logger.error(f"Error retrieving formatted chat history: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'chat_history': [],
+            'total_chats': 0
+        }), 500
 
 @app.errorhandler(404)
 def not_found(error):
