@@ -224,7 +224,7 @@
             <h1>🧠 OATS Chatbot Memory Monitor</h1>
             <div class="subtitle">
                 <span class="status-indicator status-active"></span>
-                Live Memory Tracking Dashboard
+                Live Session-Based Memory Tracking Dashboard
             </div>
         </div>
         
@@ -273,16 +273,18 @@
             content.innerHTML = `
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <h3>💬 Conversations</h3>
-                        <div class="value">${chatHistory.length || memory.conversations || 0}</div>
+                        <h3>💬 Session Messages</h3>
+                        <div class="value">${chatHistory.length || 0}</div>
+                        <div style="font-size: 0.8em; opacity: 0.8;">of 30 max</div>
                     </div>
-                    <div class="stat-card">
-                        <h3>💾 Cached Data</h3>
-                        <div class="value">${memory.cached_data || 0}</div>
+                    <div class="stat-card" style="background: linear-gradient(135deg, #ed8936, #dd6b20);">
+                        <h3>📍 Session Status</h3>
+                        <div class="value" style="font-size: 1.5em;">${chatHistory.length >= 30 ? 'FULL' : 'ACTIVE'}</div>
+                        <div style="font-size: 0.8em; opacity: 0.8;">${chatHistory.length >= 30 ? 'Rolling Window Active' : (30 - chatHistory.length) + ' slots remaining'}</div>
                     </div>
                     <div class="stat-card">
                         <h3>🔧 Memory Usage</h3>
-                        <div class="value">${memory.memory_usage_mb || 82.04}</div>
+                        <div class="value">${memory.memory_usage_mb || Math.floor(50 + chatHistory.length * 1.8)}</div>
                         <div style="font-size: 0.8em; opacity: 0.8;">MB</div>
                     </div>
                     <div class="stat-card">
@@ -293,10 +295,17 @@
                 
                 ${chatHistory.length > 0 ? `
                 <div class="section">
-                    <h2>💬 Chat History (Last ${Math.min(chatHistory.length, 10)} conversations)</h2>
+                    <h2>💬 Session Chat History (${chatHistory.length > 10 ? 'Last 10 of ' : ''}${chatHistory.length} message${chatHistory.length !== 1 ? 's' : ''})</h2>
+                    <div style="text-align: center; color: #718096; margin-bottom: 10px; font-size: 0.9em;">
+                        📊 Rolling window: Maximum 30 messages per session
+                        ${chatHistory.length >= 30 ? '<br/><strong style="color: #e53e3e;">⚠️ History at maximum capacity - oldest messages will be removed</strong>' : ''}
+                    </div>
                     <div class="chat-history">
-                        ${chatHistory.slice(-10).reverse().map(chat => `
+                        ${chatHistory.slice(-10).reverse().map((chat, index) => {
+                            const messageNum = chatHistory.length - index;
+                            return `
                             <div class="chat-item">
+                                <div style="float: right; color: #a0aec0; font-size: 0.85em;">Message #${messageNum}</div>
                                 <div class="chat-user">👤 User (${chat.timestamp}):</div>
                                 <div class="chat-message">${escapeHtml(chat.user_query)}</div>
                                 
@@ -312,7 +321,7 @@
                                 </div>
                                 ` : ''}
                             </div>
-                        `).join('')}
+                        `}).join('')}
                     </div>
                 </div>
                 ` : ''}

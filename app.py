@@ -339,6 +339,28 @@ app.config['SESSION_PERMANENT'] = False
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=2)
 Session(app)
 
+# Session-based chat history management
+def get_session_chat_history():
+    """Get chat history for current session with rolling window of 30 messages"""
+    if 'chat_history' not in session:
+        session['chat_history'] = []
+    return session['chat_history']
+
+def add_to_session_chat_history(chat_entry):
+    """Add a chat entry to session history with rolling window"""
+    if 'chat_history' not in session:
+        session['chat_history'] = []
+    
+    # Add new entry
+    session['chat_history'].append(chat_entry)
+    
+    # Maintain rolling window of 30 messages
+    if len(session['chat_history']) > 30:
+        session['chat_history'] = session['chat_history'][-30:]
+    
+    # Force session save
+    session.modified = True
+
 
 @dataclass
 class APIEndpoint:
@@ -3675,6 +3697,18 @@ def query_route():
                 'workflow_buttons': extract_workflow_buttons(response)
             }
             chatbot.store_chat_history(chat_entry)
+            
+            # Also store in session-based history
+            session_entry = {
+                'timestamp': datetime.now().isoformat(),
+                'user_query': user_query,
+                'bot_response': response,
+                'ai_response': response,  # for compatibility
+                'endpoints_used': [],  # Will be populated if available
+                'record_counts': {}
+            }
+            add_to_session_chat_history(session_entry)
+            
         except Exception as e:
             logger.error(f"Error storing chat history: {e}")
         
@@ -4109,15 +4143,17 @@ def get_chatbot():
 
 @app.route('/api/chat-history')
 def chat_history_api():
-    """API endpoint to serve chat history for memory monitor"""
+    """API endpoint to serve session-specific chat history for memory monitor"""
     try:
-        chatbot = get_chatbot()
-        chat_history = chatbot.get_chat_history()
+        # Get session-specific chat history
+        chat_history = get_session_chat_history()
         
         return jsonify({
             'success': True,
             'chat_history': chat_history,
-            'total_chats': len(chat_history)
+            'total_chats': len(chat_history),
+            'session_based': True,
+            'max_messages': 30
         })
         
     except Exception as e:
@@ -4133,8 +4169,8 @@ def chat_history_api():
 def chat_history_formatted_api():
     """API endpoint to serve formatted chat history for memory monitor"""
     try:
-        chatbot = get_chatbot()
-        chat_history = chatbot.get_chat_history()
+        # Get session-specific chat history
+        chat_history = get_session_chat_history()
         
         # Format chat history for display
         formatted_history = []
