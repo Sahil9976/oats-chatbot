@@ -395,7 +395,7 @@ class OATSChatbot:
         # Setup Gemini AI
         try:
             genai.configure(api_key=self.gemini_api_key)
-            self.gemini_model = genai.GenerativeModel("gemini-1.5-flash")
+            self.gemini_model = genai.GenerativeModel("gemini-2.5-flash-lite")
             logger.info("Gemini AI initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Gemini AI: {e}")
@@ -1030,7 +1030,7 @@ Let me know if you need any additional information or have other questions!</div
         return {
             # --- JOB ENDPOINTS (VERIFIED WORKING) ---
             "jobs": APIEndpoint(
-                url=f"{self.base_url}/jobs/get-job-list-filter-with-Paginator/?page=1&per_page=10&IncludeFields[]=job_code,job_title,client,job_status,client_bill_rate__value,pay_rates__min_salary,pay_rates__max_salary,location,job_created_by,created_at,modified_at&Search=",
+                url=f"{self.base_url}/jobs/get-job-list-filter-with-Paginator/?page=1&per_page=100&IncludeFields[]=job_code,job_title,client,job_status,client_bill_rate__value,pay_rates__min_salary,pay_rates__max_salary,location,job_created_by,created_at,modified_at&Search=",
                 description="Get job listings with filters",
                 category="job"
             ),
@@ -3119,7 +3119,7 @@ User's current question: "{user_query}"
 """
 
         try:
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-2.5-flash-lite')
             ai_response = model.generate_content(prompt).text
             
             return f"""<div class='ai-response'>

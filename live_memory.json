@@ -1,14 +1,14 @@
 {
   "status": "monitoring",
-  "last_update": "2025-09-04T14:57:34.487949",
+  "last_update": "2025-09-04T16:16:24.319744",
   "current_memory": {
-    "conversations": 4,
-    "cached_data": 4,
-    "memory_usage_mb": 101.77,
+    "conversations": 12,
+    "cached_data": 10,
+    "memory_usage_mb": 103.04,
     "latest_query": {
-      "id": 4,
-      "query": "how to perform advance search?...",
-      "timestamp": 1756977982.9485126,
+      "id": 12,
+      "query": "how to create jd?...",
+      "timestamp": 1756982703.1664221,
       "endpoints_used": [
         "flow_manager"
       ]
