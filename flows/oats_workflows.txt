@@ -1,0 +1,337 @@
+. # ===== SCREENSHOT-EXTRACTED WORKFLOWS (AUTO-GENERATED) =====
+34. # OATS System Workflows and Processes
+35. # This file contains all step-by-step workflows for the OATS recruitment system
+36. # Each workflow is clearly separated and labeled for easy AI analysis
+37. # Updated based on actual website screenshots
+38. # ===== SCREENSHOT-EXTRACTED WORKFLOWS (AUTO-GENERATED) =====
+39. # OATS System Workflows and Processes
+40. # This file contains all step-by-step workflows for the OATS recruitment system
+41. # Each workflow is clearly separated and labeled for easy AI analysis
+42. # Updated based on actual website screenshots
+
+RELATED_FLOWS: USER_MANAGEMENT, SECURITY_SETUP, SYSTEM_MAINTENANCE
+
+=== FLOW_ID: POST-LOGIN_DASHBOARD_NAVIGATION ===
+TITLE: Post-Login Dashboard Navigation
+KEYWORDS: 1, main page, after user login, all features, highlevel, buttons, Dashboard, Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated, Candidate Onboarded, Team Report, Create Job Posting, Create Candidate  # Limit to 15 keywords
+DESCRIPTION: This workflow involves accessing the OATS dashboard after successful login, reviewing KPIs, and navigating to other features.
+
+STEPS:
+1. Step 1:  The user successfully logs in to OATS.
+2. Step 2: The dashboard displays, showing 'Overall Details' with metrics for Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated, and Candidate Onboarded.  'Team Report' shows data for Internal Submissions, Client Submissions, L1 Interviews, L2 Interviews, and Candidate Onboarding, broken down by manager. 'Candidate Source Metrics' section is also visible. A pie chart showing 'Types of Job' (On Site/Work From Home) is displayed.
+3. Step 3: The user can click buttons such as 'Create Job Posting', 'Create Candidate', 'Advanced Search', or 'Account Setup' in the top navigation bar to access the relevant functions.  Clicking 'Logout' on the bottom left sidebar logs the user out.
+4. PREREQUISITES:
+5. - Successful login to OATS
+6. TIPS:
+7. - Review the KPIs for a quick overview of your team's performance.
+8. - Utilize the left sidebar for quick navigation to different sections.
+
+RELATED_FLOWS: Job Posting Workflow, Candidate Management Workflow, Advanced Search Workflow, Account Setup Workflow
+
+=== FLOW_ID: OATS_POST-LOGIN_DASHBOARD_NAVIGATION ===
+TITLE: OATS Post-Login Dashboard Navigation
+KEYWORDS: OATS, Dashboard, main page, user login, all features, highlevel, buttons, Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated, Candidate Onboarded, Team Report, Candidate Source Metrics, Create Job Posting  # Limit to 15 keywords
+DESCRIPTION: This workflow guides the user through accessing different features after successful login.
+
+STEPS:
+1. Step 1: Access the OATS application and enter credentials. After successful login, user lands on the Dashboard page.
+2. Step 2: Review the Overall Details section showing Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated and Candidate Onboarded. User can choose different time periods via dropdown.
+3. Step 3: Review the Team Report which presents the data broken down by internal and client submissions, and interview stages.
+4. Step 4: Review Candidate Source Metrics (not shown in detail in the screenshot).
+5. Step 5: Use the buttons in the top-right for common actions.
+6. Step 6: Navigate to other modules using the left-sidebar navigation bar.
+7. PREREQUISITES:
+8. - Successful user authentication
+9. TIPS:
+10. - The Dashboard provides a quick overview of your recruitment activity.
+11. - Use the sidebar for easy navigation.
+
+RELATED_FLOWS: Job Posting Workflow, Candidate Management Workflow, Advanced Search Workflow, Account Setup Workflow
+
+=== FLOW_ID: CANDIDATE_CREATION_WORKFLOW ===
+TITLE: Candidate Creation Workflow
+KEYWORDS: 1.3, create candidate, button features, Manual Creation, Parse Resume, Bulk Uploading, OATS, Candidate Management, Candidate Creation, New Candidate, Manual Creation, Parse Resume, Bulk Uploading, X  # Limit to 15 keywords
+DESCRIPTION: This workflow guides users through the process of creating new candidate records in OATS.
+
+STEPS:
+1. Step 1: Navigate to the 'Candidates' section in the OATS main menu.
+2. Step 2: Click on the 'Create Candidate' button in the top navigation bar.
+3. Step 3: A modal will appear with three options: 'Manual Creation', 'Parse Resume', and 'Bulk Uploading'. Select one of these options depending on your method of candidate creation.
+4. PREREQUISITES:
+5. - User is logged into OATS
+6. - User has the necessary permissions to create candidates
+
+RELATED_FLOWS: Candidate data entry, Resume parsing workflow, Bulk candidate upload
+
+=== FLOW_ID: CREATE_CANDIDATE_WORKFLOW ===
+TITLE: Create Candidate Workflow
+KEYWORDS: Create Candidate, Parse JD, OATS-AI, Job Description, Candidate Management, OATS, 1.2, click create candidate button, shows these two things, modal dialog, Parse JD, OATS-AI, X  # Limit to 15 keywords
+DESCRIPTION: This workflow guides the user through creating a new candidate profile in OATS.  It begins with selecting a method to create or import the job description.
+
+STEPS:
+1. Step 1: Navigate to the 'Candidates' section in the OATS main menu.
+2. Step 1.1: Click the 'Create Candidate' button in the main navigation bar.
+3. Step 1.2: In the modal dialog that appears, select either 'Parse JD' to manually upload/input a job description or 'OATS-AI' to let the system automatically generate one.
+4. Step 2: Proceed with filling in the candidate's information based on the selected job creation method.
+5. PREREQUISITES:
+6. - User must be logged into OATS with appropriate permissions.
+7. TIPS:
+8. - Ensure the selected job description creation method aligns with your needs.
+
+RELATED_FLOWS: Candidate Information Entry Workflow
+
+=== FLOW_ID: JOB_DESCRIPTION_CREATION_WORKFLOW ===
+TITLE: Job Description Creation Workflow
+KEYWORDS: 1.2.1, Parse JD, Job Descriptions, Upload File, Audio File, OATS, Job description creation, Modal window, Workflow, Input methods, Job Descriptions, Upload File, Audio File, ←, X  # Limit to 15 keywords
+DESCRIPTION: This workflow guides the user through creating a new job description within the OATS system.
+
+STEPS:
+1. Step 1: Navigate to the job creation section in OATS.
+2. Step 1.1: Initiate the job description creation process.
+3. Step 1.2: Click the 'Parse JD' button (not shown, inferred from filename).
+4. Step 1.2.1:  A modal window appears showing three options: 'Job Descriptions' (to input a pre-written description), 'Upload File' (to upload a file containing the description), and 'Audio File' (to record an audio description).  Select the desired method by clicking the corresponding button.
+5. Step 1.3: Depending on the selected method, continue to input the job description details (next steps not shown in this screenshot).
+6. PREREQUISITES:
+7. - User must be logged into OATS and have necessary permissions to create job descriptions.
+8. TIPS:
+9. - Ensure the uploaded file is in a compatible format.
+
+RELATED_FLOWS: Job Posting Workflow, Candidate Application Workflow
+
+=== FLOW_ID: OATS_AI_JOB_DESCRIPTION_CREATION ===
+TITLE: OATS AI Job Description Creation
+KEYWORDS: OATS AI, Prompt Based, Fields Based, Job Description, 1.2.2, OATS interface workflow, Job Posting, Modal Dialog, Overall Details, Create Job Description, ←, X, Prompt Based, Fields Based  # Limit to 15 keywords
+DESCRIPTION: This workflow guides the user through selecting a method to create a job description using the OATS AI feature.
+
+STEPS:
+1. Step 1: Navigate to the 'Jobs' section in the OATS main menu.
+2. Step 2: Click on the 'Overall Details' section (likely related to a specific job posting).
+3. Step 3: Click on the 'OATS AI' button (or equivalent action triggering the modal shown in the screenshot).
+4. Step 4: Select either 'Prompt Based' to compose the job description based on a text prompt or 'Fields Based' to create it using specified fields.  Click the selected button.
+5. Step 5: (Following the choice made):  Proceed with the next steps based on the selected method. This would likely involve additional input screens depending on method selected.
+6. PREREQUISITES:
+7. - A job posting needs to be selected or in the process of creation.
+8. TIPS:
+9. - Consider using 'Prompt Based' for a quick draft and 'Fields Based' for more precise control.
+
+RELATED_FLOWS: Job Posting Workflow, Job Description Editing Workflow
+
+=== FLOW_ID: OATS_ADVANCED_JOB_SEARCH ===
+TITLE: OATS Advanced Job Search
+KEYWORDS: advanced features, button, OATS, job search, keywords, job title, country, state, city, search within selected locations, search within radius, search, recent history, string builder, Search Within Selected Locations  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to perform detailed job searches using various criteria, including keywords, job titles, and location parameters.  Recent search history is also available.
+
+STEPS:
+1. Step 1: Select the desired search option: 'Search Within Selected Locations' or 'Search Within Radius'.
+2. Step 2: Enter Keywords in the 'Keywords' field (required).
+3. Step 3: Optionally, enter a Job Title.
+4. Step 4: Select Country, State, and City from the respective dropdown menus. (These fields are optional, but at least one location parameter is typically recommended for meaningful results)
+5. Step 5: Click the 'Search' button to initiate the job search.  The results will display on a new page.
+6. PREREQUISITES:
+7. - User must be logged into OATS.
+8. VALIDATION RULES:
+9. - Keywords field is mandatory.
+10. TIPS:
+11. - For better results, use specific keywords and combine location parameters.
+12. - Use the String Builder for more complex search queries.
+
+RELATED_FLOWS: OATS Job Result Review, OATS String Builder
+
+=== FLOW_ID: ADVANCED_JOB_SEARCH_IN_OATS ===
+TITLE: Advanced Job Search in OATS
+KEYWORDS: advanced features, button, Search, Keywords, Job Title, Country, State, City, Search Within Selected Locations, Search Within Radius, OATS, Job Search, Filtering, String Builder, Search  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to perform a detailed job search using keywords, job title, and location filters.
+
+STEPS:
+1. Step 1: Select the desired job board (Internal DB, Dice, Foundit SEA, Careerbuilder).
+2. Step 2: Enter keywords in the 'Keywords' field (required).
+3. Step 3: Optionally enter the job title in the 'Job Title' field.
+4. Step 4: Select the country, state, and city from the respective dropdown menus.  Note that 'Select Country' is only a placeholder until the user selects a country.
+5. Step 5: Select either 'Search Within Selected Locations' or 'Search Within Radius' radio button.
+6. Step 6: Click the 'Search' button to initiate the job search.
+7. PREREQUISITES:
+8. - User logged into OATS.
+9. VALIDATION RULES:
+10. - Keywords field is mandatory.
+11. TIPS:
+12. - Use relevant keywords for better search results.
+13. - Combine keywords with location filters for precise targeting.
+
+RELATED_FLOWS: Job Result Review, String Builder Workflow
+
+=== FLOW_ID: CONTACT_IMPORT_AND_MANAGEMENT ===
+TITLE: Contact Import and Management
+KEYWORDS: 1.5 account setup, account setup button, contact import, import contacts, computer, email, cloud, windows, contact groups, search, group name, creator, allocated credits, OATS  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to import contacts from various sources (computer, email, cloud) and manage existing contact groups within their OATS account.
+
+STEPS:
+1. 1. Navigate to the Account Management section. This can typically be found in the top right corner of the OATS interface under your account profile.
+2. 2. Locate and select the 'Personal contact' option from the horizontal navigation menu.
+3. 3. In the 'Import Contacts From' section, choose one of the available import methods represented by icons: Computer, Email, Cloud, or Windows.
+4. 4. (Optional) Use the 'Search with group name and creator' text field to find a specific contact group.
+5. 5. Select the checkbox next to the desired contact group to view details (if present).
+6. PREREQUISITES:
+7. - An active OATS account.
+8. VALIDATION RULES:
+9. - File format validation (xls, xlsx, csv)
+10. - Maximum contacts per group (2000)
+11. TIPS:
+12. - Use the search field to easily locate specific contact groups.
+13. - Review contact group details before making changes.
+
+RELATED_FLOWS: Account Setup, Contact Management, Credit Allocation
+
+=== FLOW_ID: ACCOUNT_SETUP:_CONTACT_IMPORT ===
+TITLE: Account Setup: Contact Import
+KEYWORDS: 1.5 account setup button, account setup, contact import, Import Contacts From, Computer, Gmail, Cloud, Windows, .xls, .xlsx, .csv, OATS, contact groups, search, upload  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to import existing contacts from various sources into their OATS account.
+
+STEPS:
+1. 1. Navigate to the 'Account Management' section, likely through a main menu.
+2. 2. Locate and select the 'Personal contact' or similar tab within the Account Management section.
+3. 3. Find the 'Import Contacts From' section.
+4. 4. Choose the desired import method: Computer, Gmail, Cloud, or Windows icon.  (Note:  These are implied by the icons; the screenshot lacks explicit labels).
+5. 5. Optionally, use the 'Search with group name and creator' field to locate and select existing contact groups to manage or update contact list.
+6. 6.  (Implied Next Step):  Follow the prompts to upload the contact data file depending on the chosen import method.  Refer to the guidelines on the right side panel for supported formats and limitations (2000 contacts per group maximum).
+7. PREREQUISITES:
+8. - User must have an active OATS account.
+9. - Contacts should be in a supported file format (.xls, .xlsx, .csv)
+10. VALIDATION RULES:
+11. - File format validation (.xls, .xlsx, .csv)
+12. - Duplicate contact record handling
+13. - Maximum 2000 contacts per group
+14. TIPS:
+15. - Use the search function to locate existing contact groups.
+16. - Check the supported file formats before importing.
+17. - Review data import guidelines for limitations and recommendations
+
+RELATED_FLOWS: Account Creation, Contact Management, Data Import
+
+=== FLOW_ID: JOB_MANAGEMENT_WORKFLOW ===
+TITLE: Job Management Workflow
+KEYWORDS: Job section page, buttons, Add Job, Edit Column, Draft, Job Code, Job Title, Client, Status, Client Bill Rate, Pay Rate Min, Pay Rate Max, Location, Search, Rows per page  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to create, view, edit, and manage job postings within the OATS system.
+
+STEPS:
+1. Step 1: Navigate to the 'All Jobs' page from the main menu. This is typically done by selecting the 'Jobs' option from the left-hand navigation menu.
+2. Step 2: Review the list of jobs displayed. Each row represents a job and includes fields for Job Code, Job Title, Client, Status, Bill Rates, Pay Rates, and Location.
+3. Step 3: To add a new job posting, click the 'Add Job' button. This will navigate to the job creation form.
+4. Step 4: To modify the displayed columns, click the 'Edit Column' button.
+5. Step 5: To save a job as a draft, click the 'Draft' button.  This allows you to save progress without fully publishing the job.
+6. Step 6: Use the search bar to filter the job list by keywords in any of the listed columns.
+7. Step 7: Use the dropdown menu to adjust the number of jobs displayed per page.
+8. PREREQUISITES:
+9. - User must be logged into OATS with appropriate permissions.
+10. VALIDATION RULES:
+11. - Search input is not case sensitive
+12. TIPS:
+13. - Use the search bar to efficiently locate specific jobs.
+
+RELATED_FLOWS: Job Creation Workflow, Job Editing Workflow
+
+=== FLOW_ID: CANDIDATE_LIST_MANAGEMENT ===
+TITLE: Candidate List Management
+KEYWORDS: candidate section, data, button, Add Candidate, Edit Column, candidate list, search, filter, pagination, candidate management, OATS, Candidate ID, Name, Job Title, Location  # Limit to 15 keywords
+DESCRIPTION: View, search, filter, and add new candidates.
+
+STEPS:
+1. Step 1: Navigate to the 'Candidates' section in OATS.
+2. Step 2: (Optional) Use the 'Search...' field to filter candidates by name, ID, or other searchable criteria.
+3. Step 3: (Optional) Use the 'Rows per page' dropdown to adjust the number of candidates shown per page.
+4. Step 4: Review the list of candidates, including their IDs, names, job titles, locations, source, ownership, notice periods, and relocation status.
+5. Step 5: (Optional) Click the checkbox next to a candidate's ID to select the candidate for further actions (not shown in this screenshot).
+6. Step 6: To add a new candidate, click the 'Add Candidate' button (this will open a new page or form).
+7. Step 7: (Optional) To modify the columns visible in the candidate list, click 'Edit Column'.
+8. PREREQUISITES:
+9. - Access to the OATS system and the Candidates section.
+10. VALIDATION RULES:
+11. - Search input field accepts alphanumeric characters.
+12. - Rows per page dropdown has valid options.
+13. TIPS:
+14. - Use the search function to quickly locate specific candidates.
+15. - Adjust the rows per page to enhance browsing.
+
+RELATED_FLOWS: Add Candidate workflow, Candidate Detail View workflow, Candidate Edit workflow
+
+=== FLOW_ID: CLIENT_MANAGEMENT:_DATA_VIEW_AND_EDITING ===
+TITLE: Client Management: Data View and Editing
+KEYWORDS: 4 . clients section with data with button, OATS, Client Management, Client data, Add New, Edit Column, Search, Client ID, Client Name, Contact Number, Email, Website, Status, Primary Owner, Created By  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to view, search, and manage existing client data within the OATS system.  It also provides the ability to add new clients and edit the displayed columns.
+
+STEPS:
+1. Step 1: Access the 'Clients' section via the OATS main menu.
+2. Step 2: Review the list of clients displayed in the table.  Each row represents a client with information like Client ID, Client Name, Contact Number, Email, Website, Status, Primary Owner, and Created By.
+3. Step 3: Use the 'Search...' field to filter the list by client name or ID.
+4. Step 4: Select the checkboxes next to specific clients for bulk actions (not shown but implied by checkboxes).
+5. Step 5: Click 'Edit Column' to customize the columns displayed in the client table.
+6. Step 6: Click 'Add New' to navigate to a page for creating a new client entry.
+7. Step 7: Use the dropdown to adjust the number of rows displayed per page.
+8. PREREQUISITES:
+9. - User must be logged into the OATS system and have appropriate permissions to access the Clients section.
+10. TIPS:
+11. - Use the search function to quickly locate specific clients.
+12. - Customize columns to view the information most relevant to your tasks.
+
+RELATED_FLOWS: Add New Client, Edit Client Data, Customize Client Table Columns
+
+=== FLOW_ID: CLIENT_DATA_MANAGEMENT ===
+TITLE: Client Data Management
+KEYWORDS: Clients, Client Management, OATS, Otomashen ATS, Add New, Edit Column, Search, Client ID, Client Name, Contact Number, Email, Website, Status, Primary Owner, Created By  # Limit to 15 keywords
+DESCRIPTION: View, search, and manage existing client information. Add new clients.
+
+STEPS:
+1. Step 1: Navigate to the 'Clients' section in OATS.
+2. Step 2: Use the 'Search...' field (optional) to filter clients by name or ID.
+3. Step 3: Select the 'Rows per page' dropdown to adjust the number of clients displayed per page.
+4. Step 4: Click on individual checkboxes to select multiple clients for bulk actions (if available - not shown).
+5. Step 5: Click 'Edit Column' to customize the displayed client attributes.
+6. Step 6: Click 'Add New' to add a new client. (This will navigate to the client creation page)
+7. Step 7: Use pagination buttons to navigate through the client list.
+8. PREREQUISITES:
+9. - Access to OATS system
+10. - Client management permissions
+11. TIPS:
+12. - Use the search bar for quick client lookups.
+13. - Adjust rows per page for optimized view.
+
+RELATED_FLOWS: Add New Client Workflow, Client Detail View Workflow, Edit Client Workflow
+
+=== FLOW_ID: VENDOR_MANAGEMENT ===
+TITLE: Vendor Management
+KEYWORDS: Vendors, Vendor Management, OATS, Add New, Edit Column, Vendor Id, Vendor name, Federal Id, Contact Number, Website, Address, Ownership, Created By, Data Table, Pagination  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to view, search, add, and manage vendor information within the OATS system.
+
+STEPS:
+1. Step 1: Navigate to the Vendor Management section in OATS.
+2. Step 2: (If applicable) Use the search bar to filter vendors based on criteria.
+3. Step 3:  Review the displayed vendor data.  The data shown includes Vendor ID, Vendor Name, Federal ID, Contact Number, Website, Address, Ownership, and Created By.
+4. Step 4: To add a new vendor, click the 'Add New' button.
+5. Step 5: To modify the displayed columns, click the 'Edit Column' button.
+6. Step 6: To view details of a specific vendor (if possible), click on the vendor's row. This action will vary based on OATS' capabilities.
+7. Step 7: Use the pagination controls (Rows per page and page numbers) to navigate the vendor list.
+8. PREREQUISITES:
+9. - Access to the OATS system and appropriate permissions for Vendor Management
+10. TIPS:
+11. - Use the search bar to find vendors quickly.
+12. - Ensure data accuracy when adding or editing vendor information.
+
+RELATED_FLOWS: Add Vendor Workflow, Edit Vendor Workflow, Search Vendors Workflow
+
+=== FLOW_ID: VENDOR_MANAGEMENT_WORKFLOW ===
+TITLE: Vendor Management Workflow
+KEYWORDS: Vendors, Vendor management, OATS, Add New, Edit Column, Search, Vendor Id, Vendor name, Federal Id, Contact Number, Website, Address, Ownership, Created By, 5 . vendors section with data with button  # Limit to 15 keywords
+DESCRIPTION: This workflow allows users to manage vendor information within the OATS system, including adding, viewing, and potentially editing vendor details.
+
+STEPS:
+1. Step 1: Navigate to the Vendor Management section in the OATS main menu (path not shown in screenshot).
+2. Step 2:  The 'All Vendors' page will load, displaying a table of vendor data (Vendor Id, Vendor name, Federal Id, Contact Number, Website, Address, Ownership, Created By).
+3. Step 3: Use the search field (placeholder: 'Search...') to filter vendors by any of the visible columns.
+4. Step 4: Select the checkboxes next to vendor IDs to select multiple vendors for potential bulk actions (not visible in this workflow).
+5. Step 5: Use the 'Rows per page' dropdown to adjust the number of rows displayed per page.
+6. Step 6: Click the 'Add New' button (blue, top right) to add a new vendor. This will lead to a new form.
+7. Step 7: Click the 'Edit Column' button (blue, top right) to customize the columns displayed in the vendor table.  The exact behavior is not specified.
+8. PREREQUISITES:
+9. - Access to OATS system, appropriate user permissions
+
+RELATED_FLOWS: Adding a new vendor, Editing vendor details, Deleting vendors
+

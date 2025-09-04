@@ -1,0 +1,2573 @@
+[
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1 . main page after user login ,shows all features on highlevel with buttons.png\",\n    \"expected_workflow\": \"Authentication and login workflow - 1 . main page after user login ,shows all features on highlevel with buttons\",\n    \"section_number\": \"1\",\n    \"descriptive_elements\": [\"main page\", \"after user login\", \"all features\", \"highlevel\", \"buttons\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Post-login dashboard display\",\n    \"interface_focus\": \"Dashboard showing all available features via buttons and high-level metrics\"\n  },\n  \"page_info\": {\n    \"title\": \"Dashboard\",\n    \"section\": \"Dashboard\",\n    \"purpose\": \"Display key performance indicators (KPIs) and provide quick access to OATS features.\",\n    \"breadcrumb\": \"None visible\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Dashboard\", \"color\": \"blue\", \"position\": \"left sidebar, top\"},\n      {\"text\": \"Create Job Posting\", \"color\": \"dark gray\", \"position\": \"top navigation bar\"},\n      {\"text\": \"Create Candidate\", \"color\": \"dark gray\", \"position\": \"top navigation bar\"},\n      {\"text\": \"Advanced Search\", \"color\": \"dark gray\", \"position\": \"top navigation bar\"},\n      {\"text\": \"Account Setup\", \"color\": \"dark gray\", \"position\": \"top navigation bar\"},\n      {\"text\": \"Logout\", \"color\": \"dark gray\", \"position\": \"bottom left sidebar\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {\n      \"Account Manager\": [\"Account Manager\"],\n      \"Last 30 Days\": [\"Last 30 Days\"]\n    },\n    \"navigation\": [\"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\"],\n    \"sections\": [\"Overall Details\", \"Team Report\", \"Candidate Source Metrics\"]\n  },\n  \"workflow\": {\n    \"title\": \"Post-Login Dashboard Navigation\",\n    \"description\": \"This workflow involves accessing the OATS dashboard after successful login, reviewing KPIs, and navigating to other features.\",\n    \"current_step\": \"Displaying the post-login dashboard\",\n    \"steps\": [\n      \"Step 1:  The user successfully logs in to OATS.\",\n      \"Step 2: The dashboard displays, showing 'Overall Details' with metrics for Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated, and Candidate Onboarded.  'Team Report' shows data for Internal Submissions, Client Submissions, L1 Interviews, L2 Interviews, and Candidate Onboarding, broken down by manager. 'Candidate Source Metrics' section is also visible. A pie chart showing 'Types of Job' (On Site/Work From Home) is displayed.\",\n      \"Step 3: The user can click buttons such as 'Create Job Posting', 'Create Candidate', 'Advanced Search', or 'Account Setup' in the top navigation bar to access the relevant functions.  Clicking 'Logout' on the bottom left sidebar logs the user out.\"\n    ],\n    \"prerequisites\": [\"Successful login to OATS\"],\n    \"outcomes\": [\"User is presented with high-level metrics and access to main OATS features.\"],\n    \"next_actions\": [\"Create Job Posting\", \"Create Candidate\", \"Advanced Search\", \"Account Setup\", \"Navigate to Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, or Placements sections\"]\n  },\n  \"keywords\": [\n    \"1\",\n    \"main page\",\n    \"after user login\",\n    \"all features\",\n    \"highlevel\",\n    \"buttons\",\n    \"Dashboard\",\n    \"Open Jobs\",\n    \"Active Submissions\",\n    \"Interviews Done\",\n    \"Onboarding Initiated\",\n    \"Candidate Onboarded\",\n    \"Team Report\",\n    \"Create Job Posting\",\n    \"Create Candidate\",\n    \"Advanced Search\",\n    \"Account Setup\",\n    \"Logout\",\n    \"KPIs\",\n    \"OATS\",\n    \"Post-Login\"\n  ],\n  \"related_flows\": [\"Job Posting Workflow\", \"Candidate Management Workflow\", \"Advanced Search Workflow\", \"Account Setup Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Review the KPIs for a quick overview of your team's performance.\", \"Utilize the left sidebar for quick navigation to different sections.\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename description, showing the main page after login, highlighting key features at a high level via buttons and metrics.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1 . main page after user login ,shows all features on highlevel with buttons.png",
+    "filename": "1 . main page after user login ,shows all features on highlevel with buttons.png",
+    "filename_analysis": {
+      "filename": "1 . main page after user login ,shows all features on highlevel with buttons.png",
+      "expected_workflow": "Authentication and login workflow - 1 . main page after user login ,shows all features on highlevel with buttons",
+      "section_number": "1",
+      "descriptive_elements": [
+        "main page",
+        "after user login",
+        "all features",
+        "highlevel",
+        "buttons"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Post-login dashboard display",
+      "interface_focus": "Dashboard showing all available features via buttons and high-level metrics"
+    },
+    "page_info": {
+      "title": "Dashboard",
+      "section": "Dashboard",
+      "purpose": "Display key performance indicators (KPIs) and provide quick access to OATS features.",
+      "breadcrumb": "None visible"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Dashboard",
+          "color": "blue",
+          "position": "left sidebar, top"
+        },
+        {
+          "text": "Create Job Posting",
+          "color": "dark gray",
+          "position": "top navigation bar"
+        },
+        {
+          "text": "Create Candidate",
+          "color": "dark gray",
+          "position": "top navigation bar"
+        },
+        {
+          "text": "Advanced Search",
+          "color": "dark gray",
+          "position": "top navigation bar"
+        },
+        {
+          "text": "Account Setup",
+          "color": "dark gray",
+          "position": "top navigation bar"
+        },
+        {
+          "text": "Logout",
+          "color": "dark gray",
+          "position": "bottom left sidebar"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {
+        "Account Manager": [
+          "Account Manager"
+        ],
+        "Last 30 Days": [
+          "Last 30 Days"
+        ]
+      },
+      "navigation": [
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "Vendors",
+        "Talent Bench",
+        "eBoarding",
+        "Placements"
+      ],
+      "sections": [
+        "Overall Details",
+        "Team Report",
+        "Candidate Source Metrics"
+      ]
+    },
+    "workflow": {
+      "title": "Post-Login Dashboard Navigation",
+      "description": "This workflow involves accessing the OATS dashboard after successful login, reviewing KPIs, and navigating to other features.",
+      "current_step": "Displaying the post-login dashboard",
+      "steps": [
+        "Step 1:  The user successfully logs in to OATS.",
+        "Step 2: The dashboard displays, showing 'Overall Details' with metrics for Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated, and Candidate Onboarded.  'Team Report' shows data for Internal Submissions, Client Submissions, L1 Interviews, L2 Interviews, and Candidate Onboarding, broken down by manager. 'Candidate Source Metrics' section is also visible. A pie chart showing 'Types of Job' (On Site/Work From Home) is displayed.",
+        "Step 3: The user can click buttons such as 'Create Job Posting', 'Create Candidate', 'Advanced Search', or 'Account Setup' in the top navigation bar to access the relevant functions.  Clicking 'Logout' on the bottom left sidebar logs the user out."
+      ],
+      "prerequisites": [
+        "Successful login to OATS"
+      ],
+      "outcomes": [
+        "User is presented with high-level metrics and access to main OATS features."
+      ],
+      "next_actions": [
+        "Create Job Posting",
+        "Create Candidate",
+        "Advanced Search",
+        "Account Setup",
+        "Navigate to Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, or Placements sections"
+      ]
+    },
+    "keywords": [
+      "1",
+      "main page",
+      "after user login",
+      "all features",
+      "highlevel",
+      "buttons",
+      "Dashboard",
+      "Open Jobs",
+      "Active Submissions",
+      "Interviews Done",
+      "Onboarding Initiated",
+      "Candidate Onboarded",
+      "Team Report",
+      "Create Job Posting",
+      "Create Candidate",
+      "Advanced Search",
+      "Account Setup",
+      "Logout",
+      "KPIs",
+      "OATS",
+      "Post-Login"
+    ],
+    "related_flows": [
+      "Job Posting Workflow",
+      "Candidate Management Workflow",
+      "Advanced Search Workflow",
+      "Account Setup Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Review the KPIs for a quick overview of your team's performance.",
+      "Utilize the left sidebar for quick navigation to different sections."
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename description, showing the main page after login, highlighting key features at a high level via buttons and metrics."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1 . main page after user login ,shows all features on highlevel with buttons.png\",\n    \"expected_workflow\": \"Authentication and login workflow - 1 . main page after user login ,shows all features on highlevel with buttons\",\n    \"section_number\": \"1\",\n    \"descriptive_elements\": [\"main page\", \"after user login\", \"all features\", \"highlevel\", \"buttons\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Post-login landing page\",\n    \"interface_focus\": \"Dashboard showing all available features via buttons and high-level metrics\"\n  },\n  \"page_info\": {\n    \"title\": \"Dashboard\",\n    \"section\": \"Dashboard\",\n    \"purpose\": \"Provides an overview of key metrics and quick access to all OATS features.\",\n    \"breadcrumb\": \"Dashboard\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Dashboard\", \"color\": \"blue\", \"position\": \"left sidebar\"},\n      {\"text\": \"Jobs\", \"color\": \"grey\", \"position\": \"left sidebar\"},\n      {\"text\": \"Candidates\", \"color\": \"grey\", \"position\": \"left sidebar\"},\n      {\"text\": \"Clients\", \"color\": \"grey\", \"position\": \"left sidebar\"},\n      {\"text\": \"Vendors\", \"color\": \"grey\", \"position\": \"left sidebar\"},\n      {\"text\": \"Talent Bench\", \"color\": \"grey\", \"position\": \"left sidebar\"},\n      {\"text\": \"eBoarding\", \"color\": \"grey\", \"position\": \"left sidebar\"},\n      {\"text\": \"Placements\", \"color\": \"grey\", \"position\": \"left sidebar\"},\n      {\"text\": \"Logout\", \"color\": \"grey\", \"position\": \"bottom left sidebar\"},\n      {\"text\": \"Create Job Posting\", \"color\": \"dark-grey\", \"position\": \"top-right, near header\"},\n      {\"text\": \"Create Candidate\", \"color\": \"dark-grey\", \"position\": \"top-right, near header\"},\n      {\"text\": \"Advanced Search\", \"color\": \"dark-grey\", \"position\": \"top-right, near header\"},\n      {\"text\": \"Account Setup\", \"color\": \"dark-grey\", \"position\": \"top-right, near header\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {\n      \"Account Manager\": [\"Account Manager options\"],\n      \"Last 30 Days\": [\"Time period options\"]\n    },\n    \"navigation\": [\"Dashboard\", \"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\", \"Logout\"],\n    \"sections\": [\"Overall Details\", \"Team Report\", \"Candidate Source Metrics\"]\n  },\n  \"workflow\": {\n    \"title\": \"OATS Post-Login Dashboard Navigation\",\n    \"description\": \"This workflow guides the user through accessing different features after successful login.\",\n    \"current_step\": \"Displaying the main dashboard after successful authentication\",\n    \"steps\": [\n      \"Step 1: Access the OATS application and enter credentials. After successful login, user lands on the Dashboard page.\",\n      \"Step 2: Review the Overall Details section showing Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated and Candidate Onboarded. User can choose different time periods via dropdown.\",\n      \"Step 3: Review the Team Report which presents the data broken down by internal and client submissions, and interview stages.\",\n      \"Step 4: Review Candidate Source Metrics (not shown in detail in the screenshot).\",\n      \"Step 5: Use the buttons in the top-right for common actions.\",\n      \"Step 6: Navigate to other modules using the left-sidebar navigation bar.\"\n    ],\n    \"prerequisites\": [\"Successful user authentication\"],\n    \"outcomes\": [\"User has access to all available OATS features and metrics\"],\n    \"next_actions\": [\"Create Job Posting\", \"Create Candidate\", \"Advanced Search\", \"Account Setup\",  \"Navigate to Jobs, Candidates, Clients etc.\"]\n  },\n  \"keywords\": [\n    \"OATS\",\n    \"Dashboard\",\n    \"main page\",\n    \"user login\",\n    \"all features\",\n    \"highlevel\",\n    \"buttons\",\n    \"Open Jobs\",\n    \"Active Submissions\",\n    \"Interviews Done\",\n    \"Onboarding Initiated\",\n    \"Candidate Onboarded\",\n    \"Team Report\",\n    \"Candidate Source Metrics\",\n    \"Create Job Posting\",\n    \"Create Candidate\",\n    \"Advanced Search\",\n    \"Account Setup\",\n    \"Account Manager\",\n    \"Last 30 Days\"\n  ],\n  \"related_flows\": [\"Job Posting Workflow\", \"Candidate Management Workflow\", \"Advanced Search Workflow\", \"Account Setup Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"The Dashboard provides a quick overview of your recruitment activity.\", \"Use the sidebar for easy navigation.\" ],\n  \"accuracy_notes\": \"The screenshot content perfectly matches the filename's description.  The filename accurately reflects the content of the main dashboard after login, with a high-level overview of available features and key metrics.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1 . main page after user login ,shows all features on highlevel with buttons.png",
+    "filename": "1 . main page after user login ,shows all features on highlevel with buttons.png",
+    "filename_analysis": {
+      "filename": "1 . main page after user login ,shows all features on highlevel with buttons.png",
+      "expected_workflow": "Authentication and login workflow - 1 . main page after user login ,shows all features on highlevel with buttons",
+      "section_number": "1",
+      "descriptive_elements": [
+        "main page",
+        "after user login",
+        "all features",
+        "highlevel",
+        "buttons"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Post-login landing page",
+      "interface_focus": "Dashboard showing all available features via buttons and high-level metrics"
+    },
+    "page_info": {
+      "title": "Dashboard",
+      "section": "Dashboard",
+      "purpose": "Provides an overview of key metrics and quick access to all OATS features.",
+      "breadcrumb": "Dashboard"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Dashboard",
+          "color": "blue",
+          "position": "left sidebar"
+        },
+        {
+          "text": "Jobs",
+          "color": "grey",
+          "position": "left sidebar"
+        },
+        {
+          "text": "Candidates",
+          "color": "grey",
+          "position": "left sidebar"
+        },
+        {
+          "text": "Clients",
+          "color": "grey",
+          "position": "left sidebar"
+        },
+        {
+          "text": "Vendors",
+          "color": "grey",
+          "position": "left sidebar"
+        },
+        {
+          "text": "Talent Bench",
+          "color": "grey",
+          "position": "left sidebar"
+        },
+        {
+          "text": "eBoarding",
+          "color": "grey",
+          "position": "left sidebar"
+        },
+        {
+          "text": "Placements",
+          "color": "grey",
+          "position": "left sidebar"
+        },
+        {
+          "text": "Logout",
+          "color": "grey",
+          "position": "bottom left sidebar"
+        },
+        {
+          "text": "Create Job Posting",
+          "color": "dark-grey",
+          "position": "top-right, near header"
+        },
+        {
+          "text": "Create Candidate",
+          "color": "dark-grey",
+          "position": "top-right, near header"
+        },
+        {
+          "text": "Advanced Search",
+          "color": "dark-grey",
+          "position": "top-right, near header"
+        },
+        {
+          "text": "Account Setup",
+          "color": "dark-grey",
+          "position": "top-right, near header"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {
+        "Account Manager": [
+          "Account Manager options"
+        ],
+        "Last 30 Days": [
+          "Time period options"
+        ]
+      },
+      "navigation": [
+        "Dashboard",
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "Vendors",
+        "Talent Bench",
+        "eBoarding",
+        "Placements",
+        "Logout"
+      ],
+      "sections": [
+        "Overall Details",
+        "Team Report",
+        "Candidate Source Metrics"
+      ]
+    },
+    "workflow": {
+      "title": "OATS Post-Login Dashboard Navigation",
+      "description": "This workflow guides the user through accessing different features after successful login.",
+      "current_step": "Displaying the main dashboard after successful authentication",
+      "steps": [
+        "Step 1: Access the OATS application and enter credentials. After successful login, user lands on the Dashboard page.",
+        "Step 2: Review the Overall Details section showing Open Jobs, Active Submissions, Interviews Done, Onboarding Initiated and Candidate Onboarded. User can choose different time periods via dropdown.",
+        "Step 3: Review the Team Report which presents the data broken down by internal and client submissions, and interview stages.",
+        "Step 4: Review Candidate Source Metrics (not shown in detail in the screenshot).",
+        "Step 5: Use the buttons in the top-right for common actions.",
+        "Step 6: Navigate to other modules using the left-sidebar navigation bar."
+      ],
+      "prerequisites": [
+        "Successful user authentication"
+      ],
+      "outcomes": [
+        "User has access to all available OATS features and metrics"
+      ],
+      "next_actions": [
+        "Create Job Posting",
+        "Create Candidate",
+        "Advanced Search",
+        "Account Setup",
+        "Navigate to Jobs, Candidates, Clients etc."
+      ]
+    },
+    "keywords": [
+      "OATS",
+      "Dashboard",
+      "main page",
+      "user login",
+      "all features",
+      "highlevel",
+      "buttons",
+      "Open Jobs",
+      "Active Submissions",
+      "Interviews Done",
+      "Onboarding Initiated",
+      "Candidate Onboarded",
+      "Team Report",
+      "Candidate Source Metrics",
+      "Create Job Posting",
+      "Create Candidate",
+      "Advanced Search",
+      "Account Setup",
+      "Account Manager",
+      "Last 30 Days"
+    ],
+    "related_flows": [
+      "Job Posting Workflow",
+      "Candidate Management Workflow",
+      "Advanced Search Workflow",
+      "Account Setup Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "The Dashboard provides a quick overview of your recruitment activity.",
+      "Use the sidebar for easy navigation."
+    ],
+    "accuracy_notes": "The screenshot content perfectly matches the filename's description.  The filename accurately reflects the content of the main dashboard after login, with a high-level overview of available features and key metrics."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.2 click create candidate button shows these two things.png\",\n    \"expected_workflow\": \"Candidate management workflow - 1.2 click create candidate button shows these two things\",\n    \"section_number\": \"1.2\",\n    \"descriptive_elements\": [\"click create candidate button\", \"shows these two things\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Choosing a method to create a new candidate\",\n    \"interface_focus\": \"A modal dialog appearing after clicking the 'Create Candidate' button, presenting two options for candidate creation.\"\n  },\n  \"page_info\": {\n    \"title\": \"Choose an option to create the job\",\n    \"section\": \"Candidates\",\n    \"purpose\": \"To select the method for creating a new candidate (Parse JD or OATS-AI)\",\n    \"breadcrumb\": \"No breadcrumb visible in this screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Parse JD\", \"color\": \"blue\", \"position\": \"Left option in modal dialog\"},\n      {\"text\": \"OATS-AI\", \"color\": \"blue\", \"position\": \"Right option in modal dialog\"},\n      {\"text\": \"X\", \"color\": \"gray\", \"position\": \"Top right corner of the modal dialog - close button\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {},\n    \"navigation\": [\"Dashboard\", \"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\", \"Logout\"],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"Candidate Creation Workflow\",\n    \"description\": \"This workflow guides the user through creating a new candidate profile within the OATS system.\",\n    \"current_step\": \"Step 1.2: Selecting Candidate Creation Method\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Candidates' section in the OATS main menu.\",\n      \"Step 1.1: Click the 'Create Candidate' button located in the main navigation bar.\",\n      \"Step 1.2:  A modal dialog appears.  Choose either 'Parse JD' (to create a candidate profile based on a job description) or 'OATS-AI' (to leverage AI-assisted candidate creation). Click the chosen option. \",\n      \"Step 2: (Following selection of either Parse JD or OATS-AI)  Complete the subsequent forms/screens based on the chosen method to fully create the candidate profile. This may include entering candidate details such as name, contact information, skills, experience etc.\"\n    ],\n    \"prerequisites\": [\"Access to OATS system\", \"Appropriate user permissions\"],\n    \"outcomes\": [\"A new candidate profile is created in the OATS system.\"],\n    \"next_actions\": [\"Complete the next steps based on the selected method ('Parse JD' or 'OATS-AI'), which will lead to inputting candidate data.\"]\n  },\n  \"keywords\": [\n    \"Create Candidate\",\n    \"Parse JD\",\n    \"OATS-AI\",\n    \"Candidate management\",\n    \"Candidate creation\",\n    \"Job Description\",\n    \"AI-assisted\",\n    \"1.2 click create candidate button\",\n    \"shows these two things\",\n    \"OATS\",\n    \"Otomashen ATS\"\n  ],\n  \"related_flows\": [\"Job Posting Workflow\", \"Candidate Onboarding Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Ensure you have the necessary job description ready if choosing 'Parse JD'\", \"Review all entered candidate information for accuracy before submitting.\"],\n  \"accuracy_notes\": \"The screenshot perfectly matches the filename's description, showing the two options presented after clicking the 'Create Candidate' button. The filename accurately reflects the workflow step shown.\"\n}\n```\n",
+    "screenshot_path": "flows\\screenshots\\1.2 click create candidate button shows these two things.png",
+    "filename": "1.2 click create candidate button shows these two things.png",
+    "filename_analysis": {
+      "filename": "1.2 click create candidate button shows these two things.png",
+      "expected_workflow": "Candidate management workflow - 1.2 click create candidate button shows these two things",
+      "section_number": "1.2",
+      "descriptive_elements": [
+        "click create candidate button",
+        "shows these two things"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Choosing a method to create a new candidate",
+      "interface_focus": "A modal dialog appearing after clicking the 'Create Candidate' button, presenting two options for candidate creation."
+    },
+    "page_info": {
+      "title": "Choose an option to create the job",
+      "section": "Candidates",
+      "purpose": "To select the method for creating a new candidate (Parse JD or OATS-AI)",
+      "breadcrumb": "No breadcrumb visible in this screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Parse JD",
+          "color": "blue",
+          "position": "Left option in modal dialog"
+        },
+        {
+          "text": "OATS-AI",
+          "color": "blue",
+          "position": "Right option in modal dialog"
+        },
+        {
+          "text": "X",
+          "color": "gray",
+          "position": "Top right corner of the modal dialog - close button"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {},
+      "navigation": [
+        "Dashboard",
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "Vendors",
+        "Talent Bench",
+        "eBoarding",
+        "Placements",
+        "Logout"
+      ],
+      "sections": []
+    },
+    "workflow": {
+      "title": "Candidate Creation Workflow",
+      "description": "This workflow guides the user through creating a new candidate profile within the OATS system.",
+      "current_step": "Step 1.2: Selecting Candidate Creation Method",
+      "steps": [
+        "Step 1: Navigate to the 'Candidates' section in the OATS main menu.",
+        "Step 1.1: Click the 'Create Candidate' button located in the main navigation bar.",
+        "Step 1.2:  A modal dialog appears.  Choose either 'Parse JD' (to create a candidate profile based on a job description) or 'OATS-AI' (to leverage AI-assisted candidate creation). Click the chosen option. ",
+        "Step 2: (Following selection of either Parse JD or OATS-AI)  Complete the subsequent forms/screens based on the chosen method to fully create the candidate profile. This may include entering candidate details such as name, contact information, skills, experience etc."
+      ],
+      "prerequisites": [
+        "Access to OATS system",
+        "Appropriate user permissions"
+      ],
+      "outcomes": [
+        "A new candidate profile is created in the OATS system."
+      ],
+      "next_actions": [
+        "Complete the next steps based on the selected method ('Parse JD' or 'OATS-AI'), which will lead to inputting candidate data."
+      ]
+    },
+    "keywords": [
+      "Create Candidate",
+      "Parse JD",
+      "OATS-AI",
+      "Candidate management",
+      "Candidate creation",
+      "Job Description",
+      "AI-assisted",
+      "1.2 click create candidate button",
+      "shows these two things",
+      "OATS",
+      "Otomashen ATS"
+    ],
+    "related_flows": [
+      "Job Posting Workflow",
+      "Candidate Onboarding Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Ensure you have the necessary job description ready if choosing 'Parse JD'",
+      "Review all entered candidate information for accuracy before submitting."
+    ],
+    "accuracy_notes": "The screenshot perfectly matches the filename's description, showing the two options presented after clicking the 'Create Candidate' button. The filename accurately reflects the workflow step shown."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.2 click create candidate button shows these two things.png\",\n    \"expected_workflow\": \"Candidate management workflow - 1.2 click create candidate button shows these two things\",\n    \"section_number\": \"1.2\",\n    \"descriptive_elements\": [\"click create candidate button\", \"shows these two things\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Selecting a method to create a job description for a candidate\",\n    \"interface_focus\": \"A modal dialog box appearing after clicking the 'Create Candidate' button, showing two job creation options\"\n  },\n  \"page_info\": {\n    \"title\": null, \n    \"section\": \"Candidates\",\n    \"purpose\": \"To select a method for creating a job description before creating a candidate\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Parse JD\", \"color\": \"blue\", \"position\": \"left side of modal\"},\n      {\"text\": \"OATS-AI\", \"color\": \"blue\", \"position\": \"right side of modal\"},\n      {\"text\": \"X\", \"color\": \"grey\", \"position\": \"top right corner of modal\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {},\n    \"navigation\": [\"Dashboard\", \"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\", \"Logout\"],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"Create Candidate Workflow\",\n    \"description\": \"This workflow guides the user through creating a new candidate profile in OATS.  It begins with selecting a method to create or import the job description.\",\n    \"current_step\": \"Step 1.2: Choosing a Job Description Creation Method\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Candidates' section in the OATS main menu.\",\n      \"Step 1.1: Click the 'Create Candidate' button in the main navigation bar.\",\n      \"Step 1.2: In the modal dialog that appears, select either 'Parse JD' to manually upload/input a job description or 'OATS-AI' to let the system automatically generate one.\",\n      \"Step 2: Proceed with filling in the candidate's information based on the selected job creation method.\"\n    ],\n    \"prerequisites\": [\"User must be logged into OATS with appropriate permissions.\"],\n    \"outcomes\": [\"A job description is created (either manually or automatically) and the system proceeds to the next step for entering candidate details.\"],\n    \"next_actions\": [\"Proceed to fill in the candidate's details on the subsequent form.\"]\n  },\n  \"keywords\": [\n    \"Create Candidate\",\n    \"Parse JD\",\n    \"OATS-AI\",\n    \"Job Description\",\n    \"Candidate Management\",\n    \"OATS\",\n    \"1.2\",\n    \"click create candidate button\",\n    \"shows these two things\",\n    \"modal dialog\"\n  ],\n  \"related_flows\": [\"Candidate Information Entry Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Ensure the selected job description creation method aligns with your needs.\"],\n  \"accuracy_notes\": \"The screenshot accurately depicts the two options presented after clicking the 'Create Candidate' button as described in the filename. The filename's description matches the UI perfectly.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.2 click create candidate button shows these two things.png",
+    "filename": "1.2 click create candidate button shows these two things.png",
+    "filename_analysis": {
+      "filename": "1.2 click create candidate button shows these two things.png",
+      "expected_workflow": "Candidate management workflow - 1.2 click create candidate button shows these two things",
+      "section_number": "1.2",
+      "descriptive_elements": [
+        "click create candidate button",
+        "shows these two things"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Selecting a method to create a job description for a candidate",
+      "interface_focus": "A modal dialog box appearing after clicking the 'Create Candidate' button, showing two job creation options"
+    },
+    "page_info": {
+      "title": null,
+      "section": "Candidates",
+      "purpose": "To select a method for creating a job description before creating a candidate",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Parse JD",
+          "color": "blue",
+          "position": "left side of modal"
+        },
+        {
+          "text": "OATS-AI",
+          "color": "blue",
+          "position": "right side of modal"
+        },
+        {
+          "text": "X",
+          "color": "grey",
+          "position": "top right corner of modal"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {},
+      "navigation": [
+        "Dashboard",
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "Vendors",
+        "Talent Bench",
+        "eBoarding",
+        "Placements",
+        "Logout"
+      ],
+      "sections": []
+    },
+    "workflow": {
+      "title": "Create Candidate Workflow",
+      "description": "This workflow guides the user through creating a new candidate profile in OATS.  It begins with selecting a method to create or import the job description.",
+      "current_step": "Step 1.2: Choosing a Job Description Creation Method",
+      "steps": [
+        "Step 1: Navigate to the 'Candidates' section in the OATS main menu.",
+        "Step 1.1: Click the 'Create Candidate' button in the main navigation bar.",
+        "Step 1.2: In the modal dialog that appears, select either 'Parse JD' to manually upload/input a job description or 'OATS-AI' to let the system automatically generate one.",
+        "Step 2: Proceed with filling in the candidate's information based on the selected job creation method."
+      ],
+      "prerequisites": [
+        "User must be logged into OATS with appropriate permissions."
+      ],
+      "outcomes": [
+        "A job description is created (either manually or automatically) and the system proceeds to the next step for entering candidate details."
+      ],
+      "next_actions": [
+        "Proceed to fill in the candidate's details on the subsequent form."
+      ]
+    },
+    "keywords": [
+      "Create Candidate",
+      "Parse JD",
+      "OATS-AI",
+      "Job Description",
+      "Candidate Management",
+      "OATS",
+      "1.2",
+      "click create candidate button",
+      "shows these two things",
+      "modal dialog"
+    ],
+    "related_flows": [
+      "Candidate Information Entry Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Ensure the selected job description creation method aligns with your needs."
+    ],
+    "accuracy_notes": "The screenshot accurately depicts the two options presented after clicking the 'Create Candidate' button as described in the filename. The filename's description matches the UI perfectly."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.2.1 when click parse jd shows these three features.png\",\n    \"expected_workflow\": \"Job description creation workflow - 1.2.1 when click parse jd shows these three features\",\n    \"section_number\": \"1.2.1\",\n    \"descriptive_elements\": [\"click parse jd\", \"three features\", \"Job Descriptions\", \"Upload File\", \"Audio File\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Selecting a method to add a job description\",\n    \"interface_focus\": \"Modal window showing three options for adding a job description\"\n  },\n  \"page_info\": {\n    \"title\": null,\n    \"section\": \"Jobs\",\n    \"purpose\": \"To provide options for adding a job description during job creation\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Job Descriptions\", \"color\": \"blue\", \"position\": \"leftmost\"},\n      {\"text\": \"Upload File\", \"color\": \"blue\", \"position\": \"middle\"},\n      {\"text\": \"Audio File\", \"color\": \"blue\", \"position\": \"rightmost\"},\n      {\"text\": \"←\", \"color\": \"blue\", \"position\": \"top left of modal\"},\n      {\"text\": \"X\", \"color\": \"gray\", \"position\": \"top right of modal\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {},\n    \"navigation\": [\"Create Candidate\", \"Advanced Search\", \"Account Setup\"],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"Job Description Creation Workflow\",\n    \"description\": \"Creating a new job posting in OATS, including adding a job description.\",\n    \"current_step\": \"Step 1.2.1: Selecting Job Description Input Method\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Create Job' section within OATS.\",\n      \"Step 2: Complete relevant fields such as job title, location, etc. \",\n      \"Step 3: Click the button to initiate job description parsing.\",\n      \"Step 4: A modal will appear showing three options: 'Job Descriptions' (manual entry), 'Upload File' (for document upload), and 'Audio File' (for audio recording).\",\n      \"Step 5: Select the preferred method (Job Descriptions, Upload File, or Audio File) from the modal.\",\n      \"Step 6: If selecting 'Job Descriptions', proceed to manually enter the job description in the next step. If selecting 'Upload File', upload the job description document. If selecting 'Audio File', record the job description audio.\"\n    ],\n    \"prerequisites\": [\"Access to OATS\", \"Job creation initiated\", \"Job Details partially filled\"],\n    \"outcomes\": [\"Job description added to job posting via chosen method\"],\n    \"next_actions\": [\"Continue filling out the job creation form\", \"Review job posting details\", \"Submit job posting\"]\n  },\n  \"keywords\": [\n    \"OATS\",\n    \"Job Description\",\n    \"Parse JD\",\n    \"Job Descriptions\",\n    \"Upload File\",\n    \"Audio File\",\n    \"1.2.1\",\n    \"Job Creation Workflow\",\n    \"Modal Window\",\n    \"Create Job\"\n  ],\n  \"related_flows\": [\"Job Posting Submission Workflow\", \"Candidate Application Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Ensure the uploaded file is in a readable format (.doc, .pdf, .txt, etc.)\", \"Keep audio recordings clear and concise.\"],\n  \"accuracy_notes\": \"The screenshot perfectly matches the filename's description, clearly showing the three features for adding a job description after clicking 'Parse JD'.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.2.1 when click parse jd shows these three features.png",
+    "filename": "1.2.1 when click parse jd shows these three features.png",
+    "filename_analysis": {
+      "filename": "1.2.1 when click parse jd shows these three features.png",
+      "expected_workflow": "Job description creation workflow - 1.2.1 when click parse jd shows these three features",
+      "section_number": "1.2.1",
+      "descriptive_elements": [
+        "click parse jd",
+        "three features",
+        "Job Descriptions",
+        "Upload File",
+        "Audio File"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Selecting a method to add a job description",
+      "interface_focus": "Modal window showing three options for adding a job description"
+    },
+    "page_info": {
+      "title": null,
+      "section": "Jobs",
+      "purpose": "To provide options for adding a job description during job creation",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Job Descriptions",
+          "color": "blue",
+          "position": "leftmost"
+        },
+        {
+          "text": "Upload File",
+          "color": "blue",
+          "position": "middle"
+        },
+        {
+          "text": "Audio File",
+          "color": "blue",
+          "position": "rightmost"
+        },
+        {
+          "text": "←",
+          "color": "blue",
+          "position": "top left of modal"
+        },
+        {
+          "text": "X",
+          "color": "gray",
+          "position": "top right of modal"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {},
+      "navigation": [
+        "Create Candidate",
+        "Advanced Search",
+        "Account Setup"
+      ],
+      "sections": []
+    },
+    "workflow": {
+      "title": "Job Description Creation Workflow",
+      "description": "Creating a new job posting in OATS, including adding a job description.",
+      "current_step": "Step 1.2.1: Selecting Job Description Input Method",
+      "steps": [
+        "Step 1: Navigate to the 'Create Job' section within OATS.",
+        "Step 2: Complete relevant fields such as job title, location, etc. ",
+        "Step 3: Click the button to initiate job description parsing.",
+        "Step 4: A modal will appear showing three options: 'Job Descriptions' (manual entry), 'Upload File' (for document upload), and 'Audio File' (for audio recording).",
+        "Step 5: Select the preferred method (Job Descriptions, Upload File, or Audio File) from the modal.",
+        "Step 6: If selecting 'Job Descriptions', proceed to manually enter the job description in the next step. If selecting 'Upload File', upload the job description document. If selecting 'Audio File', record the job description audio."
+      ],
+      "prerequisites": [
+        "Access to OATS",
+        "Job creation initiated",
+        "Job Details partially filled"
+      ],
+      "outcomes": [
+        "Job description added to job posting via chosen method"
+      ],
+      "next_actions": [
+        "Continue filling out the job creation form",
+        "Review job posting details",
+        "Submit job posting"
+      ]
+    },
+    "keywords": [
+      "OATS",
+      "Job Description",
+      "Parse JD",
+      "Job Descriptions",
+      "Upload File",
+      "Audio File",
+      "1.2.1",
+      "Job Creation Workflow",
+      "Modal Window",
+      "Create Job"
+    ],
+    "related_flows": [
+      "Job Posting Submission Workflow",
+      "Candidate Application Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Ensure the uploaded file is in a readable format (.doc, .pdf, .txt, etc.)",
+      "Keep audio recordings clear and concise."
+    ],
+    "accuracy_notes": "The screenshot perfectly matches the filename's description, clearly showing the three features for adding a job description after clicking 'Parse JD'."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.2.1 when click parse jd shows these three features.png\",\n    \"expected_workflow\": \"Job description creation workflow - 1.2.1 when click parse jd shows these three features\",\n    \"section_number\": \"1.2.1\",\n    \"descriptive_elements\": [\"click parse jd\", \"three features\", \"Job Descriptions\", \"Upload File\", \"Audio File\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Selecting a method to create a job description\",\n    \"interface_focus\": \"Modal window showing three options for creating a job description after clicking 'Parse JD'\"\n  },\n  \"page_info\": {\n    \"title\": null, \n    \"section\": \"Jobs\",\n    \"purpose\": \"Present options for creating a job description (from existing description, uploaded file, or audio recording)\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Job Descriptions\", \"color\": \"blue\", \"position\": \"top-left in modal\"},\n      {\"text\": \"Upload File\", \"color\": \"blue\", \"position\": \"top-center in modal\"},\n      {\"text\": \"Audio File\", \"color\": \"blue\", \"position\": \"top-right in modal\"},\n      {\"text\": \"←\", \"color\": \"dark gray\", \"position\": \"top-left in modal (close button)\"},\n      {\"text\": \"X\", \"color\": \"dark gray\", \"position\": \"top-right in modal (close button)\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {\n      \"Last 30 Days\": [\"Last 30 Days\", \"Other options (not visible in screenshot)\"]\n    },\n    \"navigation\": [\"Create Candidate\", \"Advanced Search\", \"Account Setup\"],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"Job Description Creation Workflow\",\n    \"description\": \"This workflow guides the user through creating a new job description within the OATS system.\",\n    \"current_step\": \"Step 1.2.1: Selecting a method to input the job description.\",\n    \"steps\": [\n      \"Step 1: Navigate to the job creation section in OATS.\",\n      \"Step 1.1: Initiate the job description creation process.\",\n      \"Step 1.2: Click the 'Parse JD' button (not shown, inferred from filename).\",\n      \"Step 1.2.1:  A modal window appears showing three options: 'Job Descriptions' (to input a pre-written description), 'Upload File' (to upload a file containing the description), and 'Audio File' (to record an audio description).  Select the desired method by clicking the corresponding button.\",\n      \"Step 1.3: Depending on the selected method, continue to input the job description details (next steps not shown in this screenshot).\"\n    ],\n    \"prerequisites\": [\"User must be logged into OATS and have necessary permissions to create job descriptions.\"],\n    \"outcomes\": [\"A job description is created and saved within the OATS system.\"],\n    \"next_actions\": [\"Proceed to the next step of the job description creation workflow based on the method chosen. (This requires additional screenshots to analyze)\"]\n  },\n  \"keywords\": [\n    \"1.2.1\",\n    \"Parse JD\",\n    \"Job Descriptions\",\n    \"Upload File\",\n    \"Audio File\",\n    \"OATS\",\n    \"Job description creation\",\n    \"Modal window\",\n    \"Workflow\",\n    \"Input methods\"\n  ],\n  \"related_flows\": [\"Job Posting Workflow\", \"Candidate Application Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Ensure the uploaded file is in a compatible format.\"],\n  \"accuracy_notes\": \"The screenshot perfectly matches the filename description. It shows the three features mentioned after clicking 'Parse JD', making it a clear representation of step 1.2.1 in the job description creation workflow. \"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.2.1 when click parse jd shows these three features.png",
+    "filename": "1.2.1 when click parse jd shows these three features.png",
+    "filename_analysis": {
+      "filename": "1.2.1 when click parse jd shows these three features.png",
+      "expected_workflow": "Job description creation workflow - 1.2.1 when click parse jd shows these three features",
+      "section_number": "1.2.1",
+      "descriptive_elements": [
+        "click parse jd",
+        "three features",
+        "Job Descriptions",
+        "Upload File",
+        "Audio File"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Selecting a method to create a job description",
+      "interface_focus": "Modal window showing three options for creating a job description after clicking 'Parse JD'"
+    },
+    "page_info": {
+      "title": null,
+      "section": "Jobs",
+      "purpose": "Present options for creating a job description (from existing description, uploaded file, or audio recording)",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Job Descriptions",
+          "color": "blue",
+          "position": "top-left in modal"
+        },
+        {
+          "text": "Upload File",
+          "color": "blue",
+          "position": "top-center in modal"
+        },
+        {
+          "text": "Audio File",
+          "color": "blue",
+          "position": "top-right in modal"
+        },
+        {
+          "text": "←",
+          "color": "dark gray",
+          "position": "top-left in modal (close button)"
+        },
+        {
+          "text": "X",
+          "color": "dark gray",
+          "position": "top-right in modal (close button)"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {
+        "Last 30 Days": [
+          "Last 30 Days",
+          "Other options (not visible in screenshot)"
+        ]
+      },
+      "navigation": [
+        "Create Candidate",
+        "Advanced Search",
+        "Account Setup"
+      ],
+      "sections": []
+    },
+    "workflow": {
+      "title": "Job Description Creation Workflow",
+      "description": "This workflow guides the user through creating a new job description within the OATS system.",
+      "current_step": "Step 1.2.1: Selecting a method to input the job description.",
+      "steps": [
+        "Step 1: Navigate to the job creation section in OATS.",
+        "Step 1.1: Initiate the job description creation process.",
+        "Step 1.2: Click the 'Parse JD' button (not shown, inferred from filename).",
+        "Step 1.2.1:  A modal window appears showing three options: 'Job Descriptions' (to input a pre-written description), 'Upload File' (to upload a file containing the description), and 'Audio File' (to record an audio description).  Select the desired method by clicking the corresponding button.",
+        "Step 1.3: Depending on the selected method, continue to input the job description details (next steps not shown in this screenshot)."
+      ],
+      "prerequisites": [
+        "User must be logged into OATS and have necessary permissions to create job descriptions."
+      ],
+      "outcomes": [
+        "A job description is created and saved within the OATS system."
+      ],
+      "next_actions": [
+        "Proceed to the next step of the job description creation workflow based on the method chosen. (This requires additional screenshots to analyze)"
+      ]
+    },
+    "keywords": [
+      "1.2.1",
+      "Parse JD",
+      "Job Descriptions",
+      "Upload File",
+      "Audio File",
+      "OATS",
+      "Job description creation",
+      "Modal window",
+      "Workflow",
+      "Input methods"
+    ],
+    "related_flows": [
+      "Job Posting Workflow",
+      "Candidate Application Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Ensure the uploaded file is in a compatible format."
+    ],
+    "accuracy_notes": "The screenshot perfectly matches the filename description. It shows the three features mentioned after clicking 'Parse JD', making it a clear representation of step 1.2.1 in the job description creation workflow. "
+  },
+  {
+    "analysis_status": "partial",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.2.2 when click oats ai.png\",\n    \"expected_workflow\": \"OATS interface workflow: 1.2.2 when click oats ai\",\n    \"section_number\": \"1.2.2\",\n    \"descriptive_elements\": [\"click oats ai\", \"OATS interface workflow\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Selecting a method for composing a job description using OATS AI\",\n    \"interface_focus\": \"Modal window offering 'Prompt Based' and 'Fields Based' options for job description creation via OATS AI\"\n  },\n  \"page_info\": {\n    \"title\": \"Overall Details\",\n    \"section\": \"Jobs\",\n    \"purpose\": \"To select a method for generating a job description using either a prompt or specified fields, within the OATS AI system.\",\n    \"breadcrumb\": \"No breadcrumb visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"←\", \"color\": \"Gray\", \"position\": \"Top left of modal\"},\n      {\"text\": \"X\", \"color\": \"Gray\", \"position\": \"Top right of modal\"},\n      {\"text\": \"Prompt Based\", \"color\": \"Blue\", \"position\": \"Left side of modal\"},\n      {\"text\": \"Fields Based\", \"color\": \"Blue\", \"position\": \"Right side of modal\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {\n      \"Last 30 Days\": [\"Last 30 Days\", /* other options not visible */]\n    },\n    \"navigation\": [\"Dashboard\", \"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\", \"Logout\"],\n    \"sections\": [\"Overall Details\", \"Team Report\", \"Candidate Source Metrics\"]\n  },\n  \"workflow\": {\n    \"title\": \"OATS AI Job Description Creation\",\n    \"description\": \"This workflow guides the user through selecting a method to generate a job description within the OATS AI system, choosing between prompt-based and field-based composition.\",\n    \"current_step\": \"Selecting Job Description Generation Method\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Jobs' section of the OATS interface.\",\n      \"Step 2: Click on the 'Overall Details' section to open the job creation interface.\",\n      \"Step 3: Click on an element that triggers the OATS AI functionality (implied from filename).\",\n      \"Step 4: A modal window appears with two options: 'Prompt Based' and 'Fields Based'.\",\n      \"Step 5: Select either 'Prompt Based' to generate the job description based on a provided text prompt or 'Fields Based' to populate the description using specified fields.\"\n    ],\n    \"prerequisites\": [\"Access to the OATS system\", \"Appropriate permissions to create job postings\"],\n    \"outcomes\": [\"A job description is generated either using a text prompt or specified fields\", \"The user proceeds to the next step of job creation\"],\n    \"next_actions\": [\"Completing the job description using the chosen method\", \"Saving and submitting the job posting\"]\n  },\n  \"keywords\": [\n    \"OATS AI\", \"Prompt Based\", \"Fields Based\", \"Job Description\", \"Job Posting\", \"OATS interface\", \"1.2.2\", \"Modal\", \"Workflow\", \"AI-powered job description\"\n  ],\n  \"related_flows\": [\"OATS Job Posting Workflow\", \"OATS AI Prompt Input Workflow\", \"OATS AI Field Input Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Ensure you have the necessary information ready before selecting a method.\", \"Review the generated job description carefully before proceeding.\"],\n  \"accuracy_notes\": \"The screenshot perfectly aligns with the filename's description. It accurately shows the selection of method step for OATS AI job description creation, which is consistent with the section '1.2.2' of the workflow.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.2.2 when click oats ai.png",
+    "filename": "1.2.2 when click oats ai.png"
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.2.2 when click oats ai.png\",\n    \"expected_workflow\": \"OATS interface workflow: 1.2.2 when click oats ai\",\n    \"section_number\": \"1.2.2\",\n    \"descriptive_elements\": [\"click oats ai\", \"OATS interface workflow\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Selecting a job description creation method\",\n    \"interface_focus\": \"Modal dialog offering 'Prompt Based' and 'Fields Based' options for job description creation\"\n  },\n  \"page_info\": {\n    \"title\": \"Overall Details\",\n    \"section\": \"Jobs\",\n    \"purpose\": \"To select a method for creating a job description using OATS AI\",\n    \"breadcrumb\": \"No breadcrumb visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"←\", \"color\": \"Gray\", \"position\": \"Top left of modal\"},\n      {\"text\": \"X\", \"color\": \"Gray\", \"position\": \"Top right of modal\"},\n      {\"text\": \"Prompt Based\", \"color\": \"Blue\", \"position\": \"Left side of modal\"},\n      {\"text\": \"Fields Based\", \"color\": \"Blue\", \"position\": \"Right side of modal\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {\n      \"Last 30 Days\": [\"Last 30 Days\", \"Other options (not visible)\"]\n    },\n    \"navigation\": [\"Dashboard\", \"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\", \"Logout\", \"Create Job Posting\", \"Create Candidate\", \"Advanced Search\", \"Account Setup\"],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"OATS AI Job Description Creation\",\n    \"description\": \"This workflow guides the user through selecting a method to create a job description using the OATS AI feature.\",\n    \"current_step\": \"Choosing between 'Prompt Based' and 'Fields Based' methods\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Jobs' section in the OATS main menu.\",\n      \"Step 2: Click on the 'Overall Details' section (likely related to a specific job posting).\",\n      \"Step 3: Click on the 'OATS AI' button (or equivalent action triggering the modal shown in the screenshot).\",\n      \"Step 4: Select either 'Prompt Based' to compose the job description based on a text prompt or 'Fields Based' to create it using specified fields.  Click the selected button.\",\n      \"Step 5: (Following the choice made):  Proceed with the next steps based on the selected method. This would likely involve additional input screens depending on method selected.\"\n    ],\n    \"prerequisites\": [\"A job posting needs to be selected or in the process of creation.\"],\n    \"outcomes\": [\"A job description is generated based on the chosen method.\"],\n    \"next_actions\": [\"Proceed with the job description creation process based on the selected method ('Prompt Based' or 'Fields Based').\"]\n  },\n  \"keywords\": [\n    \"OATS AI\",\n    \"Prompt Based\",\n    \"Fields Based\",\n    \"Job Description\",\n    \"1.2.2\",\n    \"OATS interface workflow\",\n    \"Job Posting\",\n    \"Modal Dialog\",\n    \"Overall Details\",\n    \"Create Job Description\"\n  ],\n  \"related_flows\": [\"Job Posting Workflow\", \"Job Description Editing Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Consider using 'Prompt Based' for a quick draft and 'Fields Based' for more precise control.\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename's description of selecting a method within the OATS AI job description creation workflow.  The modal dialog is the focal point and correctly reflects the 'click oats ai' aspect.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.2.2 when click oats ai.png",
+    "filename": "1.2.2 when click oats ai.png",
+    "filename_analysis": {
+      "filename": "1.2.2 when click oats ai.png",
+      "expected_workflow": "OATS interface workflow: 1.2.2 when click oats ai",
+      "section_number": "1.2.2",
+      "descriptive_elements": [
+        "click oats ai",
+        "OATS interface workflow"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Selecting a job description creation method",
+      "interface_focus": "Modal dialog offering 'Prompt Based' and 'Fields Based' options for job description creation"
+    },
+    "page_info": {
+      "title": "Overall Details",
+      "section": "Jobs",
+      "purpose": "To select a method for creating a job description using OATS AI",
+      "breadcrumb": "No breadcrumb visible in the screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "←",
+          "color": "Gray",
+          "position": "Top left of modal"
+        },
+        {
+          "text": "X",
+          "color": "Gray",
+          "position": "Top right of modal"
+        },
+        {
+          "text": "Prompt Based",
+          "color": "Blue",
+          "position": "Left side of modal"
+        },
+        {
+          "text": "Fields Based",
+          "color": "Blue",
+          "position": "Right side of modal"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {
+        "Last 30 Days": [
+          "Last 30 Days",
+          "Other options (not visible)"
+        ]
+      },
+      "navigation": [
+        "Dashboard",
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "Vendors",
+        "Talent Bench",
+        "eBoarding",
+        "Placements",
+        "Logout",
+        "Create Job Posting",
+        "Create Candidate",
+        "Advanced Search",
+        "Account Setup"
+      ],
+      "sections": []
+    },
+    "workflow": {
+      "title": "OATS AI Job Description Creation",
+      "description": "This workflow guides the user through selecting a method to create a job description using the OATS AI feature.",
+      "current_step": "Choosing between 'Prompt Based' and 'Fields Based' methods",
+      "steps": [
+        "Step 1: Navigate to the 'Jobs' section in the OATS main menu.",
+        "Step 2: Click on the 'Overall Details' section (likely related to a specific job posting).",
+        "Step 3: Click on the 'OATS AI' button (or equivalent action triggering the modal shown in the screenshot).",
+        "Step 4: Select either 'Prompt Based' to compose the job description based on a text prompt or 'Fields Based' to create it using specified fields.  Click the selected button.",
+        "Step 5: (Following the choice made):  Proceed with the next steps based on the selected method. This would likely involve additional input screens depending on method selected."
+      ],
+      "prerequisites": [
+        "A job posting needs to be selected or in the process of creation."
+      ],
+      "outcomes": [
+        "A job description is generated based on the chosen method."
+      ],
+      "next_actions": [
+        "Proceed with the job description creation process based on the selected method ('Prompt Based' or 'Fields Based')."
+      ]
+    },
+    "keywords": [
+      "OATS AI",
+      "Prompt Based",
+      "Fields Based",
+      "Job Description",
+      "1.2.2",
+      "OATS interface workflow",
+      "Job Posting",
+      "Modal Dialog",
+      "Overall Details",
+      "Create Job Description"
+    ],
+    "related_flows": [
+      "Job Posting Workflow",
+      "Job Description Editing Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Consider using 'Prompt Based' for a quick draft and 'Fields Based' for more precise control."
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename's description of selecting a method within the OATS AI job description creation workflow.  The modal dialog is the focal point and correctly reflects the 'click oats ai' aspect."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.3  create candidate button features.png\",\n    \"expected_workflow\": \"Candidate management workflow - 1.3  create candidate button features\",\n    \"section_number\": \"1.3\",\n    \"descriptive_elements\": [\"create candidate\", \"button\", \"features\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Selecting a method to create a new candidate\",\n    \"interface_focus\": \"The 'Create Candidate' button and the options presented after clicking it\"\n  },\n  \"page_info\": {\n    \"title\": \"Choose an option to create New Candidate\",\n    \"section\": \"Candidates\",\n    \"purpose\": \"To present options for creating a new candidate record in the OATS system.\",\n    \"breadcrumb\": \"No breadcrumb visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Manual Creation\", \"color\": \"blue\", \"position\": \"Top left in the modal\"},\n      {\"text\": \"Parse Resume\", \"color\": \"blue\", \"position\": \"Top middle in the modal\"},\n      {\"text\": \"Bulk Uploading\", \"color\": \"blue\", \"position\": \"Top right in the modal\"},\n      {\"text\": \"X\", \"color\": \"gray\", \"position\": \"Top right of the modal, close button\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {\n      \"Last 30 Days\": [\"Last 30 Days\", \"Other options (not visible)\"]\n    },\n    \"navigation\": [\"Dashboard\", \"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\", \"Logout\", \"Create Job Posting\", \"Create Candidate\", \"Advanced Search\", \"Account Setup\"],\n    \"sections\": [\"Overall Details\", \"Team Report\"]\n  },\n  \"workflow\": {\n    \"title\": \"Candidate Creation Workflow\",\n    \"description\": \"This workflow guides users through the process of adding new candidate records to the OATS system.\",\n    \"current_step\": \"Choosing a candidate creation method (Manual, Resume Parse, or Bulk Upload).\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Candidates' section in the OATS main menu.\",\n      \"Step 2: Click the 'Create Candidate' button in the top navigation bar.\",\n      \"Step 3: Select one of the three options presented: 'Manual Creation', 'Parse Resume', or 'Bulk Uploading'.\",\n      \"Step 4:  Proceed to the next step, which will vary depending on the chosen method (manual entry form, resume upload, or bulk import).\"\n    ],\n    \"prerequisites\": [\"User must be logged into OATS with appropriate permissions.\"],\n    \"outcomes\": [\"A new candidate record is created in the system.\"],\n    \"next_actions\": [\"Completing the chosen candidate creation method (entering manual data, uploading a resume, or importing a bulk file), navigating to the candidate profile page or dashboard after record creation.\"]\n  },\n  \"keywords\": [\n    \"1.3\",\n    \"create candidate\",\n    \"button\",\n    \"features\",\n    \"Manual Creation\",\n    \"Parse Resume\",\n    \"Bulk Uploading\",\n    \"candidate management\",\n    \"OATS\",\n    \"candidate creation\",\n    \"new candidate\",\n    \"modal\",\n    \"workflow\",\n    \"options\"\n  ],\n  \"related_flows\": [\"Candidate Profile Management\", \"Job Posting Workflow\", \"Bulk Candidate Import\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Choose the method that best suits your needs and the data you have available.\"],\n  \"accuracy_notes\": \"The screenshot perfectly aligns with the filename, showcasing the 'Create Candidate' button's features and the subsequent options.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.3  create candidate button features.png",
+    "filename": "1.3  create candidate button features.png",
+    "filename_analysis": {
+      "filename": "1.3  create candidate button features.png",
+      "expected_workflow": "Candidate management workflow - 1.3  create candidate button features",
+      "section_number": "1.3",
+      "descriptive_elements": [
+        "create candidate",
+        "button",
+        "features"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Selecting a method to create a new candidate",
+      "interface_focus": "The 'Create Candidate' button and the options presented after clicking it"
+    },
+    "page_info": {
+      "title": "Choose an option to create New Candidate",
+      "section": "Candidates",
+      "purpose": "To present options for creating a new candidate record in the OATS system.",
+      "breadcrumb": "No breadcrumb visible in the screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Manual Creation",
+          "color": "blue",
+          "position": "Top left in the modal"
+        },
+        {
+          "text": "Parse Resume",
+          "color": "blue",
+          "position": "Top middle in the modal"
+        },
+        {
+          "text": "Bulk Uploading",
+          "color": "blue",
+          "position": "Top right in the modal"
+        },
+        {
+          "text": "X",
+          "color": "gray",
+          "position": "Top right of the modal, close button"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {
+        "Last 30 Days": [
+          "Last 30 Days",
+          "Other options (not visible)"
+        ]
+      },
+      "navigation": [
+        "Dashboard",
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "Vendors",
+        "Talent Bench",
+        "eBoarding",
+        "Placements",
+        "Logout",
+        "Create Job Posting",
+        "Create Candidate",
+        "Advanced Search",
+        "Account Setup"
+      ],
+      "sections": [
+        "Overall Details",
+        "Team Report"
+      ]
+    },
+    "workflow": {
+      "title": "Candidate Creation Workflow",
+      "description": "This workflow guides users through the process of adding new candidate records to the OATS system.",
+      "current_step": "Choosing a candidate creation method (Manual, Resume Parse, or Bulk Upload).",
+      "steps": [
+        "Step 1: Navigate to the 'Candidates' section in the OATS main menu.",
+        "Step 2: Click the 'Create Candidate' button in the top navigation bar.",
+        "Step 3: Select one of the three options presented: 'Manual Creation', 'Parse Resume', or 'Bulk Uploading'.",
+        "Step 4:  Proceed to the next step, which will vary depending on the chosen method (manual entry form, resume upload, or bulk import)."
+      ],
+      "prerequisites": [
+        "User must be logged into OATS with appropriate permissions."
+      ],
+      "outcomes": [
+        "A new candidate record is created in the system."
+      ],
+      "next_actions": [
+        "Completing the chosen candidate creation method (entering manual data, uploading a resume, or importing a bulk file), navigating to the candidate profile page or dashboard after record creation."
+      ]
+    },
+    "keywords": [
+      "1.3",
+      "create candidate",
+      "button",
+      "features",
+      "Manual Creation",
+      "Parse Resume",
+      "Bulk Uploading",
+      "candidate management",
+      "OATS",
+      "candidate creation",
+      "new candidate",
+      "modal",
+      "workflow",
+      "options"
+    ],
+    "related_flows": [
+      "Candidate Profile Management",
+      "Job Posting Workflow",
+      "Bulk Candidate Import"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Choose the method that best suits your needs and the data you have available."
+    ],
+    "accuracy_notes": "The screenshot perfectly aligns with the filename, showcasing the 'Create Candidate' button's features and the subsequent options."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.3  create candidate button features.png\",\n    \"expected_workflow\": \"Candidate management workflow - 1.3  create candidate button features\",\n    \"section_number\": \"1.3\",\n    \"descriptive_elements\": [\"create candidate\", \"button\", \"features\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Selecting a method to create a new candidate\",\n    \"interface_focus\": \"The buttons offering different methods for creating a new candidate\"\n  },\n  \"page_info\": {\n    \"title\": \"Choose an option to create New Candidate\",\n    \"section\": \"Candidates\",\n    \"purpose\": \"To present options for creating a new candidate record in OATS\",\n    \"breadcrumb\": \"Not visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Manual Creation\", \"color\": \"#2962FF\", \"position\": \"Top left\"},\n      {\"text\": \"Parse Resume\", \"color\": \"#2962FF\", \"position\": \"Top middle\"},\n      {\"text\": \"Bulk Uploading\", \"color\": \"#2962FF\", \"position\": \"Top right\"},\n      {\"text\": \"X\", \"color\": \"grey\", \"position\": \"Top right of the modal\"}\n    ],\n    \"fields\": [],\n    \"dropdowns\": {},\n    \"navigation\": [\"Dashboard\", \"Jobs\", \"Candidates\", \"Clients\", \"Vendors\", \"Talent Bench\", \"eBoarding\", \"Placements\", \"Logout\", \"Create Job Posting\", \"Create Candidate\", \"Advanced Search\", \"Account Setup\"],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"Candidate Creation Workflow\",\n    \"description\": \"This workflow guides users through the process of creating new candidate records in OATS.\",\n    \"current_step\": \"Step 1.3: Selecting Candidate Creation Method\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Candidates' section in the OATS main menu.\",\n      \"Step 2: Click on the 'Create Candidate' button in the top navigation bar.\",\n      \"Step 3: A modal will appear with three options: 'Manual Creation', 'Parse Resume', and 'Bulk Uploading'. Select one of these options depending on your method of candidate creation.\"\n    ],\n    \"prerequisites\": [\"User is logged into OATS\", \"User has the necessary permissions to create candidates\"],\n    \"outcomes\": [\"A new candidate record is created via the chosen method.\", \"User is redirected to the relevant candidate creation page.\" ],\n    \"next_actions\": [\"Manual data entry if 'Manual Creation' is selected\", \"Resume upload if 'Parse Resume' is selected\", \"Bulk upload file selection if 'Bulk Uploading' is selected\"]\n  },\n  \"keywords\": [\n    \"1.3\",\n    \"create candidate\",\n    \"button features\",\n    \"Manual Creation\",\n    \"Parse Resume\",\n    \"Bulk Uploading\",\n    \"OATS\",\n    \"Candidate Management\",\n    \"Candidate Creation\",\n    \"New Candidate\"\n  ],\n  \"related_flows\": [\"Candidate data entry\", \"Resume parsing workflow\", \"Bulk candidate upload\"],\n  \"validation_rules\": [],\n  \"tips\": [],\n  \"accuracy_notes\": \"The screenshot perfectly matches the filename description. It clearly showcases the 'create candidate' button features, specifically the three methods for adding new candidates.  The section number (1.3) also fits in a logical order within a broader candidate management process.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.3  create candidate button features.png",
+    "filename": "1.3  create candidate button features.png",
+    "filename_analysis": {
+      "filename": "1.3  create candidate button features.png",
+      "expected_workflow": "Candidate management workflow - 1.3  create candidate button features",
+      "section_number": "1.3",
+      "descriptive_elements": [
+        "create candidate",
+        "button",
+        "features"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Selecting a method to create a new candidate",
+      "interface_focus": "The buttons offering different methods for creating a new candidate"
+    },
+    "page_info": {
+      "title": "Choose an option to create New Candidate",
+      "section": "Candidates",
+      "purpose": "To present options for creating a new candidate record in OATS",
+      "breadcrumb": "Not visible in the screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Manual Creation",
+          "color": "#2962FF",
+          "position": "Top left"
+        },
+        {
+          "text": "Parse Resume",
+          "color": "#2962FF",
+          "position": "Top middle"
+        },
+        {
+          "text": "Bulk Uploading",
+          "color": "#2962FF",
+          "position": "Top right"
+        },
+        {
+          "text": "X",
+          "color": "grey",
+          "position": "Top right of the modal"
+        }
+      ],
+      "fields": [],
+      "dropdowns": {},
+      "navigation": [
+        "Dashboard",
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "Vendors",
+        "Talent Bench",
+        "eBoarding",
+        "Placements",
+        "Logout",
+        "Create Job Posting",
+        "Create Candidate",
+        "Advanced Search",
+        "Account Setup"
+      ],
+      "sections": []
+    },
+    "workflow": {
+      "title": "Candidate Creation Workflow",
+      "description": "This workflow guides users through the process of creating new candidate records in OATS.",
+      "current_step": "Step 1.3: Selecting Candidate Creation Method",
+      "steps": [
+        "Step 1: Navigate to the 'Candidates' section in the OATS main menu.",
+        "Step 2: Click on the 'Create Candidate' button in the top navigation bar.",
+        "Step 3: A modal will appear with three options: 'Manual Creation', 'Parse Resume', and 'Bulk Uploading'. Select one of these options depending on your method of candidate creation."
+      ],
+      "prerequisites": [
+        "User is logged into OATS",
+        "User has the necessary permissions to create candidates"
+      ],
+      "outcomes": [
+        "A new candidate record is created via the chosen method.",
+        "User is redirected to the relevant candidate creation page."
+      ],
+      "next_actions": [
+        "Manual data entry if 'Manual Creation' is selected",
+        "Resume upload if 'Parse Resume' is selected",
+        "Bulk upload file selection if 'Bulk Uploading' is selected"
+      ]
+    },
+    "keywords": [
+      "1.3",
+      "create candidate",
+      "button features",
+      "Manual Creation",
+      "Parse Resume",
+      "Bulk Uploading",
+      "OATS",
+      "Candidate Management",
+      "Candidate Creation",
+      "New Candidate"
+    ],
+    "related_flows": [
+      "Candidate data entry",
+      "Resume parsing workflow",
+      "Bulk candidate upload"
+    ],
+    "validation_rules": [],
+    "tips": [],
+    "accuracy_notes": "The screenshot perfectly matches the filename description. It clearly showcases the 'create candidate' button features, specifically the three methods for adding new candidates.  The section number (1.3) also fits in a logical order within a broader candidate management process."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.4. advanced features button.png\",\n    \"expected_workflow\": \"OATS interface workflow: 1.4. advanced features button\",\n    \"section_number\": \"1.4\",\n    \"descriptive_elements\": [\"advanced features\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Performing an advanced search using location-based criteria and/or recent search history\",\n    \"interface_focus\": \"The 'advanced features' section of the search form, specifically the buttons and input fields enabling advanced search parameters.\"\n  },\n  \"page_info\": {\n    \"title\": null, \n    \"section\": \"Job Search\",\n    \"purpose\": \"To allow users to perform advanced job searches using keywords, job titles, and location parameters.  It also displays recent search history.\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Search Within Selected Locations\", \"color\": \"blue\", \"position\": \"top-left, within Keywords section\"},\n      {\"text\": \"Search Within Radius\", \"color\": \"blue\", \"position\": \"top-right, within Keywords section\"},\n      {\"text\": \"Search\", \"color\": \"blue\", \"position\": \"bottom-right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Keywords *\", \"type\": \"text\", \"required\": true, \"placeholder\": \"Enter Keywords\"},\n      {\"label\": \"Job Title\", \"type\": \"text\", \"required\": false, \"placeholder\": \"Enter Job Title\"}\n    ],\n    \"dropdowns\": {\n      \"Country\": [\"Select Country\"],\n      \"State\": [\"Select States\"],\n      \"City\": [\"Select Cities\"]\n    },\n    \"navigation\": [\"Internal DB\", \"Dice\", \"Foundit SEA\", \"Careerbuilder\"],\n    \"sections\": [\"Keywords\", \"Country\", \"State\", \"City\", \"Recent History\"]\n  },\n  \"workflow\": {\n    \"title\": \"OATS Advanced Job Search\",\n    \"description\": \"This workflow allows users to perform detailed job searches using various criteria, including keywords, job titles, and location parameters.  Recent search history is also available.\",\n    \"current_step\": \"Entering search criteria and initiating the search.\",\n    \"steps\": [\n      \"Step 1: Select the desired search option: 'Search Within Selected Locations' or 'Search Within Radius'.\",\n      \"Step 2: Enter Keywords in the 'Keywords' field (required).\",\n      \"Step 3: Optionally, enter a Job Title.\",\n      \"Step 4: Select Country, State, and City from the respective dropdown menus. (These fields are optional, but at least one location parameter is typically recommended for meaningful results)\",\n      \"Step 5: Click the 'Search' button to initiate the job search.  The results will display on a new page.\"\n    ],\n    \"prerequisites\": [\"User must be logged into OATS.\"],\n    \"outcomes\": [\"A list of jobs matching the specified criteria will be displayed.\"],\n    \"next_actions\": [\"Review search results\", \"Refine search criteria\", \"Utilize String Builder (as indicated on right panel)\"]\n  },\n  \"keywords\": [\n    \"advanced features\",\n    \"button\",\n    \"OATS\",\n    \"job search\",\n    \"keywords\",\n    \"job title\",\n    \"country\",\n    \"state\",\n    \"city\",\n    \"search within selected locations\",\n    \"search within radius\",\n    \"search\",\n    \"recent history\",\n    \"string builder\"\n  ],\n  \"related_flows\": [\"OATS Job Result Review\", \"OATS String Builder\"],\n  \"validation_rules\": [\"Keywords field is mandatory.\"],\n  \"tips\": [\"For better results, use specific keywords and combine location parameters.\", \"Use the String Builder for more complex search queries.\"],\n  \"accuracy_notes\": \"The screenshot content fully matches the filename's expectation of showcasing the 'advanced features button' within a job search context. The filename is a very effective summary of the image's focus and purpose. The provided analysis reflects this completely and explains the functionality and workflow.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.4. advanced features button.png",
+    "filename": "1.4. advanced features button.png",
+    "filename_analysis": {
+      "filename": "1.4. advanced features button.png",
+      "expected_workflow": "OATS interface workflow: 1.4. advanced features button",
+      "section_number": "1.4",
+      "descriptive_elements": [
+        "advanced features",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Performing an advanced search using location-based criteria and/or recent search history",
+      "interface_focus": "The 'advanced features' section of the search form, specifically the buttons and input fields enabling advanced search parameters."
+    },
+    "page_info": {
+      "title": null,
+      "section": "Job Search",
+      "purpose": "To allow users to perform advanced job searches using keywords, job titles, and location parameters.  It also displays recent search history.",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Search Within Selected Locations",
+          "color": "blue",
+          "position": "top-left, within Keywords section"
+        },
+        {
+          "text": "Search Within Radius",
+          "color": "blue",
+          "position": "top-right, within Keywords section"
+        },
+        {
+          "text": "Search",
+          "color": "blue",
+          "position": "bottom-right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Keywords *",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter Keywords"
+        },
+        {
+          "label": "Job Title",
+          "type": "text",
+          "required": false,
+          "placeholder": "Enter Job Title"
+        }
+      ],
+      "dropdowns": {
+        "Country": [
+          "Select Country"
+        ],
+        "State": [
+          "Select States"
+        ],
+        "City": [
+          "Select Cities"
+        ]
+      },
+      "navigation": [
+        "Internal DB",
+        "Dice",
+        "Foundit SEA",
+        "Careerbuilder"
+      ],
+      "sections": [
+        "Keywords",
+        "Country",
+        "State",
+        "City",
+        "Recent History"
+      ]
+    },
+    "workflow": {
+      "title": "OATS Advanced Job Search",
+      "description": "This workflow allows users to perform detailed job searches using various criteria, including keywords, job titles, and location parameters.  Recent search history is also available.",
+      "current_step": "Entering search criteria and initiating the search.",
+      "steps": [
+        "Step 1: Select the desired search option: 'Search Within Selected Locations' or 'Search Within Radius'.",
+        "Step 2: Enter Keywords in the 'Keywords' field (required).",
+        "Step 3: Optionally, enter a Job Title.",
+        "Step 4: Select Country, State, and City from the respective dropdown menus. (These fields are optional, but at least one location parameter is typically recommended for meaningful results)",
+        "Step 5: Click the 'Search' button to initiate the job search.  The results will display on a new page."
+      ],
+      "prerequisites": [
+        "User must be logged into OATS."
+      ],
+      "outcomes": [
+        "A list of jobs matching the specified criteria will be displayed."
+      ],
+      "next_actions": [
+        "Review search results",
+        "Refine search criteria",
+        "Utilize String Builder (as indicated on right panel)"
+      ]
+    },
+    "keywords": [
+      "advanced features",
+      "button",
+      "OATS",
+      "job search",
+      "keywords",
+      "job title",
+      "country",
+      "state",
+      "city",
+      "search within selected locations",
+      "search within radius",
+      "search",
+      "recent history",
+      "string builder"
+    ],
+    "related_flows": [
+      "OATS Job Result Review",
+      "OATS String Builder"
+    ],
+    "validation_rules": [
+      "Keywords field is mandatory."
+    ],
+    "tips": [
+      "For better results, use specific keywords and combine location parameters.",
+      "Use the String Builder for more complex search queries."
+    ],
+    "accuracy_notes": "The screenshot content fully matches the filename's expectation of showcasing the 'advanced features button' within a job search context. The filename is a very effective summary of the image's focus and purpose. The provided analysis reflects this completely and explains the functionality and workflow."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.4. advanced features button.png\",\n    \"expected_workflow\": \"OATS interface workflow: 1.4. advanced features button\",\n    \"section_number\": \"1.4\",\n    \"descriptive_elements\": [\"advanced features\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Job Search using Advanced Features\",\n    \"interface_focus\": \"The 'Advanced Features' section of the job search page, specifically focusing on the search button.\"\n  },\n  \"page_info\": {\n    \"title\": null, \n    \"section\": \"Job Search\",\n    \"purpose\": \"To search for jobs using advanced filtering options (keywords, job title, location).\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\n        \"text\": \"Search\",\n        \"color\": \"blue\",\n        \"position\": \"bottom-right\"\n      },\n      {\n        \"text\": \"Search Within Selected Locations\",\n        \"color\": \"blue\",\n        \"position\": \"middle-left\"\n      },\n      {\n        \"text\": \"Search Within Radius\",\n        \"color\": \"blue\",\n        \"position\": \"middle-right\"\n      }\n    ],\n    \"fields\": [\n      {\n        \"label\": \"Keywords *\",\n        \"type\": \"text\",\n        \"required\": true,\n        \"placeholder\": \"Enter Keywords\"\n      },\n      {\n        \"label\": \"Job Title\",\n        \"type\": \"text\",\n        \"required\": false,\n        \"placeholder\": \"Enter Job Title\"\n      }\n    ],\n    \"dropdowns\": {\n      \"Country\": [\"Select Country\"],\n      \"State\": [\"Select States\"],\n      \"City\": [\"Select Cities\"]\n    },\n    \"navigation\": [\"Internal DB\", \"Dice\", \"Foundit SEA\", \"Careerbuilder\"],\n    \"sections\": [\"Keywords\", \"Country\", \"State\", \"City\", \"Recent History\"]\n  },\n  \"workflow\": {\n    \"title\": \"Advanced Job Search in OATS\",\n    \"description\": \"This workflow allows users to perform a detailed job search using keywords, job title, and location filters.\",\n    \"current_step\": \"Initiating the advanced job search.\",\n    \"steps\": [\n      \"Step 1: Select the desired job board (Internal DB, Dice, Foundit SEA, Careerbuilder).\",\n      \"Step 2: Enter keywords in the 'Keywords' field (required).\",\n      \"Step 3: Optionally enter the job title in the 'Job Title' field.\",\n      \"Step 4: Select the country, state, and city from the respective dropdown menus.  Note that 'Select Country' is only a placeholder until the user selects a country.\",\n      \"Step 5: Select either 'Search Within Selected Locations' or 'Search Within Radius' radio button.\",\n      \"Step 6: Click the 'Search' button to initiate the job search.\"\n    ],\n    \"prerequisites\": [\"User logged into OATS.\"],\n    \"outcomes\": [\"A list of jobs matching the search criteria is displayed.\"],\n    \"next_actions\": [\"Reviewing search results\", \"Refining search criteria\", \"Using the 'String Builder' feature\"]\n  },\n  \"keywords\": [\n    \"advanced features\",\n    \"button\",\n    \"Search\",\n    \"Keywords\",\n    \"Job Title\",\n    \"Country\",\n    \"State\",\n    \"City\",\n    \"Search Within Selected Locations\",\n    \"Search Within Radius\",\n    \"OATS\",\n    \"Job Search\",\n    \"Filtering\",\n    \"String Builder\"\n  ],\n  \"related_flows\": [\"Job Result Review\", \"String Builder Workflow\"],\n  \"validation_rules\": [\"Keywords field is mandatory.\"],\n  \"tips\": [\"Use relevant keywords for better search results.\", \"Combine keywords with location filters for precise targeting.\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename's description of an advanced features button within a job search interface.  The 'advanced features' are represented by the multi-criteria search options.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.4. advanced features button.png",
+    "filename": "1.4. advanced features button.png",
+    "filename_analysis": {
+      "filename": "1.4. advanced features button.png",
+      "expected_workflow": "OATS interface workflow: 1.4. advanced features button",
+      "section_number": "1.4",
+      "descriptive_elements": [
+        "advanced features",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Job Search using Advanced Features",
+      "interface_focus": "The 'Advanced Features' section of the job search page, specifically focusing on the search button."
+    },
+    "page_info": {
+      "title": null,
+      "section": "Job Search",
+      "purpose": "To search for jobs using advanced filtering options (keywords, job title, location).",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Search",
+          "color": "blue",
+          "position": "bottom-right"
+        },
+        {
+          "text": "Search Within Selected Locations",
+          "color": "blue",
+          "position": "middle-left"
+        },
+        {
+          "text": "Search Within Radius",
+          "color": "blue",
+          "position": "middle-right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Keywords *",
+          "type": "text",
+          "required": true,
+          "placeholder": "Enter Keywords"
+        },
+        {
+          "label": "Job Title",
+          "type": "text",
+          "required": false,
+          "placeholder": "Enter Job Title"
+        }
+      ],
+      "dropdowns": {
+        "Country": [
+          "Select Country"
+        ],
+        "State": [
+          "Select States"
+        ],
+        "City": [
+          "Select Cities"
+        ]
+      },
+      "navigation": [
+        "Internal DB",
+        "Dice",
+        "Foundit SEA",
+        "Careerbuilder"
+      ],
+      "sections": [
+        "Keywords",
+        "Country",
+        "State",
+        "City",
+        "Recent History"
+      ]
+    },
+    "workflow": {
+      "title": "Advanced Job Search in OATS",
+      "description": "This workflow allows users to perform a detailed job search using keywords, job title, and location filters.",
+      "current_step": "Initiating the advanced job search.",
+      "steps": [
+        "Step 1: Select the desired job board (Internal DB, Dice, Foundit SEA, Careerbuilder).",
+        "Step 2: Enter keywords in the 'Keywords' field (required).",
+        "Step 3: Optionally enter the job title in the 'Job Title' field.",
+        "Step 4: Select the country, state, and city from the respective dropdown menus.  Note that 'Select Country' is only a placeholder until the user selects a country.",
+        "Step 5: Select either 'Search Within Selected Locations' or 'Search Within Radius' radio button.",
+        "Step 6: Click the 'Search' button to initiate the job search."
+      ],
+      "prerequisites": [
+        "User logged into OATS."
+      ],
+      "outcomes": [
+        "A list of jobs matching the search criteria is displayed."
+      ],
+      "next_actions": [
+        "Reviewing search results",
+        "Refining search criteria",
+        "Using the 'String Builder' feature"
+      ]
+    },
+    "keywords": [
+      "advanced features",
+      "button",
+      "Search",
+      "Keywords",
+      "Job Title",
+      "Country",
+      "State",
+      "City",
+      "Search Within Selected Locations",
+      "Search Within Radius",
+      "OATS",
+      "Job Search",
+      "Filtering",
+      "String Builder"
+    ],
+    "related_flows": [
+      "Job Result Review",
+      "String Builder Workflow"
+    ],
+    "validation_rules": [
+      "Keywords field is mandatory."
+    ],
+    "tips": [
+      "Use relevant keywords for better search results.",
+      "Combine keywords with location filters for precise targeting."
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename's description of an advanced features button within a job search interface.  The 'advanced features' are represented by the multi-criteria search options."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.5 account setup button.png\",\n    \"expected_workflow\": \"Account management workflow - 1.5 account setup button\",\n    \"section_number\": \"1.5\",\n    \"descriptive_elements\": [\"account setup\", \"button\"],\n    \"matches_expectation\": false,\n    \"workflow_step\": \"Contact Import\",\n    \"interface_focus\": \"Contact import options and existing contact groups\"\n  },\n  \"page_info\": {\n    \"title\": null, \n    \"section\": \"Account Management\",\n    \"purpose\": \"Import contacts from various sources and manage existing contact groups.\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [],\n    \"fields\": [\n      {\"label\": \"Search with group name and creator\", \"type\": \"text\", \"required\": false, \"placeholder\": null}\n    ],\n    \"dropdowns\": {},\n    \"navigation\": [\"Personal contact\", \"Email signature\", \"Job Boards\", \"User preferences\", \"Mail themes\", \"Allocated credits\", \"Notifications\", \"Email Integrations\"],\n    \"sections\": [\"Import Contacts From\", \"Allocated Credits\", \"Contacts\"]\n  },\n  \"workflow\": {\n    \"title\": \"Contact Import and Management\",\n    \"description\": \"This workflow allows users to import contacts from various sources (computer, email, cloud) and manage existing contact groups within their OATS account.\",\n    \"current_step\": \"Selecting a contact import method and reviewing existing contact groups.\",\n    \"steps\": [\n      \"1. Navigate to the Account Management section. This can typically be found in the top right corner of the OATS interface under your account profile.\",\n      \"2. Locate and select the 'Personal contact' option from the horizontal navigation menu.\",\n      \"3. In the 'Import Contacts From' section, choose one of the available import methods represented by icons: Computer, Email, Cloud, or Windows.\",\n      \"4. (Optional) Use the 'Search with group name and creator' text field to find a specific contact group.\",\n      \"5. Select the checkbox next to the desired contact group to view details (if present).\"\n    ],\n    \"prerequisites\": [\"An active OATS account.\"],\n    \"outcomes\": [\"Imported contacts added to the specified contact group.\", \"Existing contact groups viewed and possibly modified.\"],\n    \"next_actions\": [\"Selecting a contact import method and proceeding to import contacts.\", \"Creating a new contact group.\", \"Editing or deleting existing contact groups\"]\n  },\n  \"keywords\": [\n    \"1.5 account setup\",\n    \"account setup button\",\n    \"contact import\",\n    \"import contacts\",\n    \"computer\",\n    \"email\",\n    \"cloud\",\n    \"windows\",\n    \"contact groups\",\n    \"search\",\n    \"group name\",\n    \"creator\",\n    \"allocated credits\",\n    \"OATS\"\n  ],\n  \"related_flows\": [\"Account Setup\", \"Contact Management\", \"Credit Allocation\"],\n  \"validation_rules\": [\"File format validation (xls, xlsx, csv)\", \"Maximum contacts per group (2000)\"],\n  \"tips\": [\"Use the search field to easily locate specific contact groups.\", \"Review contact group details before making changes.\"],\n  \"accuracy_notes\": \"The filename is misleading. The screenshot does not show an account setup button, but rather a contact import interface. The '1.5' sequence likely indicates it is part of a broader account management process.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.5 account setup button.png",
+    "filename": "1.5 account setup button.png",
+    "filename_analysis": {
+      "filename": "1.5 account setup button.png",
+      "expected_workflow": "Account management workflow - 1.5 account setup button",
+      "section_number": "1.5",
+      "descriptive_elements": [
+        "account setup",
+        "button"
+      ],
+      "matches_expectation": false,
+      "workflow_step": "Contact Import",
+      "interface_focus": "Contact import options and existing contact groups"
+    },
+    "page_info": {
+      "title": null,
+      "section": "Account Management",
+      "purpose": "Import contacts from various sources and manage existing contact groups.",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [],
+      "fields": [
+        {
+          "label": "Search with group name and creator",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        }
+      ],
+      "dropdowns": {},
+      "navigation": [
+        "Personal contact",
+        "Email signature",
+        "Job Boards",
+        "User preferences",
+        "Mail themes",
+        "Allocated credits",
+        "Notifications",
+        "Email Integrations"
+      ],
+      "sections": [
+        "Import Contacts From",
+        "Allocated Credits",
+        "Contacts"
+      ]
+    },
+    "workflow": {
+      "title": "Contact Import and Management",
+      "description": "This workflow allows users to import contacts from various sources (computer, email, cloud) and manage existing contact groups within their OATS account.",
+      "current_step": "Selecting a contact import method and reviewing existing contact groups.",
+      "steps": [
+        "1. Navigate to the Account Management section. This can typically be found in the top right corner of the OATS interface under your account profile.",
+        "2. Locate and select the 'Personal contact' option from the horizontal navigation menu.",
+        "3. In the 'Import Contacts From' section, choose one of the available import methods represented by icons: Computer, Email, Cloud, or Windows.",
+        "4. (Optional) Use the 'Search with group name and creator' text field to find a specific contact group.",
+        "5. Select the checkbox next to the desired contact group to view details (if present)."
+      ],
+      "prerequisites": [
+        "An active OATS account."
+      ],
+      "outcomes": [
+        "Imported contacts added to the specified contact group.",
+        "Existing contact groups viewed and possibly modified."
+      ],
+      "next_actions": [
+        "Selecting a contact import method and proceeding to import contacts.",
+        "Creating a new contact group.",
+        "Editing or deleting existing contact groups"
+      ]
+    },
+    "keywords": [
+      "1.5 account setup",
+      "account setup button",
+      "contact import",
+      "import contacts",
+      "computer",
+      "email",
+      "cloud",
+      "windows",
+      "contact groups",
+      "search",
+      "group name",
+      "creator",
+      "allocated credits",
+      "OATS"
+    ],
+    "related_flows": [
+      "Account Setup",
+      "Contact Management",
+      "Credit Allocation"
+    ],
+    "validation_rules": [
+      "File format validation (xls, xlsx, csv)",
+      "Maximum contacts per group (2000)"
+    ],
+    "tips": [
+      "Use the search field to easily locate specific contact groups.",
+      "Review contact group details before making changes."
+    ],
+    "accuracy_notes": "The filename is misleading. The screenshot does not show an account setup button, but rather a contact import interface. The '1.5' sequence likely indicates it is part of a broader account management process."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"1.5 account setup button.png\",\n    \"expected_workflow\": \"Account management workflow - 1.5 account setup button\",\n    \"section_number\": \"1.5\",\n    \"descriptive_elements\": [\"account setup\", \"button\"],\n    \"matches_expectation\": false,\n    \"workflow_step\": \"Contact import within account setup\",\n    \"interface_focus\": \"Contact import options and process\"\n  },\n  \"page_info\": {\n    \"title\": \"Import Contacts From\",\n    \"section\": \"Account Management\",\n    \"purpose\": \"Import contacts into the OATS system\",\n    \"breadcrumb\": \"Not visible in screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [],\n    \"fields\": [\n      {\n        \"label\": \"Search with group name and creator\",\n        \"type\": \"text\",\n        \"required\": false,\n        \"placeholder\": \"\"\n      }\n    ],\n    \"dropdowns\": {},\n    \"navigation\": [\n      \"Personal contact\",\n      \"Email signature\",\n      \"Job Boards\",\n      \"User preferences\",\n      \"Mail themes\",\n      \"Allocated credits\",\n      \"Notifications\",\n      \"Email Integrations\"\n    ],\n    \"sections\": [\n      \"Import Contacts From\",\n      \"Group Name\",\n      \"Group Type\",\n      \"Created by\",\n      \"Created at\",\n      \"Actions\",\n      \"Contacts\"\n    ]\n  },\n  \"workflow\": {\n    \"title\": \"Account Setup: Contact Import\",\n    \"description\": \"This workflow allows users to import existing contacts from various sources into their OATS account.\",\n    \"current_step\": \"Selecting a contact import method and optionally searching existing contact groups.\",\n    \"steps\": [\n      \"1. Navigate to the 'Account Management' section, likely through a main menu.\",\n      \"2. Locate and select the 'Personal contact' or similar tab within the Account Management section.\",\n      \"3. Find the 'Import Contacts From' section.\",\n      \"4. Choose the desired import method: Computer, Gmail, Cloud, or Windows icon.  (Note:  These are implied by the icons; the screenshot lacks explicit labels).\",\n      \"5. Optionally, use the 'Search with group name and creator' field to locate and select existing contact groups to manage or update contact list.\",\n      \"6.  (Implied Next Step):  Follow the prompts to upload the contact data file depending on the chosen import method.  Refer to the guidelines on the right side panel for supported formats and limitations (2000 contacts per group maximum).\"\n    ],\n    \"prerequisites\": [\n      \"User must have an active OATS account.\",\n      \"Contacts should be in a supported file format (.xls, .xlsx, .csv)\"\n    ],\n    \"outcomes\": [\n      \"Contacts are imported into the user's OATS account.\",\n      \"Existing contact groups can be updated.\"\n    ],\n    \"next_actions\": [\n      \"Proceed with the file upload process.\",\n      \"Manage existing contact groups (this workflow doesn't show the action to add new groups).\"\n    ]\n  },\n  \"keywords\": [\n    \"1.5 account setup button\",\n    \"account setup\",\n    \"contact import\",\n    \"Import Contacts From\",\n    \"Computer\",\n    \"Gmail\",\n    \"Cloud\",\n    \"Windows\",\n    \".xls\",\n    \".xlsx\",\n    \".csv\",\n    \"OATS\",\n    \"contact groups\",\n    \"search\",\n    \"upload\",\n    \"contact management\"\n  ],\n  \"related_flows\": [\"Account Creation\", \"Contact Management\", \"Data Import\"],\n  \"validation_rules\": [\n    \"File format validation (.xls, .xlsx, .csv)\",\n    \"Duplicate contact record handling\",\n    \"Maximum 2000 contacts per group\"\n  ],\n  \"tips\": [\n    \"Use the search function to locate existing contact groups.\",\n    \"Check the supported file formats before importing.\",\n    \"Review data import guidelines for limitations and recommendations\"\n  ],\n  \"accuracy_notes\": \"The screenshot shows contact import options within what appears to be an account management section, but the '1.5 account setup button' in the filename is not directly represented visually.  There is no button shown.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\1.5 account setup button.png",
+    "filename": "1.5 account setup button.png",
+    "filename_analysis": {
+      "filename": "1.5 account setup button.png",
+      "expected_workflow": "Account management workflow - 1.5 account setup button",
+      "section_number": "1.5",
+      "descriptive_elements": [
+        "account setup",
+        "button"
+      ],
+      "matches_expectation": false,
+      "workflow_step": "Contact import within account setup",
+      "interface_focus": "Contact import options and process"
+    },
+    "page_info": {
+      "title": "Import Contacts From",
+      "section": "Account Management",
+      "purpose": "Import contacts into the OATS system",
+      "breadcrumb": "Not visible in screenshot"
+    },
+    "ui_elements": {
+      "buttons": [],
+      "fields": [
+        {
+          "label": "Search with group name and creator",
+          "type": "text",
+          "required": false,
+          "placeholder": ""
+        }
+      ],
+      "dropdowns": {},
+      "navigation": [
+        "Personal contact",
+        "Email signature",
+        "Job Boards",
+        "User preferences",
+        "Mail themes",
+        "Allocated credits",
+        "Notifications",
+        "Email Integrations"
+      ],
+      "sections": [
+        "Import Contacts From",
+        "Group Name",
+        "Group Type",
+        "Created by",
+        "Created at",
+        "Actions",
+        "Contacts"
+      ]
+    },
+    "workflow": {
+      "title": "Account Setup: Contact Import",
+      "description": "This workflow allows users to import existing contacts from various sources into their OATS account.",
+      "current_step": "Selecting a contact import method and optionally searching existing contact groups.",
+      "steps": [
+        "1. Navigate to the 'Account Management' section, likely through a main menu.",
+        "2. Locate and select the 'Personal contact' or similar tab within the Account Management section.",
+        "3. Find the 'Import Contacts From' section.",
+        "4. Choose the desired import method: Computer, Gmail, Cloud, or Windows icon.  (Note:  These are implied by the icons; the screenshot lacks explicit labels).",
+        "5. Optionally, use the 'Search with group name and creator' field to locate and select existing contact groups to manage or update contact list.",
+        "6.  (Implied Next Step):  Follow the prompts to upload the contact data file depending on the chosen import method.  Refer to the guidelines on the right side panel for supported formats and limitations (2000 contacts per group maximum)."
+      ],
+      "prerequisites": [
+        "User must have an active OATS account.",
+        "Contacts should be in a supported file format (.xls, .xlsx, .csv)"
+      ],
+      "outcomes": [
+        "Contacts are imported into the user's OATS account.",
+        "Existing contact groups can be updated."
+      ],
+      "next_actions": [
+        "Proceed with the file upload process.",
+        "Manage existing contact groups (this workflow doesn't show the action to add new groups)."
+      ]
+    },
+    "keywords": [
+      "1.5 account setup button",
+      "account setup",
+      "contact import",
+      "Import Contacts From",
+      "Computer",
+      "Gmail",
+      "Cloud",
+      "Windows",
+      ".xls",
+      ".xlsx",
+      ".csv",
+      "OATS",
+      "contact groups",
+      "search",
+      "upload",
+      "contact management"
+    ],
+    "related_flows": [
+      "Account Creation",
+      "Contact Management",
+      "Data Import"
+    ],
+    "validation_rules": [
+      "File format validation (.xls, .xlsx, .csv)",
+      "Duplicate contact record handling",
+      "Maximum 2000 contacts per group"
+    ],
+    "tips": [
+      "Use the search function to locate existing contact groups.",
+      "Check the supported file formats before importing.",
+      "Review data import guidelines for limitations and recommendations"
+    ],
+    "accuracy_notes": "The screenshot shows contact import options within what appears to be an account management section, but the '1.5 account setup button' in the filename is not directly represented visually.  There is no button shown."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"2 . job section page with buttons.png\",\n    \"expected_workflow\": \"Job creation and management workflow - 2 . job section page with buttons\",\n    \"section_number\": \"2\",\n    \"descriptive_elements\": [\"job section\", \"page\", \"buttons\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Viewing and managing existing jobs\",\n    \"interface_focus\": \"A page displaying a list of jobs with buttons for actions like adding a new job and managing columns\"\n  },\n  \"page_info\": {\n    \"title\": \"All Jobs\",\n    \"section\": \"Jobs\",\n    \"purpose\": \"To display a list of existing jobs, allowing for viewing details, searching, and adding new jobs.\",\n    \"breadcrumb\": \"Not visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Edit Column\", \"color\": \"blue\", \"position\": \"top right\"},\n      {\"text\": \"Draft\", \"color\": \"blue\", \"position\": \"top right\"},\n      {\"text\": \"Add Job\", \"color\": \"blue\", \"position\": \"top right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Search...\", \"type\": \"text\", \"required\": false, \"placeholder\": \"Search...\"}\n    ],\n    \"dropdowns\": {\n      \"Rows per page:\": [\"10\"]\n    },\n    \"navigation\": [\"Home\", \"All Jobs\"],\n    \"sections\": [\"Job Code\", \"Job Title\", \"Client\", \"Status\", \"Client Bill Rate\", \"Pay Rate Min\", \"Pay Rate Max\", \"Location\"]\n  },\n  \"workflow\": {\n    \"title\": \"Job Management Workflow\",\n    \"description\": \"This workflow allows users to view, search, and manage existing jobs within the OATS system.\",\n    \"current_step\": \"Viewing and filtering the list of existing jobs\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'All Jobs' page (usually from the main menu).\",\n      \"Step 2: Use the 'Search...' field to filter jobs based on keywords related to job code, title, client, or location.\",\n      \"Step 3: Utilize the 'Rows per page' dropdown to adjust the number of jobs displayed per page.\",\n      \"Step 4: Click the 'Edit Column' button to customize visible columns in the job list.\",\n      \"Step 5: Optionally, use the 'Draft' button to create a draft job posting (not fully detailed in this screenshot).\",\n      \"Step 6: To add a new job, click the 'Add Job' button. This will take you to the next step in the Job creation process.\"\n    ],\n    \"prerequisites\": [\"User must be logged into OATS with appropriate permissions.\"],\n    \"outcomes\": [\"Users can effectively view, search, and filter jobs. New jobs can be added through the 'Add Job' button.\"],\n    \"next_actions\": [\"Add a new job using the 'Add Job' button, modify column display, search for specific jobs, proceed to draft a job\"]\n  },\n  \"keywords\": [\n    \"2 . job section page with buttons\",\n    \"job section\",\n    \"All Jobs\",\n    \"Add Job\",\n    \"Edit Column\",\n    \"Draft\",\n    \"Search\",\n    \"Job Code\",\n    \"Job Title\",\n    \"Client\",\n    \"Status\",\n    \"Client Bill Rate\",\n    \"Pay Rate Min\",\n    \"Pay Rate Max\",\n    \"Location\",\n    \"OATS\",\n    \"Job Management\",\n    \"Job Listing\"\n  ],\n  \"related_flows\": [\"Job Creation Workflow\", \"Job Editing Workflow\"],\n  \"validation_rules\": [\"Search field accepts alphanumeric characters and spaces.\"],\n  \"tips\": [\"Use specific keywords for efficient searching.\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename description. It shows a section of a Job management workflow where the user can view existing jobs and initiate job creation or modification.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\2 . job section page with buttons.png",
+    "filename": "2 . job section page with buttons.png",
+    "filename_analysis": {
+      "filename": "2 . job section page with buttons.png",
+      "expected_workflow": "Job creation and management workflow - 2 . job section page with buttons",
+      "section_number": "2",
+      "descriptive_elements": [
+        "job section",
+        "page",
+        "buttons"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Viewing and managing existing jobs",
+      "interface_focus": "A page displaying a list of jobs with buttons for actions like adding a new job and managing columns"
+    },
+    "page_info": {
+      "title": "All Jobs",
+      "section": "Jobs",
+      "purpose": "To display a list of existing jobs, allowing for viewing details, searching, and adding new jobs.",
+      "breadcrumb": "Not visible in the screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Edit Column",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Draft",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Add Job",
+          "color": "blue",
+          "position": "top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Search...",
+          "type": "text",
+          "required": false,
+          "placeholder": "Search..."
+        }
+      ],
+      "dropdowns": {
+        "Rows per page:": [
+          "10"
+        ]
+      },
+      "navigation": [
+        "Home",
+        "All Jobs"
+      ],
+      "sections": [
+        "Job Code",
+        "Job Title",
+        "Client",
+        "Status",
+        "Client Bill Rate",
+        "Pay Rate Min",
+        "Pay Rate Max",
+        "Location"
+      ]
+    },
+    "workflow": {
+      "title": "Job Management Workflow",
+      "description": "This workflow allows users to view, search, and manage existing jobs within the OATS system.",
+      "current_step": "Viewing and filtering the list of existing jobs",
+      "steps": [
+        "Step 1: Navigate to the 'All Jobs' page (usually from the main menu).",
+        "Step 2: Use the 'Search...' field to filter jobs based on keywords related to job code, title, client, or location.",
+        "Step 3: Utilize the 'Rows per page' dropdown to adjust the number of jobs displayed per page.",
+        "Step 4: Click the 'Edit Column' button to customize visible columns in the job list.",
+        "Step 5: Optionally, use the 'Draft' button to create a draft job posting (not fully detailed in this screenshot).",
+        "Step 6: To add a new job, click the 'Add Job' button. This will take you to the next step in the Job creation process."
+      ],
+      "prerequisites": [
+        "User must be logged into OATS with appropriate permissions."
+      ],
+      "outcomes": [
+        "Users can effectively view, search, and filter jobs. New jobs can be added through the 'Add Job' button."
+      ],
+      "next_actions": [
+        "Add a new job using the 'Add Job' button, modify column display, search for specific jobs, proceed to draft a job"
+      ]
+    },
+    "keywords": [
+      "2 . job section page with buttons",
+      "job section",
+      "All Jobs",
+      "Add Job",
+      "Edit Column",
+      "Draft",
+      "Search",
+      "Job Code",
+      "Job Title",
+      "Client",
+      "Status",
+      "Client Bill Rate",
+      "Pay Rate Min",
+      "Pay Rate Max",
+      "Location",
+      "OATS",
+      "Job Management",
+      "Job Listing"
+    ],
+    "related_flows": [
+      "Job Creation Workflow",
+      "Job Editing Workflow"
+    ],
+    "validation_rules": [
+      "Search field accepts alphanumeric characters and spaces."
+    ],
+    "tips": [
+      "Use specific keywords for efficient searching."
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename description. It shows a section of a Job management workflow where the user can view existing jobs and initiate job creation or modification."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"2 . job section page with buttons.png\",\n    \"expected_workflow\": \"Job creation and management workflow - 2 . job section page with buttons\",\n    \"section_number\": \"2\",\n    \"descriptive_elements\": [\"job section\", \"page\", \"buttons\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Viewing and managing existing jobs\",\n    \"interface_focus\": \"A page displaying a list of jobs with buttons for actions like adding a new job, editing columns, and drafting.\"\n  },\n  \"page_info\": {\n    \"title\": \"All Jobs\",\n    \"section\": \"Jobs\",\n    \"purpose\": \"To display a list of existing jobs, allowing users to view details and perform actions on them.\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Add Job\", \"color\": \"blue\", \"position\": \"top right\"},\n      {\"text\": \"Edit Column\", \"color\": \"blue\", \"position\": \"top right\"},\n      {\"text\": \"Draft\", \"color\": \"blue\", \"position\": \"top right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Search...\", \"type\": \"text\", \"required\": false, \"placeholder\": \"Search...\"}\n    ],\n    \"dropdowns\": {\n      \"Rows per page:\": [\"10\"]\n    },\n    \"navigation\": [\"All Jobs\", \"Home\", \"Jobs\", \"Candidates\", \"Clients\", \"...\", \"Settings\", \"Account Manager\"],\n    \"sections\": [\"Job Code\", \"Job Title\", \"Client\", \"Status\", \"Client Bill Rate\", \"Pay Rate Min\", \"Pay Rate Max\", \"Location\"]\n  },\n  \"workflow\": {\n    \"title\": \"Job Management Workflow\",\n    \"description\": \"This workflow allows users to create, view, edit, and manage job postings within the OATS system.\",\n    \"current_step\": \"Viewing the list of existing jobs and performing actions like adding a new job, editing columns or setting jobs as drafts.\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'All Jobs' page from the main menu. This is typically done by selecting the 'Jobs' option from the left-hand navigation menu.\",\n      \"Step 2: Review the list of jobs displayed. Each row represents a job and includes fields for Job Code, Job Title, Client, Status, Bill Rates, Pay Rates, and Location.\",\n      \"Step 3: To add a new job posting, click the 'Add Job' button. This will navigate to the job creation form.\",\n      \"Step 4: To modify the displayed columns, click the 'Edit Column' button.\",\n      \"Step 5: To save a job as a draft, click the 'Draft' button.  This allows you to save progress without fully publishing the job. \",\n      \"Step 6: Use the search bar to filter the job list by keywords in any of the listed columns.\",\n      \"Step 7: Use the dropdown menu to adjust the number of jobs displayed per page.\"\n    ],\n    \"prerequisites\": [\"User must be logged into OATS with appropriate permissions.\"],\n    \"outcomes\": [\"A list of existing jobs is displayed. A new job can be created, columns can be modified, and jobs can be saved as drafts.\"],\n    \"next_actions\": [\"Add a new job\", \"Edit an existing job (by selecting a row and navigating elsewhere to edit)\", \"Filter jobs using search\", \"Change the page size\"]\n  },\n  \"keywords\": [\n    \"Job section page\",\n    \"buttons\",\n    \"Add Job\",\n    \"Edit Column\",\n    \"Draft\",\n    \"Job Code\",\n    \"Job Title\",\n    \"Client\",\n    \"Status\",\n    \"Client Bill Rate\",\n    \"Pay Rate Min\",\n    \"Pay Rate Max\",\n    \"Location\",\n    \"Search\",\n    \"Rows per page\",\n    \"OATS\",\n    \"Job Management\",\n    \"Job Creation\",\n    \"Workflow\",\n    \"Table\",\n    \"Pagination\"\n  ],\n  \"related_flows\": [\"Job Creation Workflow\", \"Job Editing Workflow\"],\n  \"validation_rules\": [\"Search input is not case sensitive\"],\n  \"tips\": [\"Use the search bar to efficiently locate specific jobs.\"],\n  \"accuracy_notes\": \"The screenshot perfectly matches the filename description, accurately representing the second page in a job management workflow, showing a table of jobs and relevant action buttons.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\2 . job section page with buttons.png",
+    "filename": "2 . job section page with buttons.png",
+    "filename_analysis": {
+      "filename": "2 . job section page with buttons.png",
+      "expected_workflow": "Job creation and management workflow - 2 . job section page with buttons",
+      "section_number": "2",
+      "descriptive_elements": [
+        "job section",
+        "page",
+        "buttons"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Viewing and managing existing jobs",
+      "interface_focus": "A page displaying a list of jobs with buttons for actions like adding a new job, editing columns, and drafting."
+    },
+    "page_info": {
+      "title": "All Jobs",
+      "section": "Jobs",
+      "purpose": "To display a list of existing jobs, allowing users to view details and perform actions on them.",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Add Job",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Edit Column",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Draft",
+          "color": "blue",
+          "position": "top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Search...",
+          "type": "text",
+          "required": false,
+          "placeholder": "Search..."
+        }
+      ],
+      "dropdowns": {
+        "Rows per page:": [
+          "10"
+        ]
+      },
+      "navigation": [
+        "All Jobs",
+        "Home",
+        "Jobs",
+        "Candidates",
+        "Clients",
+        "...",
+        "Settings",
+        "Account Manager"
+      ],
+      "sections": [
+        "Job Code",
+        "Job Title",
+        "Client",
+        "Status",
+        "Client Bill Rate",
+        "Pay Rate Min",
+        "Pay Rate Max",
+        "Location"
+      ]
+    },
+    "workflow": {
+      "title": "Job Management Workflow",
+      "description": "This workflow allows users to create, view, edit, and manage job postings within the OATS system.",
+      "current_step": "Viewing the list of existing jobs and performing actions like adding a new job, editing columns or setting jobs as drafts.",
+      "steps": [
+        "Step 1: Navigate to the 'All Jobs' page from the main menu. This is typically done by selecting the 'Jobs' option from the left-hand navigation menu.",
+        "Step 2: Review the list of jobs displayed. Each row represents a job and includes fields for Job Code, Job Title, Client, Status, Bill Rates, Pay Rates, and Location.",
+        "Step 3: To add a new job posting, click the 'Add Job' button. This will navigate to the job creation form.",
+        "Step 4: To modify the displayed columns, click the 'Edit Column' button.",
+        "Step 5: To save a job as a draft, click the 'Draft' button.  This allows you to save progress without fully publishing the job. ",
+        "Step 6: Use the search bar to filter the job list by keywords in any of the listed columns.",
+        "Step 7: Use the dropdown menu to adjust the number of jobs displayed per page."
+      ],
+      "prerequisites": [
+        "User must be logged into OATS with appropriate permissions."
+      ],
+      "outcomes": [
+        "A list of existing jobs is displayed. A new job can be created, columns can be modified, and jobs can be saved as drafts."
+      ],
+      "next_actions": [
+        "Add a new job",
+        "Edit an existing job (by selecting a row and navigating elsewhere to edit)",
+        "Filter jobs using search",
+        "Change the page size"
+      ]
+    },
+    "keywords": [
+      "Job section page",
+      "buttons",
+      "Add Job",
+      "Edit Column",
+      "Draft",
+      "Job Code",
+      "Job Title",
+      "Client",
+      "Status",
+      "Client Bill Rate",
+      "Pay Rate Min",
+      "Pay Rate Max",
+      "Location",
+      "Search",
+      "Rows per page",
+      "OATS",
+      "Job Management",
+      "Job Creation",
+      "Workflow",
+      "Table",
+      "Pagination"
+    ],
+    "related_flows": [
+      "Job Creation Workflow",
+      "Job Editing Workflow"
+    ],
+    "validation_rules": [
+      "Search input is not case sensitive"
+    ],
+    "tips": [
+      "Use the search bar to efficiently locate specific jobs."
+    ],
+    "accuracy_notes": "The screenshot perfectly matches the filename description, accurately representing the second page in a job management workflow, showing a table of jobs and relevant action buttons."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"3 . candidate section with data with button.png\",\n    \"expected_workflow\": \"Candidate management workflow - 3 . candidate section with data with button\",\n    \"section_number\": \"3\",\n    \"descriptive_elements\": [\"candidate section\", \"data\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Viewing and managing a list of candidates\",\n    \"interface_focus\": \"Candidate list display with actions\"\n  },\n  \"page_info\": {\n    \"title\": \"All Candidates\",\n    \"section\": \"Candidates\",\n    \"purpose\": \"Displaying a list of candidates with options to filter, sort, add, and manage candidate data\",\n    \"breadcrumb\": \"No breadcrumb visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Add Candidate\", \"color\": \"blue\", \"position\": \"Top right\"},\n      {\"text\": \"Edit Column\", \"color\": \"blue\", \"position\": \"Top right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Search...\", \"type\": \"text input\", \"required\": false, \"placeholder\": \"Search...\"}\n    ],\n    \"dropdowns\": {\n      \"Rows per page:\": [\"10\"] \n    },\n    \"navigation\": [],\n    \"sections\": [\"Candidate ID\", \"Name\", \"Job Title\", \"Location\", \"Source\", \"Ownership\", \"Notice Period\", \"Relocation\"]\n  },\n  \"workflow\": {\n    \"title\": \"Candidate List Management\",\n    \"description\": \"This workflow allows recruiters to view, search, filter, and add candidates to the system.\",\n    \"current_step\": \"Viewing the list of candidates and performing actions like adding a new candidate or editing column visibility\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Candidates' section in OATS.\",\n      \"Step 2: Use the 'Search...' field to filter candidates by name, ID, or other criteria.\",\n      \"Step 3: Use the 'Rows per page' dropdown to adjust the number of candidates displayed per page.\",\n      \"Step 4: Click checkboxes next to candidate IDs to select candidates for bulk actions (not shown in this screenshot).\",\n      \"Step 5: Click the 'Add Candidate' button to add a new candidate to the system.\",\n      \"Step 6: Click the 'Edit Column' button to customize the columns displayed in the candidate list.\"\n    ],\n    \"prerequisites\": [\"Access to the OATS system\", \"Appropriate user permissions\"],\n    \"outcomes\": [\"List of filtered/searched candidates displayed\", \"New candidate added to the system\", \"Column visibility modified\"],\n    \"next_actions\": [\"Select candidates for actions\", \"Add a new candidate\", \"Edit the displayed columns\", \"View individual candidate details (by clicking a row)\"]\n  },\n  \"keywords\": [\n    \"3 . candidate section with data with button\",\n    \"Candidate List\",\n    \"Candidate Management\",\n    \"Add Candidate\",\n    \"Edit Column\",\n    \"Search\",\n    \"Candidate ID\",\n    \"Name\",\n    \"Job Title\",\n    \"Location\",\n    \"Source\",\n    \"Ownership\",\n    \"Notice Period\",\n    \"Relocation\",\n    \"OATS\",\n    \"Otomashen ATS\"\n  ],\n  \"related_flows\": [\"Add Candidate Workflow\", \"Candidate Details Workflow\", \"Column Configuration Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Use the search functionality for efficient candidate searching\", \"Customize columns for better visibility of relevant candidate information\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename description, showing section 3 of a candidate management workflow with a list of candidates, their data, and buttons for adding candidates and editing columns.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\3 . candidate section with data with button.png",
+    "filename": "3 . candidate section with data with button.png",
+    "filename_analysis": {
+      "filename": "3 . candidate section with data with button.png",
+      "expected_workflow": "Candidate management workflow - 3 . candidate section with data with button",
+      "section_number": "3",
+      "descriptive_elements": [
+        "candidate section",
+        "data",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Viewing and managing a list of candidates",
+      "interface_focus": "Candidate list display with actions"
+    },
+    "page_info": {
+      "title": "All Candidates",
+      "section": "Candidates",
+      "purpose": "Displaying a list of candidates with options to filter, sort, add, and manage candidate data",
+      "breadcrumb": "No breadcrumb visible in the screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Add Candidate",
+          "color": "blue",
+          "position": "Top right"
+        },
+        {
+          "text": "Edit Column",
+          "color": "blue",
+          "position": "Top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Search...",
+          "type": "text input",
+          "required": false,
+          "placeholder": "Search..."
+        }
+      ],
+      "dropdowns": {
+        "Rows per page:": [
+          "10"
+        ]
+      },
+      "navigation": [],
+      "sections": [
+        "Candidate ID",
+        "Name",
+        "Job Title",
+        "Location",
+        "Source",
+        "Ownership",
+        "Notice Period",
+        "Relocation"
+      ]
+    },
+    "workflow": {
+      "title": "Candidate List Management",
+      "description": "This workflow allows recruiters to view, search, filter, and add candidates to the system.",
+      "current_step": "Viewing the list of candidates and performing actions like adding a new candidate or editing column visibility",
+      "steps": [
+        "Step 1: Navigate to the 'Candidates' section in OATS.",
+        "Step 2: Use the 'Search...' field to filter candidates by name, ID, or other criteria.",
+        "Step 3: Use the 'Rows per page' dropdown to adjust the number of candidates displayed per page.",
+        "Step 4: Click checkboxes next to candidate IDs to select candidates for bulk actions (not shown in this screenshot).",
+        "Step 5: Click the 'Add Candidate' button to add a new candidate to the system.",
+        "Step 6: Click the 'Edit Column' button to customize the columns displayed in the candidate list."
+      ],
+      "prerequisites": [
+        "Access to the OATS system",
+        "Appropriate user permissions"
+      ],
+      "outcomes": [
+        "List of filtered/searched candidates displayed",
+        "New candidate added to the system",
+        "Column visibility modified"
+      ],
+      "next_actions": [
+        "Select candidates for actions",
+        "Add a new candidate",
+        "Edit the displayed columns",
+        "View individual candidate details (by clicking a row)"
+      ]
+    },
+    "keywords": [
+      "3 . candidate section with data with button",
+      "Candidate List",
+      "Candidate Management",
+      "Add Candidate",
+      "Edit Column",
+      "Search",
+      "Candidate ID",
+      "Name",
+      "Job Title",
+      "Location",
+      "Source",
+      "Ownership",
+      "Notice Period",
+      "Relocation",
+      "OATS",
+      "Otomashen ATS"
+    ],
+    "related_flows": [
+      "Add Candidate Workflow",
+      "Candidate Details Workflow",
+      "Column Configuration Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Use the search functionality for efficient candidate searching",
+      "Customize columns for better visibility of relevant candidate information"
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename description, showing section 3 of a candidate management workflow with a list of candidates, their data, and buttons for adding candidates and editing columns."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"3 . candidate section with data with button.png\",\n    \"expected_workflow\": \"Candidate management workflow - 3 . candidate section with data with button\",\n    \"section_number\": \"3\",\n    \"descriptive_elements\": [\"candidate section\", \"data\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Displaying and potentially filtering a list of candidates\",\n    \"interface_focus\": \"Candidate list display with filtering and 'Add Candidate' functionality\"\n  },\n  \"page_info\": {\n    \"title\": \"All Candidates\",\n    \"section\": \"Candidates\",\n    \"purpose\": \"View, filter, and add candidates\",\n    \"breadcrumb\": \"Not visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Add Candidate\", \"color\": \"blue\", \"position\": \"top right\"},\n      {\"text\": \"Edit Column\", \"color\": \"blue\", \"position\": \"top right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Search...\", \"type\": \"text\", \"required\": false, \"placeholder\": \"Search...\"}\n    ],\n    \"dropdowns\": {\n      \"Rows per page:\": [\"10\"] \n    },\n    \"navigation\": [],\n    \"sections\": [\"Candidate ID\", \"Name\", \"Job Title\", \"Location\", \"Source\", \"Ownership\", \"Notice Period\", \"Relo\"]\n  },\n  \"workflow\": {\n    \"title\": \"Candidate List Management\",\n    \"description\": \"View, search, filter, and add new candidates.\",\n    \"current_step\": \"Viewing the list of candidates\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Candidates' section in OATS.\",\n      \"Step 2: (Optional) Use the 'Search...' field to filter candidates by name, ID, or other searchable criteria.\",\n      \"Step 3: (Optional) Use the 'Rows per page' dropdown to adjust the number of candidates shown per page.\",\n      \"Step 4: Review the list of candidates, including their IDs, names, job titles, locations, source, ownership, notice periods, and relocation status.\",\n      \"Step 5: (Optional) Click the checkbox next to a candidate's ID to select the candidate for further actions (not shown in this screenshot).\",\n      \"Step 6: To add a new candidate, click the 'Add Candidate' button (this will open a new page or form).\",\n      \"Step 7: (Optional) To modify the columns visible in the candidate list, click 'Edit Column'.\"\n    ],\n    \"prerequisites\": [\"Access to the OATS system and the Candidates section.\"],\n    \"outcomes\": [\"A filtered or unfiltered list of candidates is displayed.\", \"A new candidate can be added to the system.\", \"Columns displayed can be modified.\"],\n    \"next_actions\": [\"Adding a new candidate\", \"Selecting candidates for further actions (such as editing or deleting)\", \"Navigating to specific candidate details\"]\n  },\n  \"keywords\": [\n    \"candidate section\",\n    \"data\",\n    \"button\",\n    \"Add Candidate\",\n    \"Edit Column\",\n    \"candidate list\",\n    \"search\",\n    \"filter\",\n    \"pagination\",\n    \"candidate management\",\n    \"OATS\",\n    \"Candidate ID\",\n    \"Name\",\n    \"Job Title\",\n    \"Location\",\n    \"Source\",\n    \"Ownership\",\n    \"Notice Period\",\n    \"Relocation\"\n  ],\n  \"related_flows\": [\"Add Candidate workflow\", \"Candidate Detail View workflow\", \"Candidate Edit workflow\"],\n  \"validation_rules\": [\"Search input field accepts alphanumeric characters.\", \"Rows per page dropdown has valid options.\"],\n  \"tips\": [\"Use the search function to quickly locate specific candidates.\", \"Adjust the rows per page to enhance browsing.\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename description. It shows a candidate section with data and buttons ('Add Candidate', 'Edit Column').\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\3 . candidate section with data with button.png",
+    "filename": "3 . candidate section with data with button.png",
+    "filename_analysis": {
+      "filename": "3 . candidate section with data with button.png",
+      "expected_workflow": "Candidate management workflow - 3 . candidate section with data with button",
+      "section_number": "3",
+      "descriptive_elements": [
+        "candidate section",
+        "data",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Displaying and potentially filtering a list of candidates",
+      "interface_focus": "Candidate list display with filtering and 'Add Candidate' functionality"
+    },
+    "page_info": {
+      "title": "All Candidates",
+      "section": "Candidates",
+      "purpose": "View, filter, and add candidates",
+      "breadcrumb": "Not visible in the screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Add Candidate",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Edit Column",
+          "color": "blue",
+          "position": "top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Search...",
+          "type": "text",
+          "required": false,
+          "placeholder": "Search..."
+        }
+      ],
+      "dropdowns": {
+        "Rows per page:": [
+          "10"
+        ]
+      },
+      "navigation": [],
+      "sections": [
+        "Candidate ID",
+        "Name",
+        "Job Title",
+        "Location",
+        "Source",
+        "Ownership",
+        "Notice Period",
+        "Relo"
+      ]
+    },
+    "workflow": {
+      "title": "Candidate List Management",
+      "description": "View, search, filter, and add new candidates.",
+      "current_step": "Viewing the list of candidates",
+      "steps": [
+        "Step 1: Navigate to the 'Candidates' section in OATS.",
+        "Step 2: (Optional) Use the 'Search...' field to filter candidates by name, ID, or other searchable criteria.",
+        "Step 3: (Optional) Use the 'Rows per page' dropdown to adjust the number of candidates shown per page.",
+        "Step 4: Review the list of candidates, including their IDs, names, job titles, locations, source, ownership, notice periods, and relocation status.",
+        "Step 5: (Optional) Click the checkbox next to a candidate's ID to select the candidate for further actions (not shown in this screenshot).",
+        "Step 6: To add a new candidate, click the 'Add Candidate' button (this will open a new page or form).",
+        "Step 7: (Optional) To modify the columns visible in the candidate list, click 'Edit Column'."
+      ],
+      "prerequisites": [
+        "Access to the OATS system and the Candidates section."
+      ],
+      "outcomes": [
+        "A filtered or unfiltered list of candidates is displayed.",
+        "A new candidate can be added to the system.",
+        "Columns displayed can be modified."
+      ],
+      "next_actions": [
+        "Adding a new candidate",
+        "Selecting candidates for further actions (such as editing or deleting)",
+        "Navigating to specific candidate details"
+      ]
+    },
+    "keywords": [
+      "candidate section",
+      "data",
+      "button",
+      "Add Candidate",
+      "Edit Column",
+      "candidate list",
+      "search",
+      "filter",
+      "pagination",
+      "candidate management",
+      "OATS",
+      "Candidate ID",
+      "Name",
+      "Job Title",
+      "Location",
+      "Source",
+      "Ownership",
+      "Notice Period",
+      "Relocation"
+    ],
+    "related_flows": [
+      "Add Candidate workflow",
+      "Candidate Detail View workflow",
+      "Candidate Edit workflow"
+    ],
+    "validation_rules": [
+      "Search input field accepts alphanumeric characters.",
+      "Rows per page dropdown has valid options."
+    ],
+    "tips": [
+      "Use the search function to quickly locate specific candidates.",
+      "Adjust the rows per page to enhance browsing."
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename description. It shows a candidate section with data and buttons ('Add Candidate', 'Edit Column')."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"4 . clients section with data with button.png\",\n    \"expected_workflow\": \"Client management workflow - 4 . clients section with data with button\",\n    \"section_number\": \"4\",\n    \"descriptive_elements\": [\"clients section\", \"data\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Viewing and managing existing client data\",\n    \"interface_focus\": \"A data table displaying client information with buttons for adding new clients and editing columns\"\n  },\n  \"page_info\": {\n    \"title\": \"All Clients\",\n    \"section\": \"Clients\",\n    \"purpose\": \"View, search, and manage existing client data. Add new clients.\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\n        \"text\": \"Add New\",\n        \"color\": \"blue\",\n        \"position\": \"top right\"\n      },\n      {\n        \"text\": \"Edit Column\",\n        \"color\": \"#007bff\",\n        \"position\": \"top right\"\n      }\n    ],\n    \"fields\": [\n      {\n        \"label\": \"Search...\",\n        \"type\": \"text\",\n        \"required\": false,\n        \"placeholder\": \"Search...\"\n      }\n    ],\n    \"dropdowns\": {\n      \"Rows per page:\": [\"10\"]\n    },\n    \"navigation\": [],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"Client Management: Data View and Editing\",\n    \"description\": \"This workflow allows users to view, search, and manage existing client data within the OATS system.  It also provides the ability to add new clients and edit the displayed columns.\",\n    \"current_step\": \"Viewing the list of existing clients\",\n    \"steps\": [\n      \"Step 1: Access the 'Clients' section via the OATS main menu.\",\n      \"Step 2: Review the list of clients displayed in the table.  Each row represents a client with information like Client ID, Client Name, Contact Number, Email, Website, Status, Primary Owner, and Created By.\",\n      \"Step 3: Use the 'Search...' field to filter the list by client name or ID.\",\n      \"Step 4: Select the checkboxes next to specific clients for bulk actions (not shown but implied by checkboxes).\",\n      \"Step 5: Click 'Edit Column' to customize the columns displayed in the client table.\",\n      \"Step 6: Click 'Add New' to navigate to a page for creating a new client entry.\",\n      \"Step 7: Use the dropdown to adjust the number of rows displayed per page.\"\n    ],\n    \"prerequisites\": [\"User must be logged into the OATS system and have appropriate permissions to access the Clients section.\"],\n    \"outcomes\": [\"Users can view, search, and filter client data. They can also add new clients and customize the displayed columns.\"],\n    \"next_actions\": [\"Add a new client, edit existing client data, or customize the table view.\"]\n  },\n  \"keywords\": [\n    \"4 . clients section with data with button\",\n    \"OATS\",\n    \"Client Management\",\n    \"Client data\",\n    \"Add New\",\n    \"Edit Column\",\n    \"Search\",\n    \"Client ID\",\n    \"Client Name\",\n    \"Contact Number\",\n    \"Email\",\n    \"Website\",\n    \"Status\",\n    \"Primary Owner\",\n    \"Created By\",\n    \"Rows per page\"\n  ],\n  \"related_flows\": [\"Add New Client\", \"Edit Client Data\", \"Customize Client Table Columns\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Use the search function to quickly locate specific clients.\", \"Customize columns to view the information most relevant to your tasks.\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename description.  It shows a section (section 4 implied) within client management that displays client data in a table format and includes the 'Add New' and 'Edit Column' buttons.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\4 . clients section with data with button.png",
+    "filename": "4 . clients section with data with button.png",
+    "filename_analysis": {
+      "filename": "4 . clients section with data with button.png",
+      "expected_workflow": "Client management workflow - 4 . clients section with data with button",
+      "section_number": "4",
+      "descriptive_elements": [
+        "clients section",
+        "data",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Viewing and managing existing client data",
+      "interface_focus": "A data table displaying client information with buttons for adding new clients and editing columns"
+    },
+    "page_info": {
+      "title": "All Clients",
+      "section": "Clients",
+      "purpose": "View, search, and manage existing client data. Add new clients.",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Add New",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Edit Column",
+          "color": "#007bff",
+          "position": "top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Search...",
+          "type": "text",
+          "required": false,
+          "placeholder": "Search..."
+        }
+      ],
+      "dropdowns": {
+        "Rows per page:": [
+          "10"
+        ]
+      },
+      "navigation": [],
+      "sections": []
+    },
+    "workflow": {
+      "title": "Client Management: Data View and Editing",
+      "description": "This workflow allows users to view, search, and manage existing client data within the OATS system.  It also provides the ability to add new clients and edit the displayed columns.",
+      "current_step": "Viewing the list of existing clients",
+      "steps": [
+        "Step 1: Access the 'Clients' section via the OATS main menu.",
+        "Step 2: Review the list of clients displayed in the table.  Each row represents a client with information like Client ID, Client Name, Contact Number, Email, Website, Status, Primary Owner, and Created By.",
+        "Step 3: Use the 'Search...' field to filter the list by client name or ID.",
+        "Step 4: Select the checkboxes next to specific clients for bulk actions (not shown but implied by checkboxes).",
+        "Step 5: Click 'Edit Column' to customize the columns displayed in the client table.",
+        "Step 6: Click 'Add New' to navigate to a page for creating a new client entry.",
+        "Step 7: Use the dropdown to adjust the number of rows displayed per page."
+      ],
+      "prerequisites": [
+        "User must be logged into the OATS system and have appropriate permissions to access the Clients section."
+      ],
+      "outcomes": [
+        "Users can view, search, and filter client data. They can also add new clients and customize the displayed columns."
+      ],
+      "next_actions": [
+        "Add a new client, edit existing client data, or customize the table view."
+      ]
+    },
+    "keywords": [
+      "4 . clients section with data with button",
+      "OATS",
+      "Client Management",
+      "Client data",
+      "Add New",
+      "Edit Column",
+      "Search",
+      "Client ID",
+      "Client Name",
+      "Contact Number",
+      "Email",
+      "Website",
+      "Status",
+      "Primary Owner",
+      "Created By",
+      "Rows per page"
+    ],
+    "related_flows": [
+      "Add New Client",
+      "Edit Client Data",
+      "Customize Client Table Columns"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Use the search function to quickly locate specific clients.",
+      "Customize columns to view the information most relevant to your tasks."
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename description.  It shows a section (section 4 implied) within client management that displays client data in a table format and includes the 'Add New' and 'Edit Column' buttons."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"4 . clients section with data with button.png\",\n    \"expected_workflow\": \"Client management workflow - 4 . clients section with data with button\",\n    \"section_number\": \"4\",\n    \"descriptive_elements\": [\"clients section\", \"data\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Viewing and managing client data\",\n    \"interface_focus\": \"A table displaying client data with buttons for adding new clients and editing columns\"\n  },\n  \"page_info\": {\n    \"title\": \"All Clients\",\n    \"section\": \"Clients\",\n    \"purpose\": \"Display a list of clients, allowing for viewing, searching, and adding new clients.\",\n    \"breadcrumb\": \"Not visible in screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Add New\", \"color\": \"#007bff\", \"position\": \"Top right\"},\n      {\"text\": \"Edit Column\", \"color\": \"#007bff\", \"position\": \"Top right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Search...\", \"type\": \"text\", \"required\": false, \"placeholder\": \"Search...\"}\n    ],\n    \"dropdowns\": {\n      \"Rows per page:\": [\"10\"] \n    },\n    \"navigation\": [\"Home icon\", \"Job icon\", \"Candidate icon\", \"Client Icon\", \"Shop icon\", \"Computer icon\", \"Graduation cap icon\", \"Shield icon\", \"Chart icon\", \"Exit icon\"],\n    \"sections\": [\"Client Data Table\"]\n  },\n  \"workflow\": {\n    \"title\": \"Client Data Management\",\n    \"description\": \"View, search, and manage existing client information. Add new clients.\",\n    \"current_step\": \"Viewing client list and performing actions on existing clients\",\n    \"steps\": [\n      \"Step 1: Navigate to the 'Clients' section in OATS.\",\n      \"Step 2: Use the 'Search...' field (optional) to filter clients by name or ID.\",\n      \"Step 3: Select the 'Rows per page' dropdown to adjust the number of clients displayed per page.\",\n      \"Step 4: Click on individual checkboxes to select multiple clients for bulk actions (if available - not shown).\",\n      \"Step 5: Click 'Edit Column' to customize the displayed client attributes.\",\n      \"Step 6: Click 'Add New' to add a new client. (This will navigate to the client creation page)\",\n      \"Step 7: Use pagination buttons to navigate through the client list.\"\n    ],\n    \"prerequisites\": [\"Access to OATS system\", \"Client management permissions\"],\n    \"outcomes\": [\"Client data is displayed and manipulated\", \"New clients can be added\", \"Existing client details can be modified (via edit column)\"],\n    \"next_actions\": [\"Add a new client\", \"Edit client details (if supported)\", \"perform actions on selected clients\"]\n  },\n  \"keywords\": [\n    \"Clients\",\n    \"Client Management\",\n    \"OATS\",\n    \"Otomashen ATS\",\n    \"Add New\",\n    \"Edit Column\",\n    \"Search\",\n    \"Client ID\",\n    \"Client Name\",\n    \"Contact Number\",\n    \"Email\",\n    \"Website\",\n    \"Status\",\n    \"Primary Owner\",\n    \"Created By\",\n    \"4 . clients section with data with button\",\n    \"Client Data Table\",\n    \"Pagination\"\n  ],\n  \"related_flows\": [\"Add New Client Workflow\", \"Client Detail View Workflow\", \"Edit Client Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Use the search bar for quick client lookups.\", \"Adjust rows per page for optimized view.\"],\n  \"accuracy_notes\": \"The screenshot perfectly aligns with the filename description, showing a section with client data and 'Add New' and 'Edit Column' buttons. This appears to be step 4 of a larger Client Management workflow.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\4 . clients section with data with button.png",
+    "filename": "4 . clients section with data with button.png",
+    "filename_analysis": {
+      "filename": "4 . clients section with data with button.png",
+      "expected_workflow": "Client management workflow - 4 . clients section with data with button",
+      "section_number": "4",
+      "descriptive_elements": [
+        "clients section",
+        "data",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Viewing and managing client data",
+      "interface_focus": "A table displaying client data with buttons for adding new clients and editing columns"
+    },
+    "page_info": {
+      "title": "All Clients",
+      "section": "Clients",
+      "purpose": "Display a list of clients, allowing for viewing, searching, and adding new clients.",
+      "breadcrumb": "Not visible in screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Add New",
+          "color": "#007bff",
+          "position": "Top right"
+        },
+        {
+          "text": "Edit Column",
+          "color": "#007bff",
+          "position": "Top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Search...",
+          "type": "text",
+          "required": false,
+          "placeholder": "Search..."
+        }
+      ],
+      "dropdowns": {
+        "Rows per page:": [
+          "10"
+        ]
+      },
+      "navigation": [
+        "Home icon",
+        "Job icon",
+        "Candidate icon",
+        "Client Icon",
+        "Shop icon",
+        "Computer icon",
+        "Graduation cap icon",
+        "Shield icon",
+        "Chart icon",
+        "Exit icon"
+      ],
+      "sections": [
+        "Client Data Table"
+      ]
+    },
+    "workflow": {
+      "title": "Client Data Management",
+      "description": "View, search, and manage existing client information. Add new clients.",
+      "current_step": "Viewing client list and performing actions on existing clients",
+      "steps": [
+        "Step 1: Navigate to the 'Clients' section in OATS.",
+        "Step 2: Use the 'Search...' field (optional) to filter clients by name or ID.",
+        "Step 3: Select the 'Rows per page' dropdown to adjust the number of clients displayed per page.",
+        "Step 4: Click on individual checkboxes to select multiple clients for bulk actions (if available - not shown).",
+        "Step 5: Click 'Edit Column' to customize the displayed client attributes.",
+        "Step 6: Click 'Add New' to add a new client. (This will navigate to the client creation page)",
+        "Step 7: Use pagination buttons to navigate through the client list."
+      ],
+      "prerequisites": [
+        "Access to OATS system",
+        "Client management permissions"
+      ],
+      "outcomes": [
+        "Client data is displayed and manipulated",
+        "New clients can be added",
+        "Existing client details can be modified (via edit column)"
+      ],
+      "next_actions": [
+        "Add a new client",
+        "Edit client details (if supported)",
+        "perform actions on selected clients"
+      ]
+    },
+    "keywords": [
+      "Clients",
+      "Client Management",
+      "OATS",
+      "Otomashen ATS",
+      "Add New",
+      "Edit Column",
+      "Search",
+      "Client ID",
+      "Client Name",
+      "Contact Number",
+      "Email",
+      "Website",
+      "Status",
+      "Primary Owner",
+      "Created By",
+      "4 . clients section with data with button",
+      "Client Data Table",
+      "Pagination"
+    ],
+    "related_flows": [
+      "Add New Client Workflow",
+      "Client Detail View Workflow",
+      "Edit Client Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Use the search bar for quick client lookups.",
+      "Adjust rows per page for optimized view."
+    ],
+    "accuracy_notes": "The screenshot perfectly aligns with the filename description, showing a section with client data and 'Add New' and 'Edit Column' buttons. This appears to be step 4 of a larger Client Management workflow."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"5 . vendors section with data with button.png\",\n    \"expected_workflow\": \"Vendor management workflow - 5 . vendors section with data with button\",\n    \"section_number\": \"5\",\n    \"descriptive_elements\": [\"vendors section\", \"data\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Viewing and managing vendor data\",\n    \"interface_focus\": \"A data table displaying vendor information with buttons for adding new vendors and editing columns\"\n  },\n  \"page_info\": {\n    \"title\": \"All Vendors\",\n    \"section\": \"Vendor Management\",\n    \"purpose\": \"To display a list of vendors, allowing for viewing, searching, and adding new vendors.\",\n    \"breadcrumb\": null\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Add New\", \"color\": \"blue\", \"position\": \"top right\"},\n      {\"text\": \"Edit Column\", \"color\": \"blue\", \"position\": \"top right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Vendor Id\", \"type\": \"text\", \"required\": false, \"placeholder\": null},\n      {\"label\": \"Vendor name\", \"type\": \"text\", \"required\": false, \"placeholder\": null},\n      {\"label\": \"Federal Id\", \"type\": \"text\", \"required\": false, \"placeholder\": null},\n      {\"label\": \"Contact Number\", \"type\": \"text\", \"required\": false, \"placeholder\": null},\n      {\"label\": \"Website\", \"type\": \"text\", \"required\": false, \"placeholder\": null},\n      {\"label\": \"Address\", \"type\": \"text\", \"required\": false, \"placeholder\": null},\n      {\"label\": \"Ownership\", \"type\": \"text\", \"required\": false, \"placeholder\": null},\n      {\"label\": \"Created By\", \"type\": \"text\", \"required\": false, \"placeholder\": null}\n    ],\n    \"dropdowns\": {\n      \"Rows per page\": [\"10\"]\n    },\n    \"navigation\": [],\n    \"sections\": []\n  },\n  \"workflow\": {\n    \"title\": \"Vendor Management\",\n    \"description\": \"This workflow allows users to view, search, add, and manage vendor information within the OATS system.\",\n    \"current_step\": \"Viewing vendor list. This is step 5 of an unknown number of steps.\",\n    \"steps\": [\n      \"Step 1: Navigate to the Vendor Management section in OATS.\",\n      \"Step 2: (If applicable) Use the search bar to filter vendors based on criteria.\",\n      \"Step 3:  Review the displayed vendor data.  The data shown includes Vendor ID, Vendor Name, Federal ID, Contact Number, Website, Address, Ownership, and Created By.\",\n      \"Step 4: To add a new vendor, click the 'Add New' button.\",\n      \"Step 5: To modify the displayed columns, click the 'Edit Column' button.\",\n      \"Step 6: To view details of a specific vendor (if possible), click on the vendor's row. This action will vary based on OATS' capabilities.  \",\n      \"Step 7: Use the pagination controls (Rows per page and page numbers) to navigate the vendor list.\"\n    ],\n    \"prerequisites\": [\"Access to the OATS system and appropriate permissions for Vendor Management\"],\n    \"outcomes\": [\"Vendors are viewed, added or managed.\"],\n    \"next_actions\": [\"Add New Vendor\", \"Edit existing vendor data (if a vendor's detail view is accessible)\", \"Edit Columns\"]\n  },\n  \"keywords\": [\n    \"Vendors\",\n    \"Vendor Management\",\n    \"OATS\",\n    \"Add New\",\n    \"Edit Column\",\n    \"Vendor Id\",\n    \"Vendor name\",\n    \"Federal Id\",\n    \"Contact Number\",\n    \"Website\",\n    \"Address\",\n    \"Ownership\",\n    \"Created By\",\n    \"Data Table\",\n    \"Pagination\",\n    \"Search\",\n    \"5 . vendors section with data with button\"\n  ],\n  \"related_flows\": [\"Add Vendor Workflow\", \"Edit Vendor Workflow\", \"Search Vendors Workflow\"],\n  \"validation_rules\": [],\n  \"tips\": [\"Use the search bar to find vendors quickly.\", \"Ensure data accuracy when adding or editing vendor information.\"],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename description.  The filename correctly identifies the section number, the type of data displayed, and the presence of buttons to add new vendors and edit columns.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\5 . vendors section with data with button.png",
+    "filename": "5 . vendors section with data with button.png",
+    "filename_analysis": {
+      "filename": "5 . vendors section with data with button.png",
+      "expected_workflow": "Vendor management workflow - 5 . vendors section with data with button",
+      "section_number": "5",
+      "descriptive_elements": [
+        "vendors section",
+        "data",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Viewing and managing vendor data",
+      "interface_focus": "A data table displaying vendor information with buttons for adding new vendors and editing columns"
+    },
+    "page_info": {
+      "title": "All Vendors",
+      "section": "Vendor Management",
+      "purpose": "To display a list of vendors, allowing for viewing, searching, and adding new vendors.",
+      "breadcrumb": null
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Add New",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Edit Column",
+          "color": "blue",
+          "position": "top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Vendor Id",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        },
+        {
+          "label": "Vendor name",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        },
+        {
+          "label": "Federal Id",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        },
+        {
+          "label": "Contact Number",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        },
+        {
+          "label": "Website",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        },
+        {
+          "label": "Address",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        },
+        {
+          "label": "Ownership",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        },
+        {
+          "label": "Created By",
+          "type": "text",
+          "required": false,
+          "placeholder": null
+        }
+      ],
+      "dropdowns": {
+        "Rows per page": [
+          "10"
+        ]
+      },
+      "navigation": [],
+      "sections": []
+    },
+    "workflow": {
+      "title": "Vendor Management",
+      "description": "This workflow allows users to view, search, add, and manage vendor information within the OATS system.",
+      "current_step": "Viewing vendor list. This is step 5 of an unknown number of steps.",
+      "steps": [
+        "Step 1: Navigate to the Vendor Management section in OATS.",
+        "Step 2: (If applicable) Use the search bar to filter vendors based on criteria.",
+        "Step 3:  Review the displayed vendor data.  The data shown includes Vendor ID, Vendor Name, Federal ID, Contact Number, Website, Address, Ownership, and Created By.",
+        "Step 4: To add a new vendor, click the 'Add New' button.",
+        "Step 5: To modify the displayed columns, click the 'Edit Column' button.",
+        "Step 6: To view details of a specific vendor (if possible), click on the vendor's row. This action will vary based on OATS' capabilities.  ",
+        "Step 7: Use the pagination controls (Rows per page and page numbers) to navigate the vendor list."
+      ],
+      "prerequisites": [
+        "Access to the OATS system and appropriate permissions for Vendor Management"
+      ],
+      "outcomes": [
+        "Vendors are viewed, added or managed."
+      ],
+      "next_actions": [
+        "Add New Vendor",
+        "Edit existing vendor data (if a vendor's detail view is accessible)",
+        "Edit Columns"
+      ]
+    },
+    "keywords": [
+      "Vendors",
+      "Vendor Management",
+      "OATS",
+      "Add New",
+      "Edit Column",
+      "Vendor Id",
+      "Vendor name",
+      "Federal Id",
+      "Contact Number",
+      "Website",
+      "Address",
+      "Ownership",
+      "Created By",
+      "Data Table",
+      "Pagination",
+      "Search",
+      "5 . vendors section with data with button"
+    ],
+    "related_flows": [
+      "Add Vendor Workflow",
+      "Edit Vendor Workflow",
+      "Search Vendors Workflow"
+    ],
+    "validation_rules": [],
+    "tips": [
+      "Use the search bar to find vendors quickly.",
+      "Ensure data accuracy when adding or editing vendor information."
+    ],
+    "accuracy_notes": "The screenshot accurately reflects the filename description.  The filename correctly identifies the section number, the type of data displayed, and the presence of buttons to add new vendors and edit columns."
+  },
+  {
+    "analysis_status": "success",
+    "raw_analysis": "```json\n{\n  \"filename_analysis\": {\n    \"filename\": \"5 . vendors section with data with button.png\",\n    \"expected_workflow\": \"Vendor management workflow - 5 . vendors section with data with button\",\n    \"section_number\": \"5\",\n    \"descriptive_elements\": [\"vendors section\", \"data\", \"button\"],\n    \"matches_expectation\": true,\n    \"workflow_step\": \"Viewing and managing existing vendor data\",\n    \"interface_focus\": \"A data table displaying vendor information with buttons for adding new vendors and managing columns\"\n  },\n  \"page_info\": {\n    \"title\": \"All Vendors\",\n    \"section\": \"Vendors\",\n    \"purpose\": \"To display a list of existing vendors and provide options to add new vendors, edit columns and search\",\n    \"breadcrumb\": \"No breadcrumb visible in the screenshot\"\n  },\n  \"ui_elements\": {\n    \"buttons\": [\n      {\"text\": \"Add New\", \"color\": \"blue\", \"position\": \"top right\"},\n      {\"text\": \"Edit Column\", \"color\": \"#3498db\", \"position\": \"top right\"}\n    ],\n    \"fields\": [\n      {\"label\": \"Search...\", \"type\": \"text\", \"required\": false, \"placeholder\": \"Search...\"}\n    ],\n    \"dropdowns\": {\n      \"Rows per page:\": [\"10\"]\n    },\n    \"navigation\": [],\n    \"sections\": [\"Vendor Information\"]\n  },\n  \"workflow\": {\n    \"title\": \"Vendor Management Workflow\",\n    \"description\": \"This workflow allows users to manage vendor information within the OATS system, including adding, viewing, and potentially editing vendor details.\",\n    \"current_step\": \"Viewing the list of existing vendors\",\n    \"steps\": [\n      \"Step 1: Navigate to the Vendor Management section in the OATS main menu (path not shown in screenshot).\",\n      \"Step 2:  The 'All Vendors' page will load, displaying a table of vendor data (Vendor Id, Vendor name, Federal Id, Contact Number, Website, Address, Ownership, Created By).\",\n      \"Step 3: Use the search field (placeholder: 'Search...') to filter vendors by any of the visible columns. \",\n      \"Step 4: Select the checkboxes next to vendor IDs to select multiple vendors for potential bulk actions (not visible in this workflow).\",\n      \"Step 5: Use the 'Rows per page' dropdown to adjust the number of rows displayed per page.\",\n      \"Step 6: Click the 'Add New' button (blue, top right) to add a new vendor. This will lead to a new form.\",\n      \"Step 7: Click the 'Edit Column' button (blue, top right) to customize the columns displayed in the vendor table.  The exact behavior is not specified.\"\n    ],\n    \"prerequisites\": [\"Access to OATS system, appropriate user permissions\"],\n    \"outcomes\": [\"List of vendors displayed, ability to add new vendors, filter the vendor list, and optionally perform bulk actions.\"],\n    \"next_actions\": [\"Add a new vendor, Edit columns displayed, perform potential bulk actions (selecting multiple vendors)\"]\n  },\n  \"keywords\": [\n    \"Vendors\",\n    \"Vendor management\",\n    \"OATS\",\n    \"Add New\",\n    \"Edit Column\",\n    \"Search\",\n    \"Vendor Id\",\n    \"Vendor name\",\n    \"Federal Id\",\n    \"Contact Number\",\n    \"Website\",\n    \"Address\",\n    \"Ownership\",\n    \"Created By\",\n    \"5 . vendors section with data with button\"\n  ],\n  \"related_flows\": [\"Adding a new vendor\", \"Editing vendor details\", \"Deleting vendors\"],\n  \"validation_rules\": [],\n  \"tips\": [],\n  \"accuracy_notes\": \"The screenshot accurately reflects the filename description. The '5' likely represents a step in a multi-step Vendor Management workflow.  Further actions are implied but not fully visible in this single screenshot.\"\n}\n```",
+    "screenshot_path": "flows\\screenshots\\5 . vendors section with data with button.png",
+    "filename": "5 . vendors section with data with button.png",
+    "filename_analysis": {
+      "filename": "5 . vendors section with data with button.png",
+      "expected_workflow": "Vendor management workflow - 5 . vendors section with data with button",
+      "section_number": "5",
+      "descriptive_elements": [
+        "vendors section",
+        "data",
+        "button"
+      ],
+      "matches_expectation": true,
+      "workflow_step": "Viewing and managing existing vendor data",
+      "interface_focus": "A data table displaying vendor information with buttons for adding new vendors and managing columns"
+    },
+    "page_info": {
+      "title": "All Vendors",
+      "section": "Vendors",
+      "purpose": "To display a list of existing vendors and provide options to add new vendors, edit columns and search",
+      "breadcrumb": "No breadcrumb visible in the screenshot"
+    },
+    "ui_elements": {
+      "buttons": [
+        {
+          "text": "Add New",
+          "color": "blue",
+          "position": "top right"
+        },
+        {
+          "text": "Edit Column",
+          "color": "#3498db",
+          "position": "top right"
+        }
+      ],
+      "fields": [
+        {
+          "label": "Search...",
+          "type": "text",
+          "required": false,
+          "placeholder": "Search..."
+        }
+      ],
+      "dropdowns": {
+        "Rows per page:": [
+          "10"
+        ]
+      },
+      "navigation": [],
+      "sections": [
+        "Vendor Information"
+      ]
+    },
+    "workflow": {
+      "title": "Vendor Management Workflow",
+      "description": "This workflow allows users to manage vendor information within the OATS system, including adding, viewing, and potentially editing vendor details.",
+      "current_step": "Viewing the list of existing vendors",
+      "steps": [
+        "Step 1: Navigate to the Vendor Management section in the OATS main menu (path not shown in screenshot).",
+        "Step 2:  The 'All Vendors' page will load, displaying a table of vendor data (Vendor Id, Vendor name, Federal Id, Contact Number, Website, Address, Ownership, Created By).",
+        "Step 3: Use the search field (placeholder: 'Search...') to filter vendors by any of the visible columns. ",
+        "Step 4: Select the checkboxes next to vendor IDs to select multiple vendors for potential bulk actions (not visible in this workflow).",
+        "Step 5: Use the 'Rows per page' dropdown to adjust the number of rows displayed per page.",
+        "Step 6: Click the 'Add New' button (blue, top right) to add a new vendor. This will lead to a new form.",
+        "Step 7: Click the 'Edit Column' button (blue, top right) to customize the columns displayed in the vendor table.  The exact behavior is not specified."
+      ],
+      "prerequisites": [
+        "Access to OATS system, appropriate user permissions"
+      ],
+      "outcomes": [
+        "List of vendors displayed, ability to add new vendors, filter the vendor list, and optionally perform bulk actions."
+      ],
+      "next_actions": [
+        "Add a new vendor, Edit columns displayed, perform potential bulk actions (selecting multiple vendors)"
+      ]
+    },
+    "keywords": [
+      "Vendors",
+      "Vendor management",
+      "OATS",
+      "Add New",
+      "Edit Column",
+      "Search",
+      "Vendor Id",
+      "Vendor name",
+      "Federal Id",
+      "Contact Number",
+      "Website",
+      "Address",
+      "Ownership",
+      "Created By",
+      "5 . vendors section with data with button"
+    ],
+    "related_flows": [
+      "Adding a new vendor",
+      "Editing vendor details",
+      "Deleting vendors"
+    ],
+    "validation_rules": [],
+    "tips": [],
+    "accuracy_notes": "The screenshot accurately reflects the filename description. The '5' likely represents a step in a multi-step Vendor Management workflow.  Further actions are implied but not fully visible in this single screenshot."
+  }
+]

@@ -1,0 +1,543 @@
+================================================================================
+                    OATS AI CHATBOT - SYSTEM ARCHITECTURE
+================================================================================
+
+1. SYSTEM OVERVIEW
+==================
+
+The OATS AI Chatbot is an intelligent conversational interface for the OATS 
+(Applicant Tracking System) that provides natural language access to HR data
+including Jobs, Candidates, Clients, and Vendors. The system combines direct
+rule-based routing with AI-powered response generation for optimal performance.
+
+Key Features:
+- Natural language query processing
+- Intelligent endpoint routing
+- Time-based data filtering
+- Skill/role-based candidate search
+- Conversational AI responses
+- Multi-data-type support (Jobs, Candidates, Clients, Vendors)
+
+2. HIGH-LEVEL ARCHITECTURE
+==========================
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           CLIENT LAYER                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Web Browser (HTML/CSS/JavaScript)                                         │
+│  - Chat Interface                                                           │
+│  - Real-time messaging                                                      │
+│  - Response formatting                                                      │
+│  - Session management                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ HTTP/AJAX
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        FLASK WEB APPLICATION                               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐         │
+│  │   API Routes    │    │  Authentication │    │ Session Mgmt    │         │
+│  │  /query         │    │  - Auto-login   │    │  - Flask session│         │
+│  │  /structured-   │    │  - Token mgmt   │    │  - State mgmt   │         │
+│  │   query         │    │  - Re-auth      │    │  - Memory mgmt  │         │
+│  │  /auto-login    │    │  - 401 handling │    │                 │         │
+│  └─────────────────┘    └─────────────────┘    └─────────────────┘         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      CHATBOT CORE ENGINE                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐         │
+│  │ Query Processor │    │ Direct Router   │    │ LLM Fallback    │         │
+│  │ - Input parsing │    │ - Keyword match │    │ - Gemini AI     │         │
+│  │ - Intent detect │    │ - Pattern recog │    │ - Complex queries│         │
+│  │ - Context mgmt  │    │ - Fast routing  │    │ - Endpoint sel  │         │
+│  └─────────────────┘    └─────────────────┘    └─────────────────┘         │
+│                                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐         │
+│  │ Time Utils      │    │ Search Utils    │    │ Response Gen    │         │
+│  │ - IST timezone  │    │ - Skill extract │    │ - AI prompting  │         │
+│  │ - Date parsing  │    │ - Role matching │    │ - HTML format   │         │
+│  │ - Period detect │    │ - Candidate rank│    │ - Conversation  │         │
+│  └─────────────────┘    └─────────────────┘    └─────────────────┘         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     API INTEGRATION LAYER                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐         │
+│  │ Endpoint Mgmt   │    │ HTTP Client     │    │ Data Processing │         │
+│  │ - URL templates │    │ - Requests lib  │    │ - JSON parsing  │         │
+│  │ - Parameter sub │    │ - Retry logic   │    │ - Data filtering│         │
+│  │ - Dynamic URLs  │    │ - Auth headers  │    │ - Normalization │         │
+│  └─────────────────┘    └─────────────────┘    └─────────────────┘         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ HTTPS API Calls
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       OATS BACKEND APIs                                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐         │
+│  │ Jobs API        │    │ Candidates API  │    │ Clients API     │         │
+│  │ - Job listings  │    │ - Candidate list│    │ - Client list   │         │
+│  │ - Job search    │    │ - Candidate srch│    │ - Client search │         │
+│  │ - Pagination    │    │ - Skill filter  │    │ - Contact info  │         │
+│  └─────────────────┘    └─────────────────┘    └─────────────────┘         │
+│                                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐                                │
+│  │ Vendors API     │    │ Dashboard API   │                                │
+│  │ - Vendor list   │    │ - Overview data │                                │
+│  │ - Vendor search │    │ - Metrics       │                                │
+│  │ - Tech stack    │    │ - Analytics     │                                │
+│  └─────────────────┘    └─────────────────┘                                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          DATABASE LAYER                                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  - Job Records                                                              │
+│  - Candidate Profiles                                                       │
+│  - Client Information                                                       │
+│  - Vendor Details                                                           │
+│  - User Management                                                          │
+│  - Analytics Data                                                           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+3. COMPONENT ARCHITECTURE
+=========================
+
+3.1 CHATBOT CORE CLASSES
+-------------------------
+
+OATSChatbot (Main Controller)
+├── TimeUtils (Static Methods)
+│   ├── get_ist_now()
+│   ├── parse_api_date()
+│   ├── detect_time_period()
+│   ├── get_time_period_range()
+│   └── filter_data_by_time_period()
+│
+├── CandidateSearchUtils (Static Methods)
+│   ├── get_skill_variations()
+│   ├── extract_skills_from_query()
+│   ├── extract_role_from_query()
+│   ├── score_candidate_for_skills()
+│   ├── score_candidate_for_role()
+│   └── rank_candidates()
+│
+├── Core Processing Methods
+│   ├── _direct_endpoint_routing()
+│   ├── _prepare_endpoint_with_parameters()
+│   ├── get_relevant_endpoints()
+│   ├── fetch_data_from_endpoint()
+│   ├── fetch_multiple_endpoints()
+│   ├── _generate_conversational_ai_response()
+│   └── generate_ai_response()
+│
+└── State Management
+    ├── current_time_period
+    ├── current_search_skills
+    ├── current_search_role
+    ├── current_search_limit
+    ├── current_search_term
+    └── fetch_resumes
+
+3.2 API ENDPOINT DEFINITIONS
+----------------------------
+
+APIEndpoint Class
+├── url: str (Template with {{parameters}})
+├── description: str
+└── category: str
+
+Endpoint Categories:
+├── Jobs
+│   ├── jobs (general listing)
+│   └── job_search (filtered search)
+├── Candidates
+│   ├── candidates (general listing)
+│   ├── candidate_search (skill/role based)
+│   ├── candidate_details (specific ID)
+│   └── candidate_resume (resume data)
+├── Clients
+│   ├── clients (general listing)
+│   └── client_search (name/company search)
+├── Vendors
+│   ├── vendors (general listing)
+│   └── vendor_search (name/company search)
+└── Dashboard
+    └── dashboard_overview (analytics)
+
+4. DATA FLOW ARCHITECTURE
+==========================
+
+4.1 REQUEST PROCESSING FLOW
+----------------------------
+
+User Input → Query Processing → Routing Decision → API Calls → Response Generation
+
+1. User submits natural language query
+2. Flask receives request at /api/structured-query
+3. Chatbot processes query:
+   a. Direct routing check (keyword matching)
+   b. LLM routing (complex queries)
+   c. Parameter extraction (time, skills, limits)
+4. Endpoint preparation:
+   a. URL template parameter substitution
+   b. Authentication token injection
+   c. Request configuration
+5. API execution:
+   a. HTTP requests to OATS backend
+   b. Response parsing and validation
+   c. Error handling and retry logic
+6. Data processing:
+   a. Time-based filtering (if applicable)
+   b. Candidate ranking (if applicable)
+   c. Data normalization
+7. Response generation:
+   a. AI prompt construction
+   b. Gemini AI response generation
+   c. HTML formatting
+8. Client response:
+   a. Structured JSON with AI response
+   b. Frontend rendering
+   c. User display
+
+4.2 AUTHENTICATION FLOW
+-----------------------
+
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│ User Login  │ → │ Auto-Login  │ → │ Token Store │ → │ API Requests│
+│ Request     │    │ Endpoint    │    │ in Session  │    │ with Token  │
+└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+                                                                │
+                                                                ▼
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│ Success     │ ← │ Retry with  │ ← │ Re-auth on  │ ← │ 401 Error   │
+│ Response    │    │ New Token   │    │ 401 Error   │    │ Detected    │
+└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+
+5. INTELLIGENT ROUTING SYSTEM
+==============================
+
+5.1 ROUTING DECISION TREE
+--------------------------
+
+Query Input
+│
+├── Direct Routing (Fast Path)
+│   ├── Keyword Pattern Matching
+│   │   ├── "how many total candidates" → candidates
+│   │   ├── "jobs this week" → jobs + time_filter
+│   │   ├── "python developers" → candidate_search
+│   │   ├── "total clients" → clients
+│   │   └── "find vendors" → vendor_search
+│   │
+│   ├── ID Pattern Matching
+│   │   └── "CID12345" → candidate_details
+│   │
+│   └── Parameter Extraction
+│       ├── Time periods (this week, last month)
+│       ├── Skills (python, java, react)
+│       ├── Roles (developer, engineer, analyst)
+│       ├── Limits (top 10, first 5)
+│       └── Search terms (company names, etc.)
+│
+└── LLM Routing (Complex Path)
+    ├── Gemini AI Analysis
+    ├── Context Understanding
+    ├── Multi-intent Detection
+    └── Endpoint Selection
+
+5.2 SEARCH INTELLIGENCE
+-----------------------
+
+Candidate Search Pipeline:
+1. Skill Detection
+   ├── Direct matches (python, java, react)
+   ├── Variations (pyhton → python)
+   ├── Synonyms (js → javascript)
+   └── Technology stacks
+
+2. Role Detection
+   ├── Job titles (developer, engineer)
+   ├── Seniority levels (senior, lead)
+   ├── Specializations (frontend, backend)
+   └── Industry terms (data scientist, devops)
+
+3. Ranking Algorithm
+   ├── Skill match scoring (0-100%)
+   ├── Role relevance scoring
+   ├── Combined scoring
+   ├── Sort by highest match
+   └── Limit to requested count
+
+6. DATA PROCESSING ARCHITECTURE
+===============================
+
+6.1 TIME-BASED FILTERING
+-------------------------
+
+Input: Raw API data + Time period
+│
+├── Date Field Detection
+│   ├── Jobs: "CreatedAt"
+│   ├── Candidates: "created_at"
+│   ├── Clients: "CreatedAt"
+│   └── Vendors: "CreatedAt"
+│
+├── Time Period Parsing
+│   ├── "this week" → Current week range
+│   ├── "last month" → Previous month range
+│   ├── "today" → Current date
+│   └── Custom periods
+│
+├── IST Timezone Handling
+│   ├── Convert API dates to IST
+│   ├── Calculate period boundaries
+│   └── Filter records
+│
+└── Output: Filtered data + Context
+
+6.2 RESPONSE GENERATION PIPELINE
+---------------------------------
+
+Input: Processed data + User query
+│
+├── AI Prompt Construction
+│   ├── System instructions
+│   ├── Data context
+│   ├── Query context
+│   ├── Time context (if applicable)
+│   ├── Search context (if applicable)
+│   └── Format specifications
+│
+├── Gemini AI Processing
+│   ├── Natural language generation
+│   ├── Data analysis
+│   ├── Table formatting
+│   └── Contextual insights
+│
+├── Response Enhancement
+│   ├── HTML formatting
+│   ├── Professional styling
+│   ├── Statistical summaries
+│   └── Helpful suggestions
+│
+└── Output: Conversational HTML response
+
+7. SCALABILITY & PERFORMANCE
+=============================
+
+7.1 PERFORMANCE OPTIMIZATIONS
+------------------------------
+
+├── Direct Routing (80% of queries)
+│   ├── No LLM calls needed
+│   ├── Instant keyword matching
+│   ├── Pre-configured endpoints
+│   └── ~200ms response time
+│
+├── Intelligent Caching
+│   ├── Session state management
+│   ├── Conversation memory (last 20)
+│   ├── Recent data types tracking
+│   └── Context preservation
+│
+├── Efficient API Calls
+│   ├── Connection pooling
+│   ├── Retry mechanisms
+│   ├── Parallel endpoint fetching
+│   └── Response streaming
+│
+└── Frontend Optimizations
+    ├── Async JavaScript
+    ├── Progressive loading
+    ├── Response chunking
+    └── Error handling
+
+7.2 SCALABILITY CONSIDERATIONS
+-------------------------------
+
+├── Horizontal Scaling
+│   ├── Stateless design
+│   ├── Session storage flexibility
+│   ├── Load balancer friendly
+│   └── Multi-instance support
+│
+├── Vertical Scaling
+│   ├── Configurable timeouts
+│   ├── Memory management
+│   ├── CPU optimization
+│   └── Resource monitoring
+│
+├── API Rate Limiting
+│   ├── Request throttling
+│   ├── Queue management
+│   ├── Priority queuing
+│   └── Fallback mechanisms
+│
+└── Monitoring & Logging
+    ├── Performance metrics
+    ├── Error tracking
+    ├── Usage analytics
+    └── Health checks
+
+8. SECURITY ARCHITECTURE
+=========================
+
+8.1 AUTHENTICATION & AUTHORIZATION
+-----------------------------------
+
+├── Session Management
+│   ├── Flask secure sessions
+│   ├── Token-based auth
+│   ├── Auto-renewal
+│   └── Secure logout
+│
+├── API Security
+│   ├── HTTPS enforcement
+│   ├── Token validation
+│   ├── Request signing
+│   └── Rate limiting
+│
+├── Input Validation
+│   ├── Query sanitization
+│   ├── Parameter validation
+│   ├── XSS prevention
+│   └── Injection protection
+│
+└── Error Handling
+    ├── Secure error messages
+    ├── No sensitive data leaks
+    ├── Graceful degradation
+    └── Audit logging
+
+9. DEPLOYMENT ARCHITECTURE
+===========================
+
+9.1 ENVIRONMENT STRUCTURE
+--------------------------
+
+Development Environment
+├── Local Flask server (port 5000)
+├── Local testing endpoints
+├── Debug logging enabled
+└── Development databases
+
+Production Environment
+├── WSGI server (Gunicorn/uWSGI)
+├── Reverse proxy (Nginx)
+├── SSL/TLS termination
+├── Load balancing
+├── Production databases
+└── Monitoring systems
+
+9.2 CONFIGURATION MANAGEMENT
+-----------------------------
+
+├── Environment Variables
+│   ├── API endpoints
+│   ├── Authentication credentials
+│   ├── LLM configuration
+│   └── Feature flags
+│
+├── Configuration Files
+│   ├── Flask settings
+│   ├── Logging configuration
+│   ├── API timeouts
+│   └── Cache settings
+│
+└── Secret Management
+    ├── API keys
+    ├── Database credentials
+    ├── Session secrets
+    └── Encryption keys
+
+10. EXTENSIBILITY & FUTURE ENHANCEMENTS
+========================================
+
+10.1 PLUGIN ARCHITECTURE
+-------------------------
+
+├── New Data Sources
+│   ├── Additional API endpoints
+│   ├── External systems integration
+│   ├── Database connections
+│   └── File system access
+│
+├── Enhanced AI Capabilities
+│   ├── Multi-model support
+│   ├── Custom fine-tuning
+│   ├── Domain-specific training
+│   └── Conversation memory
+│
+├── Advanced Analytics
+│   ├── Predictive analytics
+│   ├── Trend analysis
+│   ├── Recommendation engine
+│   └── Business intelligence
+│
+└── Integration Capabilities
+    ├── Webhook support
+    ├── API publishing
+    ├── Real-time notifications
+    └── External tool integration
+
+10.2 MODULAR DESIGN BENEFITS
+-----------------------------
+
+├── Easy Feature Addition
+│   ├── New endpoint types
+│   ├── Additional data processors
+│   ├── Custom response formats
+│   └── Enhanced routing logic
+│
+├── Maintainable Codebase
+│   ├── Separation of concerns
+│   ├── Clear interfaces
+│   ├── Testable components
+│   └── Documentation
+│
+├── Technology Flexibility
+│   ├── LLM provider changes
+│   ├── Database migrations
+│   ├── API versioning
+│   └── Framework updates
+│
+└── Business Adaptability
+    ├── Custom business rules
+    ├── Industry-specific features
+    ├── Compliance requirements
+    └── Performance optimizations
+
+================================================================================
+                              END OF ARCHITECTURE
+================================================================================
+
+This architecture document provides a comprehensive overview of the OATS AI 
+Chatbot system design, covering all layers from user interface to data storage,
+with detailed explanations of components, data flow, and design decisions.
+
+The system is designed for:
+- High Performance (direct routing for 80% of queries)
+- Scalability (stateless design, horizontal scaling)
+- Maintainability (modular architecture, clear interfaces)
+- Extensibility (plugin system, configurable components)
+- Security (authentication, input validation, secure sessions)
+
+For implementation details, refer to the actual code in flask/app.py and 
+related files.

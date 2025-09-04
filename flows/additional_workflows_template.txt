@@ -1,0 +1,278 @@
+===== SCREENSHOT-EXTRACTED ADDITIONAL WORKFLOWS (AUTO-GENERATED) =====
+
+# Additional OATS Workflows Template
+# Extended workflows and advanced procedures
+# Updated based on actual website screenshots
+
+
+## Dashboard - Advanced Guide
+
+**Section:** Dashboard
+**Purpose:** Display key performance indicators (KPIs) and provide quick access to OATS features.
+**Screenshot:** 1 . main page after user login ,shows all features on highlevel with buttons.png
+
+### User Interface Elements:
+**Buttons:** Dashboard, Create Job Posting, Create Candidate, Advanced Search, Account Setup, Logout
+**Dropdowns:**
+  - Account Manager: Account Manager
+  - Last 30 Days: Last 30 Days
+**Navigation:** Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements
+
+
+## Dashboard - Advanced Guide
+
+**Section:** Dashboard
+**Purpose:** Provides an overview of key metrics and quick access to all OATS features.
+**Screenshot:** 1 . main page after user login ,shows all features on highlevel with buttons.png
+
+### User Interface Elements:
+**Buttons:** Dashboard, Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements, Logout, Create Job Posting, Create Candidate, Advanced Search, Account Setup
+**Dropdowns:**
+  - Account Manager: Account Manager options
+  - Last 30 Days: Time period options
+**Navigation:** Dashboard, Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements, Logout
+
+
+## Choose an option to create the job - Advanced Guide
+
+**Section:** Candidates
+**Purpose:** To select the method for creating a new candidate (Parse JD or OATS-AI)
+**Screenshot:** 1.2 click create candidate button shows these two things.png
+
+### User Interface Elements:
+**Buttons:** Parse JD, OATS-AI, X
+**Navigation:** Dashboard, Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements, Logout
+
+
+## None - Advanced Guide
+
+**Section:** Candidates
+**Purpose:** To select a method for creating a job description before creating a candidate
+**Screenshot:** 1.2 click create candidate button shows these two things.png
+
+### User Interface Elements:
+**Buttons:** Parse JD, OATS-AI, X
+**Navigation:** Dashboard, Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements, Logout
+
+
+## None - Advanced Guide
+
+**Section:** Jobs
+**Purpose:** To provide options for adding a job description during job creation
+**Screenshot:** 1.2.1 when click parse jd shows these three features.png
+
+### User Interface Elements:
+**Buttons:** Job Descriptions, Upload File, Audio File, ←, X
+**Navigation:** Create Candidate, Advanced Search, Account Setup
+
+
+## None - Advanced Guide
+
+**Section:** Jobs
+**Purpose:** Present options for creating a job description (from existing description, uploaded file, or audio recording)
+**Screenshot:** 1.2.1 when click parse jd shows these three features.png
+
+### User Interface Elements:
+**Buttons:** Job Descriptions, Upload File, Audio File, ←, X
+**Dropdowns:**
+  - Last 30 Days: Last 30 Days, Other options (not visible in screenshot)
+**Navigation:** Create Candidate, Advanced Search, Account Setup
+
+
+## Overall Details - Advanced Guide
+
+**Section:** Jobs
+**Purpose:** To select a method for creating a job description using OATS AI
+**Screenshot:** 1.2.2 when click oats ai.png
+
+### User Interface Elements:
+**Buttons:** ←, X, Prompt Based, Fields Based
+**Dropdowns:**
+  - Last 30 Days: Last 30 Days, Other options (not visible)
+**Navigation:** Dashboard, Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements, Logout, Create Job Posting, Create Candidate, Advanced Search, Account Setup
+
+
+## Choose an option to create New Candidate - Advanced Guide
+
+**Section:** Candidates
+**Purpose:** To present options for creating a new candidate record in the OATS system.
+**Screenshot:** 1.3  create candidate button features.png
+
+### User Interface Elements:
+**Buttons:** Manual Creation, Parse Resume, Bulk Uploading, X
+**Dropdowns:**
+  - Last 30 Days: Last 30 Days, Other options (not visible)
+**Navigation:** Dashboard, Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements, Logout, Create Job Posting, Create Candidate, Advanced Search, Account Setup
+
+
+## Choose an option to create New Candidate - Advanced Guide
+
+**Section:** Candidates
+**Purpose:** To present options for creating a new candidate record in OATS
+**Screenshot:** 1.3  create candidate button features.png
+
+### User Interface Elements:
+**Buttons:** Manual Creation, Parse Resume, Bulk Uploading, X
+**Navigation:** Dashboard, Jobs, Candidates, Clients, Vendors, Talent Bench, eBoarding, Placements, Logout, Create Job Posting, Create Candidate, Advanced Search, Account Setup
+
+
+## None - Advanced Guide
+
+**Section:** Job Search
+**Purpose:** To allow users to perform advanced job searches using keywords, job titles, and location parameters.  It also displays recent search history.
+**Screenshot:** 1.4. advanced features button.png
+
+### User Interface Elements:
+**Buttons:** Search Within Selected Locations, Search Within Radius, Search
+**Input Fields:** Keywords *, Job Title
+**Dropdowns:**
+  - Country: Select Country
+  - State: Select States
+  - City: Select Cities
+**Navigation:** Internal DB, Dice, Foundit SEA, Careerbuilder
+
+
+## None - Advanced Guide
+
+**Section:** Job Search
+**Purpose:** To search for jobs using advanced filtering options (keywords, job title, location).
+**Screenshot:** 1.4. advanced features button.png
+
+### User Interface Elements:
+**Buttons:** Search, Search Within Selected Locations, Search Within Radius
+**Input Fields:** Keywords *, Job Title
+**Dropdowns:**
+  - Country: Select Country
+  - State: Select States
+  - City: Select Cities
+**Navigation:** Internal DB, Dice, Foundit SEA, Careerbuilder
+
+
+## None - Advanced Guide
+
+**Section:** Account Management
+**Purpose:** Import contacts from various sources and manage existing contact groups.
+**Screenshot:** 1.5 account setup button.png
+
+### User Interface Elements:
+**Input Fields:** Search with group name and creator
+**Navigation:** Personal contact, Email signature, Job Boards, User preferences, Mail themes, Allocated credits, Notifications, Email Integrations
+
+
+## Import Contacts From - Advanced Guide
+
+**Section:** Account Management
+**Purpose:** Import contacts into the OATS system
+**Screenshot:** 1.5 account setup button.png
+
+### User Interface Elements:
+**Input Fields:** Search with group name and creator
+**Navigation:** Personal contact, Email signature, Job Boards, User preferences, Mail themes, Allocated credits, Notifications, Email Integrations
+
+
+## All Jobs - Advanced Guide
+
+**Section:** Jobs
+**Purpose:** To display a list of existing jobs, allowing for viewing details, searching, and adding new jobs.
+**Screenshot:** 2 . job section page with buttons.png
+
+### User Interface Elements:
+**Buttons:** Edit Column, Draft, Add Job
+**Input Fields:** Search...
+**Dropdowns:**
+  - Rows per page:: 10
+**Navigation:** Home, All Jobs
+
+
+## All Jobs - Advanced Guide
+
+**Section:** Jobs
+**Purpose:** To display a list of existing jobs, allowing users to view details and perform actions on them.
+**Screenshot:** 2 . job section page with buttons.png
+
+### User Interface Elements:
+**Buttons:** Add Job, Edit Column, Draft
+**Input Fields:** Search...
+**Dropdowns:**
+  - Rows per page:: 10
+**Navigation:** All Jobs, Home, Jobs, Candidates, Clients, ..., Settings, Account Manager
+
+
+## All Candidates - Advanced Guide
+
+**Section:** Candidates
+**Purpose:** Displaying a list of candidates with options to filter, sort, add, and manage candidate data
+**Screenshot:** 3 . candidate section with data with button.png
+
+### User Interface Elements:
+**Buttons:** Add Candidate, Edit Column
+**Input Fields:** Search...
+**Dropdowns:**
+  - Rows per page:: 10
+
+
+## All Candidates - Advanced Guide
+
+**Section:** Candidates
+**Purpose:** View, filter, and add candidates
+**Screenshot:** 3 . candidate section with data with button.png
+
+### User Interface Elements:
+**Buttons:** Add Candidate, Edit Column
+**Input Fields:** Search...
+**Dropdowns:**
+  - Rows per page:: 10
+
+
+## All Clients - Advanced Guide
+
+**Section:** Clients
+**Purpose:** View, search, and manage existing client data. Add new clients.
+**Screenshot:** 4 . clients section with data with button.png
+
+### User Interface Elements:
+**Buttons:** Add New, Edit Column
+**Input Fields:** Search...
+**Dropdowns:**
+  - Rows per page:: 10
+
+
+## All Clients - Advanced Guide
+
+**Section:** Clients
+**Purpose:** Display a list of clients, allowing for viewing, searching, and adding new clients.
+**Screenshot:** 4 . clients section with data with button.png
+
+### User Interface Elements:
+**Buttons:** Add New, Edit Column
+**Input Fields:** Search...
+**Dropdowns:**
+  - Rows per page:: 10
+**Navigation:** Home icon, Job icon, Candidate icon, Client Icon, Shop icon, Computer icon, Graduation cap icon, Shield icon, Chart icon, Exit icon
+
+
+## All Vendors - Advanced Guide
+
+**Section:** Vendor Management
+**Purpose:** To display a list of vendors, allowing for viewing, searching, and adding new vendors.
+**Screenshot:** 5 . vendors section with data with button.png
+
+### User Interface Elements:
+**Buttons:** Add New, Edit Column
+**Input Fields:** Vendor Id, Vendor name, Federal Id, Contact Number, Website, Address, Ownership, Created By
+**Dropdowns:**
+  - Rows per page: 10
+
+
+## All Vendors - Advanced Guide
+
+**Section:** Vendors
+**Purpose:** To display a list of existing vendors and provide options to add new vendors, edit columns and search
+**Screenshot:** 5 . vendors section with data with button.png
+
+### User Interface Elements:
+**Buttons:** Add New, Edit Column
+**Input Fields:** Search...
+**Dropdowns:**
+  - Rows per page:: 10
+

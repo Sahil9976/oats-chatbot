@@ -1,0 +1,24 @@
+# Flask Application Configuration
+FLASK_SECRET_KEY=oats-chatbot-secret-key-change-in-production
+FLASK_DEBUG=True
+FLASK_HOST=0.0.0.0
+FLASK_PORT=5000
+
+# API Configuration
+API_BASE_URL=https://dev.oats-backend.otomashen.com
+API_LOGIN_URL=/rbca/token/
+API_LOGOUT_URL=/login-api/logout/
+
+# Authentication Credentials
+API_EMAIL=anamika.k@otomashen.com
+API_PASSWORD=@anamika.123
+
+# External API Keys
+GEMINI_API_KEY=AIzaSyAsVkN0ygVBsl2tVAN_Dq5E0AY5aabyrqA
+
+# Session Configuration
+SESSION_TYPE=filesystem
+SESSION_PERMANENT=False
+PERMANENT_SESSION_LIFETIME_HOURS=2
+
+

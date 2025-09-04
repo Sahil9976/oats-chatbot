@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OATS AI Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+        
+        .status-bar {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            text-align: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            width: 100%;
+        }
+        
+        .chat-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+        
+        .chat-header {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .login-section {
+            padding: 2rem;
+            text-align: center;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .login-btn {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+        
+        .login-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .logout-btn {
+            background: linear-gradient(45deg, #f44336, #d32f2f);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+        
+        .logout-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(244, 67, 54, 0.3);
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #fafafa;
+            min-height: 400px;
+        }
+        
+        .message {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        
+        .user-message {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .bot-message {
+            background: white;
+            border: 1px solid #e0e0e0;
+            margin-right: auto;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Table styling for bot responses */
+        .bot-message table, .ai-response table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bot-message table td, .bot-message table th,
+        .ai-response table td, .ai-response table th {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .bot-message table tr:nth-child(even),
+        .ai-response table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .bot-message table tr:hover,
+        .ai-response table tr:hover {
+            background-color: #e8f4f8;
+        }
+        
+        .bot-message table th,
+        .ai-response table th {
+            background-color: #2196F3;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        
+        .bot-message pre {
+            background: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+        
+        /* Table Styling */
+        .table-container {
+            margin: 1rem 0;
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.9rem;
+        }
+        
+        .data-table th {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #1976D2;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .data-table td {
+            padding: 0.6rem 0.75rem;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .data-table tr:hover {
+            background: #e3f2fd;
+            transition: background-color 0.2s ease;
+        }
+        
+        .table-summary {
+            background: #e3f2fd;
+            padding: 0.5rem 1rem;
+            margin: 0;
+            font-weight: 600;
+            color: #1976D2;
+            border-left: 4px solid #2196F3;
+        }
+        
+        /* Summary Table Styling */
+        .summary-container {
+            margin: 1rem 0;
+        }
+        
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .summary-table td.summary-key {
+            background: #f5f5f5;
+            font-weight: 600;
+            padding: 0.75rem;
+            border-right: 2px solid #e0e0e0;
+            width: 30%;
+            color: #333;
+        }
+        
+        .summary-table td.summary-value {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        /* AI Summary Styling */
+        .ai-summary {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+        }
+        
+        .ai-summary h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .ai-summary p {
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* Responsive Table Design */
+        @media (max-width: 768px) {
+            .table-container {
+                font-size: 0.8rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 0.5rem;
+            }
+            
+            .data-table {
+                min-width: 600px;
+            }
+            
+            .summary-table td.summary-key {
+                width: 40%;
+            }
+        }
+        
+        /* Empty state styling */
+        .bot-message em {
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Section headers in bot messages */
+        .bot-message h3 {
+            color: #2196F3;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .bot-message h4 {
+            color: #1976D2;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1rem;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 0.25rem;
+        }
+        
+        .input-section {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: none;
+        }
+        
+        .input-section.active {
+            display: block;
+        }
+        
+        .input-container {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .query-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .query-input:focus {
+            border-color: #2196F3;
+        }
+        
+        .send-btn {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+        
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
+        }
+        
+        .send-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .examples {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .examples h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .example-queries {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .example-btn {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .example-btn:hover {
+            background: #2196F3;
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            color: #666;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem;
+            border-left: 4px solid #c62828;
+        }
+        
+        .success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        /* Data Table Styles */
+        .data-header {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2196F3;
+        }
+        
+        .data-header h3 {
+            color: #2196F3;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .data-header p {
+            margin: 0.25rem 0;
+            color: #666;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.9rem;
+        }
+        
+        .data-table th {
+            background: #2196F3;
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #1976D2;
+        }
+        
+        .data-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        .data-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        .data-table tr:nth-child(even):hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* Status colors */
+        .status-active, .status-open {
+            color: #4CAF50 !important;
+            font-weight: bold;
+        }
+        
+        .status-closed, .status-inactive {
+            color: #f44336 !important;
+            font-weight: bold;
+        }
+        
+        .status-pending {
+            color: #ff9800 !important;
+            font-weight: bold;
+        }
+        
+        /* Email links */
+        .data-table a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        
+        .data-table a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Skills formatting */
+        .skills-cell {
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+        
+        /* Dashboard Styles */
+        .dashboard-section {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dashboard-section h4 {
+            color: #2196F3;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 0.5rem;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .metric-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .applicants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .applicant-stage {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #2196F3;
+        }
+        
+        .stage-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stage-count {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2196F3;
+        }
+        
+        .progress-summary, .trends-summary {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .progress-summary p, .trends-summary p {
+            margin: 0.5rem 0;
+            color: #333;
+        }
+        
+        .progress-chart, .trends-chart {
+            margin-top: 1rem;
+        }
+        
+        .progress-chart h5, .trends-chart h5 {
+            color: #1976D2;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .chart-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .bar-label {
+            min-width: 120px;
+            font-weight: 600;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        
+        .bar-container {
+            flex: 1;
+            background: #e0e0e0;
+            height: 25px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            border-radius: 12px;
+            transition: width 0.3s ease;
+        }
+        
+        .bar-value {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive dashboard */
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 0.5rem;
+            }
+            
+            .applicants-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 0.5rem;
+            }
+            
+            .metric-card {
+                padding: 1rem;
+            }
+            
+            .metric-value {
+                font-size: 1.5rem;
+            }
+            
+            .bar-label {
+                min-width: 80px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Responsive table */
+        @media (max-width: 768px) {
+            .data-table {
+                font-size: 0.8rem;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 8px 4px;
+            }
+            
+            .table-container {
+                margin: 0.5rem 0;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .example-queries {
+                grid-template-columns: 1fr;
+            }
+            
+            .input-container {
+                flex-direction: column;
+            }
+            
+            .message {
+                max-width: 95%;
+            }
+        }
+        
+        /* Workflow Button Styles */
+        .workflow-buttons {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .workflow-buttons-header {
+            margin: 0 0 0.75rem 0;
+            color: #28a745;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .workflow-button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .workflow-btn {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            padding: 0.6rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(40, 167, 69, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .workflow-btn:hover {
+            background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+        }
+        
+        .workflow-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* Workflow Modal Styles */
+        .workflow-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .workflow-modal-content {
+            background: white;
+            border-radius: 15px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .workflow-modal-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .workflow-modal-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .workflow-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .workflow-modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .workflow-modal-body {
+            padding: 2rem;
+        }
+        
+        .workflow-steps {
+            line-height: 1.6;
+        }
+        
+        .workflow-steps h4 {
+            color: #28a745;
+            margin: 0 0 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .workflow-step-list {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .workflow-step {
+            margin: 0.75rem 0;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .workflow-description {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .workflow-description h4 {
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .workflow-description p {
+            margin: 0;
+            color: #666;
+        }
+        
+        .workflow-prerequisites {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .workflow-prerequisites h4 {
+            margin: 0 0 0.5rem 0;
+            color: #856404;
+        }
+        
+        .workflow-prerequisites ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .workflow-prerequisites li {
+            margin: 0.5rem 0;
+            color: #856404;
+        }
+        
+        /* Responsive design for workflow components */
+        @media (max-width: 768px) {
+            .workflow-button-container {
+                flex-direction: column;
+            }
+            
+            .workflow-btn {
+                justify-content: center;
+            }
+            
+            .workflow-modal-content {
+                margin: 1rem;
+                max-width: calc(100% - 2rem);
+            }
+            
+            .workflow-modal-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 OATS AI Chatbot</h1>
+        <p>Intelligent ATS Assistant with AI-Driven Endpoint Selection</p>
+    </div>
+    
+    <div class="status-bar">
+        <span id="status">🔄 Checking system status...</span>
+        <button id="logoutBtn" class="logout-btn" style="display: none;">Logout</button>
+    </div>
+    
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>💬 AI-Powered Recruitment Assistant</h2>
+                <p>Ask me anything about jobs, candidates, analytics, and more!</p>
+            </div>
+            
+            <div class="login-section" id="loginSection" style="display: none;">
+                <h3>🔐 Auto-Login in Progress...</h3>
+                <p style="margin: 1rem 0;">Connecting to OATS system...</p>
+                <div class="loading">
+                    <p>🤖 Logging in automatically...</p>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages"></div>
+            
+            <div class="loading" id="loading">
+                <p>🤖 Processing your request...</p>
+            </div>
+            
+            <div class="input-section" id="inputSection">
+                <div class="input-container">
+                    <input type="text" id="queryInput" class="query-input" placeholder="Ask me anything about jobs, candidates, analytics..." maxlength="500">
+                    <button id="sendBtn" class="send-btn">Send</button>
+                </div>
+            </div>
+            
+            <div class="examples" id="examples" style="display: none;">
+                <h3>💡 Example Queries:</h3>
+                <div class="example-queries">
+                    <button class="example-btn" data-query="Show me all our jobs">📊 Show me all our jobs</button>
+                    <button class="example-btn" data-query="Who are our clients?">🏢 Who are our clients?</button>
+                    <button class="example-btn" data-query="List all candidates">👥 List all candidates</button>
+                    <button class="example-btn" data-query="How are we doing overall?">📈 How are we doing overall?</button>
+                    <button class="example-btn" data-query="Show me dashboard">📊 Show me dashboard</button>
+                    <button class="example-btn" data-query="Find Python developers">🐍 Find Python developers</button>
+                    <button class="example-btn" data-query="Show me our team members">👨‍💼 Show me our team members</button>
+                    <button class="example-btn" data-query="What vendors do we work with?">🏭 What vendors do we work with?</button>
+                    <button class="example-btn" data-query="How many open positions do we have?">📈 How many open positions do we have?</button>
+                    <button class="example-btn" data-query="Test unified JSON handling">🔧 Test unified JSON handling</button>
+                    <button class="example-btn" data-query="Search for Java developer jobs">☕ Search for Java developer jobs</button>
+                    <button class="example-btn" data-query="Search for Raja Doe candidate">👤 Search for Raja Doe candidate</button>
+                </div>
+                <div style="margin-top: 1rem; text-align: center;">
+                    <button id="debugBtn" class="example-btn" style="background: #ff9800; color: white;">🔧 Debug API Response</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class OATSChatbot {
+            constructor() {
+                this.isLoggedIn = false;
+                this.isProcessing = false;
+                this.welcomeMessageShown = false;
+                this.initializeElements();
+                this.attachEventListeners();
+                this.initializeAutoLogin();
+            }
+            
+            initializeElements() {
+                this.loginBtn = document.getElementById('loginBtn');
+                this.logoutBtn = document.getElementById('logoutBtn');
+                this.loginSection = document.getElementById('loginSection');
+                this.inputSection = document.getElementById('inputSection');
+                this.chatMessages = document.getElementById('chatMessages');
+                this.queryInput = document.getElementById('queryInput');
+                this.sendBtn = document.getElementById('sendBtn');
+                this.loading = document.getElementById('loading');
+                this.status = document.getElementById('status');
+                this.examples = document.getElementById('examples');
+            }
+            
+            attachEventListeners() {
+                if (this.loginBtn) {
+                    this.loginBtn.addEventListener('click', () => this.login());
+                }
+                this.logoutBtn.addEventListener('click', () => this.logout());
+                this.sendBtn.addEventListener('click', () => this.sendQuery());
+                this.queryInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendQuery();
+                    }
+                });
+                
+                // Example query buttons
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('example-btn')) {
+                        const query = e.target.getAttribute('data-query');
+                        this.queryInput.value = query;
+                        this.sendQuery();
+                    }
+                });
+                
+                // Debug button
+                const debugBtn = document.getElementById('debugBtn');
+                if (debugBtn) {
+                    debugBtn.addEventListener('click', () => this.debugApiResponse());
+                }
+            }
+            
+            async initializeAutoLogin() {
+                try {
+                    // First check status
+                    const statusResponse = await fetch('/status');
+                    const statusData = await statusResponse.json();
+                    
+                    if (statusData.logged_in) {
+                        this.showLoggedInState();
+                        this.status.textContent = `✅ Connected | AI: ${statusData.gemini_available ? '🧠 Active' : '⚠️ Limited'}`;
+                        if (!this.welcomeMessageShown) {
+                            this.addMessage('🤖 Welcome back! Great to see you again! I\'m ready to help you explore jobs, candidates, analytics, and much more from the OATS system. What would you like to discover today?', 'bot');
+                            this.welcomeMessageShown = true;
+                        }
+                    } else {
+                        // Attempt auto-login
+                        this.status.textContent = '🔄 Auto-login in progress...';
+                        
+                        const loginResponse = await fetch('/auto-login', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            }
+                        });
+                        
+                        const loginData = await loginResponse.json();
+                        
+                        if (loginData.success) {
+                            this.showLoggedInState();
+                            this.status.textContent = `✅ Auto-login successful | AI: ${statusData.gemini_available ? '🧠 Active' : '⚠️ Limited'}`;
+                            if (!this.welcomeMessageShown) {
+                                this.addMessage('🤖 Welcome! Auto-login successful. I\'m your friendly AI-powered OATS assistant! I\'d be delighted to help you with anything related to jobs, candidates, clients, analytics, and recruitment insights. What exciting data would you like to explore first?', 'bot');
+                                this.welcomeMessageShown = true;
+                            }
+                        } else {
+                            this.showAutoLoginFailed();
+                            this.status.textContent = '❌ Auto-login failed';
+                        }
+                    }
+                } catch (error) {
+                    this.status.textContent = '❌ Connection error';
+                    this.showAutoLoginFailed();
+                    this.showError('Unable to connect to the server. Please refresh the page.');
+                }
+            }
+            
+            showAutoLoginFailed() {
+                this.loginSection.style.display = 'block';
+                this.loginSection.innerHTML = `
+                    <h3>❌ Auto-Login Failed</h3>
+                    <p style="margin: 1rem 0;">Unable to connect automatically. Please try refreshing the page.</p>
+                    <button onclick="location.reload()" class="login-btn">🔄 Refresh Page</button>
+                `;
+            }
+            
+
+            
+            async login() {
+                // Fallback manual login method (rarely used with auto-login)
+                try {
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.showLoggedInState();
+                        this.showSuccess(data.message);
+                        if (!this.welcomeMessageShown) {
+                            this.addMessage('🤖 Welcome! I\'m your friendly AI-powered OATS assistant! I\'m excited to help you explore jobs, candidates, clients, analytics, and all kinds of recruitment data. What would you like to discover today?', 'bot');
+                            this.welcomeMessageShown = true;
+                        }
+                    } else {
+                        this.showError(data.message);
+                    }
+                } catch (error) {
+                    this.showError('Login failed. Please try again.');
+                }
+            }
+            
+            async logout() {
+                try {
+                    const response = await fetch('/logout', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.showLoggedOutState();
+                        this.chatMessages.innerHTML = '';
+                        this.welcomeMessageShown = false; // Reset welcome message flag
+                        this.showSuccess(data.message);
+                        this.status.textContent = '🔓 Logged out - Refresh to reconnect';
+                        
+                        // Show refresh option
+                        setTimeout(() => {
+                            if (confirm('Logged out successfully. Refresh page to reconnect?')) {
+                                location.reload();
+                            }
+                        }, 1000);
+                    }
+                } catch (error) {
+                    this.showError('Logout failed. Please try again.');
+                }
+            }
+            
+            async sendQuery() {
+                const query = this.queryInput.value.trim();
+                if (!query || this.isProcessing) return;
+                
+                this.isProcessing = true;
+                this.sendBtn.disabled = true;
+                this.sendBtn.textContent = 'Sending...';
+                this.loading.classList.add('active');
+                
+                // Add user message
+                this.addMessage(query, 'user');
+                this.queryInput.value = '';
+                
+                try {
+                    // Use the new structured query endpoint for better data handling
+                    const response = await fetch('/api/structured-query', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ query: query })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (response.ok && data.data) {
+                        // Handle structured data using unified function
+                        this.handleStructuredResponse(data);
+                    } else if (response.status === 401) {
+                        this.addMessage('🔄 Session expired. Attempting to reconnect...', 'bot');
+                        setTimeout(() => location.reload(), 2000);
+                    } else {
+                        // Fallback to regular query endpoint for non-structured responses
+                        await this.fallbackToRegularQuery(query);
+                    }
+                } catch (error) {
+                    this.addMessage('❌ Sorry, I encountered an error processing your request. Please try again.', 'bot');
+                } finally {
+                    this.isProcessing = false;
+                    this.sendBtn.disabled = false;
+                    this.sendBtn.textContent = 'Send';
+                    this.loading.classList.remove('active');
+                }
+            }
+            
+            // Handle structured response from new API endpoint
+            handleStructuredResponse(data) {
+                const { query, data: endpointData, summary, ai_response, conversational_response, workflow_buttons } = data;
+                
+                // Check if we have any successful data
+                const successfulEndpoints = Object.keys(endpointData).filter(key => 
+                    endpointData[key].type !== 'error'
+                );
+                
+                if (successfulEndpoints.length === 0 && !ai_response) {
+                    this.addMessage('❌ No data could be retrieved. Please try a different query.', 'bot');
+                    return;
+                }
+                
+                // If we have a conversational AI response, display it
+                if (ai_response && conversational_response) {
+                    // Check if response includes workflow buttons
+                    if (workflow_buttons && workflow_buttons.length > 0) {
+                        this.addMessageWithWorkflowButtons(ai_response, 'bot', workflow_buttons);
+                    } else {
+                        this.addMessage(ai_response, 'bot');
+                    }
+                    return; // The AI response already includes all the data in a conversational format
+                }
+                
+                // Fallback to structured display if no AI response
+                // Process each endpoint's data using unified function
+                successfulEndpoints.forEach(endpointName => {
+                    const endpointInfo = endpointData[endpointName];
+                    const endpointType = endpointInfo.type;
+                    const rawData = endpointInfo.raw_data;
+                    
+                    // Use unified function to handle the data
+                    this.addJsonMessage(rawData, endpointType);
+                });
+                
+                // Add summary if multiple endpoints
+                if (successfulEndpoints.length > 1) {
+                    let summaryText = '<div class="data-header"><h4>📊 Query Summary</h4>';
+                    summaryText += `<p><strong>Query:</strong> ${query}</p>`;
+                    summaryText += '<p><strong>Data Sources:</strong></p><ul>';
+                    
+                    successfulEndpoints.forEach(endpointName => {
+                        const endpointSummary = summary[endpointName];
+                        if (endpointSummary) {
+                            summaryText += `<li>${this.getEndpointTitle(endpointSummary.endpoint_type)}: ${endpointSummary.total_count.toLocaleString()} records</li>`;
+                        }
+                    });
+                    
+                    summaryText += '</ul></div>';
+                    this.addMessage(summaryText, 'bot');
+                }
+            }
+            
+            // Fallback to regular query endpoint
+            async fallbackToRegularQuery(query) {
+                try {
+                    const response = await fetch('/query', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ query: query })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Check if response includes workflow buttons
+                        if (data.workflow_buttons && data.workflow_buttons.length > 0) {
+                            this.addMessageWithWorkflowButtons(data.response, 'bot', data.workflow_buttons);
+                        } else {
+                            this.addMessage(data.response, 'bot');
+                        }
+                    } else {
+                        this.addMessage(`❌ Error: ${data.message}`, 'bot');
+                    }
+                } catch (error) {
+                    this.addMessage('❌ Fallback query also failed. Please try again.', 'bot');
+                }
+            }
+            
+            async debugApiResponse() {
+                if (!this.isLoggedIn) {
+                    this.showError('Please login first to debug API responses.');
+                    return;
+                }
+                
+                const query = this.queryInput.value.trim() || 'show me clients';
+                
+                try {
+                    this.addMessage(`🔧 Debugging API response for: "${query}"`, 'user');
+                    this.loading.classList.add('active');
+                    
+                    const response = await fetch('/debug-query', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ query: query })
+                    });
+                    
+                    const debugData = await response.json();
+                    
+                    if (response.ok) {
+                        let debugMessage = '<h4>🔍 Debug Information</h4>';
+                        
+                        for (const [endpoint, info] of Object.entries(debugData)) {
+                            debugMessage += `<h5>Endpoint: ${endpoint}</h5>`;
+                            debugMessage += `<div style="background: #f5f5f5; padding: 1rem; border-radius: 5px; margin: 0.5rem 0;">`;
+                            debugMessage += `<strong>Status:</strong> ${info.status}<br>`;
+                            
+                            if (info.status === 'success') {
+                                debugMessage += `<strong>Data Type:</strong> ${info.data_type}<br>`;
+                                debugMessage += `<strong>Data Keys:</strong> ${Array.isArray(info.data_keys) ? info.data_keys.join(', ') : info.data_keys}<br>`;
+                                debugMessage += `<strong>Sample Data:</strong><br><pre style="font-size: 0.8rem; max-height: 200px; overflow-y: auto;">${info.data_sample}</pre>`;
+                            } else {
+                                debugMessage += `<strong>Error:</strong> ${info.error}`;
+                            }
+                            
+                            debugMessage += `</div>`;
+                        }
+                        
+                        this.addMessage(debugMessage, 'bot');
+                    } else {
+                        this.addMessage(`❌ Debug failed: ${debugData.error}`, 'bot');
+                    }
+                } catch (error) {
+                    this.addMessage('❌ Debug request failed. Please try again.', 'bot');
+                } finally {
+                    this.loading.classList.remove('active');
+                }
+            }
+            
+            addMessage(text, type) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}-message`;
+                
+                if (type === 'bot') {
+                    // Bot messages can contain HTML (tables, formatting)
+                    if (text.includes('<table') || text.includes('<div') || text.includes('<h3') || text.includes('<h4')) {
+                        messageDiv.innerHTML = text;
+                    } else if (text.includes('\n')) {
+                        // Format multi-line bot responses
+                        messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+                    } else {
+                        messageDiv.textContent = text;
+                    }
+                } else {
+                    // User messages are always plain text
+                    messageDiv.textContent = text;
+                }
+                
+                this.chatMessages.appendChild(messageDiv);
+                this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+            }
+            
+            // Add message with workflow buttons
+            addMessageWithWorkflowButtons(text, type, workflowButtons) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${type}-message`;
+                
+                // Create message content
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'message-content';
+                
+                if (type === 'bot') {
+                    // Bot messages can contain HTML (tables, formatting)
+                    if (text.includes('<table') || text.includes('<div') || text.includes('<h3') || text.includes('<h4')) {
+                        contentDiv.innerHTML = text;
+                    } else if (text.includes('\n')) {
+                        // Format multi-line bot responses
+                        contentDiv.innerHTML = text.replace(/\n/g, '<br>');
+                    } else {
+                        contentDiv.textContent = text;
+                    }
+                } else {
+                    // User messages are always plain text
+                    contentDiv.textContent = text;
+                }
+                
+                messageDiv.appendChild(contentDiv);
+                
+                // Add workflow buttons if provided
+                if (workflowButtons && workflowButtons.length > 0) {
+                    const buttonsDiv = document.createElement('div');
+                    buttonsDiv.className = 'workflow-buttons';
+                    
+                    const buttonsHeader = document.createElement('h4');
+                    buttonsHeader.textContent = '🔧 Quick Actions:';
+                    buttonsHeader.className = 'workflow-buttons-header';
+                    buttonsDiv.appendChild(buttonsHeader);
+                    
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.className = 'workflow-button-container';
+                    
+                    workflowButtons.forEach(button => {
+                        const btn = document.createElement('button');
+                        btn.className = 'workflow-btn';
+                        btn.innerHTML = `${button.icon} ${button.text}`;
+                        btn.setAttribute('data-workflow-id', button.workflow_id);
+                        btn.addEventListener('click', () => this.showWorkflowDetails(button.workflow_id, button.text));
+                        buttonContainer.appendChild(btn);
+                    });
+                    
+                    buttonsDiv.appendChild(buttonContainer);
+                    messageDiv.appendChild(buttonsDiv);
+                }
+                
+                this.chatMessages.appendChild(messageDiv);
+                this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+            }
+            
+            // Show workflow details in a modal or expanded view
+            async showWorkflowDetails(workflowId, workflowName) {
+                try {
+                    const response = await fetch('/workflow-details', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ workflow_id: workflowId })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success && data.workflow) {
+                        this.displayWorkflowModal(data.workflow, workflowName);
+                    } else {
+                        this.addMessage(`❌ Could not load workflow details for: ${workflowName}`, 'bot');
+                    }
+                } catch (error) {
+                    this.addMessage(`❌ Error loading workflow details for: ${workflowName}`, 'bot');
+                }
+            }
+            
+            // Display workflow details in a modal
+            displayWorkflowModal(workflow, workflowName) {
+                // Create modal overlay
+                const modalOverlay = document.createElement('div');
+                modalOverlay.className = 'workflow-modal-overlay';
+                
+                // Create modal content
+                const modalContent = document.createElement('div');
+                modalContent.className = 'workflow-modal-content';
+                
+                // Modal header
+                const modalHeader = document.createElement('div');
+                modalHeader.className = 'workflow-modal-header';
+                modalHeader.innerHTML = `
+                    <h3>📋 ${workflowName}</h3>
+                    <button class="workflow-modal-close">&times;</button>
+                `;
+                
+                // Modal body with workflow steps
+                const modalBody = document.createElement('div');
+                modalBody.className = 'workflow-modal-body';
+                
+                let stepsHtml = '<div class="workflow-steps">';
+                if (workflow.steps && workflow.steps.length > 0) {
+                    stepsHtml += '<h4>📝 Step-by-Step Instructions:</h4>';
+                    stepsHtml += '<ol class="workflow-step-list">';
+                    workflow.steps.forEach((step, index) => {
+                        stepsHtml += `<li class="workflow-step">${step}</li>`;
+                    });
+                    stepsHtml += '</ol>';
+                } else {
+                    stepsHtml += '<p>No detailed steps available for this workflow.</p>';
+                }
+                
+                if (workflow.description) {
+                    stepsHtml += `<div class="workflow-description"><h4>📖 Description:</h4><p>${workflow.description}</p></div>`;
+                }
+                
+                if (workflow.prerequisites && workflow.prerequisites.length > 0) {
+                    stepsHtml += '<div class="workflow-prerequisites"><h4>⚠️ Prerequisites:</h4><ul>';
+                    workflow.prerequisites.forEach(prereq => {
+                        stepsHtml += `<li>${prereq}</li>`;
+                    });
+                    stepsHtml += '</ul></div>';
+                }
+                
+                stepsHtml += '</div>';
+                modalBody.innerHTML = stepsHtml;
+                
+                // Assemble modal
+                modalContent.appendChild(modalHeader);
+                modalContent.appendChild(modalBody);
+                modalOverlay.appendChild(modalContent);
+                
+                // Add to page
+                document.body.appendChild(modalOverlay);
+                
+                // Add event listeners
+                const closeBtn = modalHeader.querySelector('.workflow-modal-close');
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(modalOverlay);
+                });
+                
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) {
+                        document.body.removeChild(modalOverlay);
+                    }
+                });
+                
+                // Close on Escape key
+                const escapeHandler = (e) => {
+                    if (e.key === 'Escape') {
+                        document.body.removeChild(modalOverlay);
+                        document.removeEventListener('keydown', escapeHandler);
+                    }
+                };
+                document.addEventListener('keydown', escapeHandler);
+            }
+            
+            // Unified function to handle JSON data from all endpoints
+            handleJsonData(data, endpointType) {
+                console.log(`Handling ${endpointType} data:`, data);
+                console.log(`Data structure:`, JSON.stringify(data, null, 2));
+                
+                let html = '';
+                
+                // Special handling for dashboard data
+                if (endpointType === 'dashboard') {
+                    return this.handleDashboardData(data);
+                }
+                
+                // Extract data based on endpoint type
+                let records = [];
+                let totalCount = 0;
+                let pagination = {};
+                
+                if (data && typeof data === 'object') {
+                    // Handle paginated responses
+                    if (data.Data && Array.isArray(data.Data)) {
+                        records = data.Data;
+                        totalCount = data.TotalItems || data.Count || records.length;
+                        pagination = {
+                            totalItems: data.TotalItems || data.Count,
+                            totalPages: data.TotalPages,
+                            currentPage: data.CurrentPage || data.Page,
+                            itemsPerPage: data.ItemsPerPage || data.PerPage
+                        };
+                    } else if (data.data && Array.isArray(data.data)) {
+                        records = data.data;
+                        totalCount = data.total_items || data.count || records.length;
+                        pagination = {
+                            totalItems: data.total_items || data.count,
+                            totalPages: data.total_pages,
+                            currentPage: data.current_page,
+                            itemsPerPage: records.length
+                        };
+                    } else if (Array.isArray(data)) {
+                        records = data;
+                        totalCount = records.length;
+                    }
+                }
+                
+                // Create header with total count
+                html += `<div class="data-header">`;
+                html += `<h3>📊 ${this.getEndpointTitle(endpointType)}</h3>`;
+                html += `<p><strong>Total ${this.getEndpointPlural(endpointType)}:</strong> ${totalCount.toLocaleString()}</p>`;
+                
+                if (pagination.totalItems && pagination.totalItems > records.length) {
+                    html += `<p><em>Showing ${records.length} of ${pagination.totalItems.toLocaleString()} records</em></p>`;
+                }
+                html += `</div>`;
+                
+                // Create table if we have records
+                if (records.length > 0) {
+                    html += this.createDataTable(records, endpointType);
+                } else {
+                    html += `<p><em>No ${this.getEndpointPlural(endpointType)} found.</em></p>`;
+                }
+                
+                return html;
+            }
+            
+            // Special function to handle dashboard data
+            handleDashboardData(data) {
+                let html = '';
+                
+                if (!data || !data.data) {
+                    return '<div class="data-header"><h3>📊 Dashboard</h3><p><em>No dashboard data available.</em></p></div>';
+                }
+                
+                const dashboardData = data.data;
+                
+                // Header
+                html += `<div class="data-header">`;
+                html += `<h3>📊 Dashboard Overview</h3>`;
+                html += `<p><strong>Dashboard ID:</strong> ${data.dashboard_id || 'N/A'}</p>`;
+                html += `</div>`;
+                
+                // Total Overview Section
+                if (dashboardData.total_overview) {
+                    html += this.createDashboardOverviewSection(dashboardData.total_overview);
+                }
+                
+                // Upcoming Interviews Section
+                if (dashboardData.upcoming_interviews && dashboardData.upcoming_interviews.length > 0) {
+                    html += this.createUpcomingInterviewsSection(dashboardData.upcoming_interviews);
+                }
+                
+                // Team Performance Section
+                if (dashboardData.team_performance && dashboardData.team_performance.length > 0) {
+                    html += this.createTeamPerformanceSection(dashboardData.team_performance);
+                }
+                
+                // Number of Applicants Section
+                if (dashboardData.number_of_applicants) {
+                    html += this.createApplicantsSection(dashboardData.number_of_applicants);
+                }
+                
+                // Hiring Progress Section
+                if (dashboardData.hiring_progress) {
+                    html += this.createHiringProgressSection(dashboardData.hiring_progress);
+                }
+                
+                // Offer Trends Section
+                if (dashboardData.offer_trends) {
+                    html += this.createOfferTrendsSection(dashboardData.offer_trends);
+                }
+                
+                return html;
+            }
+            
+            // Create dashboard overview section
+            createDashboardOverviewSection(overview) {
+                let html = '<div class="dashboard-section">';
+                html += '<h4>📈 Total Overview</h4>';
+                html += '<div class="overview-grid">';
+                
+                const metrics = [
+                    { key: 'total_jobs', label: 'Total Jobs', icon: '💼' },
+                    { key: 'active_jobs', label: 'Active Jobs', icon: '✅' },
+                    { key: 'total_candidates', label: 'Total Candidates', icon: '👥' },
+                    { key: 'scheduled_candidates', label: 'Scheduled Candidates', icon: '📅' },
+                    { key: 'total_hires', label: 'Total Hires', icon: '🎉' }
+                ];
+                
+                metrics.forEach(metric => {
+                    const value = overview[metric.key] || 0;
+                    html += `<div class="metric-card">`;
+                    html += `<div class="metric-icon">${metric.icon}</div>`;
+                    html += `<div class="metric-value">${value.toLocaleString()}</div>`;
+                    html += `<div class="metric-label">${metric.label}</div>`;
+                    html += `</div>`;
+                });
+                
+                html += '</div></div>';
+                return html;
+            }
+            
+            // Create upcoming interviews section
+            createUpcomingInterviewsSection(interviews) {
+                let html = '<div class="dashboard-section">';
+                html += '<h4>📅 Upcoming Interviews</h4>';
+                html += '<div class="table-container">';
+                html += '<table class="data-table">';
+                html += '<thead><tr>';
+                html += '<th>Job Title</th>';
+                html += '<th>Candidate Name</th>';
+                html += '<th>Client</th>';
+                html += '<th>Interview Date</th>';
+                html += '</tr></thead>';
+                html += '<tbody>';
+                
+                interviews.forEach(interview => {
+                    html += '<tr>';
+                    html += `<td>${interview.job_title || 'N/A'}</td>`;
+                    html += `<td>${interview.candidate_name || 'N/A'}</td>`;
+                    html += `<td>${interview.clients || 'N/A'}</td>`;
+                    html += `<td>${interview.interview_dates || 'Not Scheduled'}</td>`;
+                    html += '</tr>';
+                });
+                
+                html += '</tbody></table></div></div>';
+                return html;
+            }
+            
+            // Create team performance section
+            createTeamPerformanceSection(performance) {
+                let html = '<div class="dashboard-section">';
+                html += '<h4>👥 Team Performance</h4>';
+                html += '<div class="table-container">';
+                html += '<table class="data-table">';
+                html += '<thead><tr>';
+                html += '<th>Manager Name</th>';
+                html += '<th>Assigned Jobs</th>';
+                html += '<th>Submissions</th>';
+                html += '<th>Onboarded</th>';
+                html += '<th>Avg Time to Hire</th>';
+                html += '</tr></thead>';
+                html += '<tbody>';
+                
+                performance.forEach(perf => {
+                    html += '<tr>';
+                    html += `<td>${perf.manager_name || 'N/A'}</td>`;
+                    html += `<td>${perf.assigned_jobs || 0}</td>`;
+                    html += `<td>${perf.submissions || 0}</td>`;
+                    html += `<td>${perf.onboarded || 0}</td>`;
+                    html += `<td>${perf.average_time_to_hire || 'N/A'}</td>`;
+                    html += '</tr>';
+                });
+                
+                html += '</tbody></table></div></div>';
+                return html;
+            }
+            
+            // Create applicants section
+            createApplicantsSection(applicants) {
+                let html = '<div class="dashboard-section">';
+                html += '<h4>📊 Applicant Pipeline</h4>';
+                html += '<div class="applicants-grid">';
+                
+                Object.entries(applicants).forEach(([stage, count]) => {
+                    html += `<div class="applicant-stage">`;
+                    html += `<div class="stage-name">${stage}</div>`;
+                    html += `<div class="stage-count">${count}</div>`;
+                    html += `</div>`;
+                });
+                
+                html += '</div></div>';
+                return html;
+            }
+            
+            // Create hiring progress section
+            createHiringProgressSection(progress) {
+                let html = '<div class="dashboard-section">';
+                html += '<h4>🎯 Hiring Progress</h4>';
+                html += '<div class="progress-summary">';
+                html += `<p><strong>Total Open Positions:</strong> ${progress.total_open || 0}</p>`;
+                html += `<p><strong>Total Candidates:</strong> ${progress.total_candidates || 0}</p>`;
+                html += `<p><strong>Client Submissions:</strong> ${progress.client_submissions || 0}</p>`;
+                html += `<p><strong>L1 Interviews:</strong> ${progress.l1_interviews || 0}</p>`;
+                html += `<p><strong>Client Interviews:</strong> ${progress.client_interviews || 0}</p>`;
+                html += '</div>';
+                
+                if (progress.chart) {
+                    html += '<div class="progress-chart">';
+                    html += '<h5>Progress Chart (%)</h5>';
+                    html += '<div class="chart-bars">';
+                    Object.entries(progress.chart).forEach(([key, value]) => {
+                        html += `<div class="chart-bar">`;
+                        html += `<div class="bar-label">${key.replace(/_/g, ' ').toUpperCase()}</div>`;
+                        html += `<div class="bar-container">`;
+                        html += `<div class="bar-fill" style="width: ${value}%"></div>`;
+                        html += `<span class="bar-value">${value}%</span>`;
+                        html += `</div>`;
+                        html += `</div>`;
+                    });
+                    html += '</div></div>';
+                }
+                
+                html += '</div>';
+                return html;
+            }
+            
+            // Create offer trends section
+            createOfferTrendsSection(trends) {
+                let html = '<div class="dashboard-section">';
+                html += '<h4>📈 Offer Trends</h4>';
+                html += '<div class="trends-summary">';
+                html += `<p><strong>Offers Accepted:</strong> ${trends.offer_accepted || 0}</p>`;
+                html += `<p><strong>Offers Declined:</strong> ${trends.offer_declined || 0}</p>`;
+                html += `<p><strong>Offers Pending:</strong> ${trends.offer_pending || 0}</p>`;
+                html += '</div>';
+                
+                if (trends.chart) {
+                    html += '<div class="trends-chart">';
+                    html += '<h5>Offer Distribution (%)</h5>';
+                    html += '<div class="chart-bars">';
+                    Object.entries(trends.chart).forEach(([key, value]) => {
+                        const color = key === 'accepted' ? '#4CAF50' : key === 'declined' ? '#f44336' : '#ff9800';
+                        html += `<div class="chart-bar">`;
+                        html += `<div class="bar-label">${key.toUpperCase()}</div>`;
+                        html += `<div class="bar-container">`;
+                        html += `<div class="bar-fill" style="width: ${value}%; background-color: ${color}"></div>`;
+                        html += `<span class="bar-value">${value}%</span>`;
+                        html += `</div>`;
+                        html += `</div>`;
+                    });
+                    html += '</div></div>';
+                }
+                
+                html += '</div>';
+                return html;
+            }
+            
+            // Get endpoint title for display
+            getEndpointTitle(endpointType) {
+                const titles = {
+                    'jobs': 'Job Listings',
+                    'candidates': 'Candidate Database',
+                    'clients': 'Client Companies',
+                    'vendors': 'Vendor Partners',
+                    'users': 'Team Members',
+                    'dashboard': 'Dashboard Analytics'
+                };
+                return titles[endpointType] || 'Data';
+            }
+            
+            // Get endpoint plural form
+            getEndpointPlural(endpointType) {
+                const plurals = {
+                    'jobs': 'Jobs',
+                    'candidates': 'Candidates',
+                    'clients': 'Clients',
+                    'vendors': 'Vendors',
+                    'users': 'Users',
+                    'dashboard': 'Records'
+                };
+                return plurals[endpointType] || 'Records';
+            }
+            
+            // Create data table based on endpoint type
+            createDataTable(records, endpointType) {
+                console.log(`Creating table for ${endpointType} with ${records.length} records`);
+                console.log(`Sample record:`, records[0]);
+                
+                let html = '<div class="table-container">';
+                html += '<table class="data-table">';
+                
+                // Get headers based on endpoint type
+                const headers = this.getTableHeaders(endpointType, records[0]);
+                console.log(`Headers for ${endpointType}:`, headers);
+                
+                html += '<thead><tr>';
+                headers.forEach(header => {
+                    html += `<th>${header.display}</th>`;
+                });
+                html += '</tr></thead>';
+                
+                // Add table body
+                html += '<tbody>';
+                records.forEach((record, index) => {
+                    html += '<tr>';
+                    headers.forEach(header => {
+                        const value = this.getFieldValue(record, header.field);
+                        console.log(`Record ${index}, Field ${header.field}:`, value);
+                        html += `<td>${this.formatFieldValue(value, header.type)}</td>`;
+                    });
+                    html += '</tr>';
+                });
+                html += '</tbody>';
+                
+                html += '</table></div>';
+                return html;
+            }
+            
+            // Get table headers based on endpoint type
+            getTableHeaders(endpointType, sampleRecord) {
+                const headers = {
+                    'jobs': [
+                        { field: 'job_title', display: 'Job Title', type: 'text' },
+                        { field: 'client', display: 'Client', type: 'text' },
+                        { field: 'job_status', display: 'Status', type: 'status' },
+                        { field: 'client_bill_rate__pay_cycle', display: 'Bill Rate', type: 'text' },
+                        { field: 'pay_rates__job_type', display: 'Job Type', type: 'text' },
+                        { field: 'job_created_by', display: 'Created By', type: 'text' },
+                        { field: 'number_of_positions', display: 'Positions', type: 'text' },
+                        { field: 'modified_at', display: 'Modified', type: 'date' }
+                    ],
+                    'candidates': [
+                        { field: 'CidId', display: 'ID', type: 'text' },
+                        { field: 'FirstName', display: 'First Name', type: 'text' },
+                        { field: 'CurrentJobTitle', display: 'Job Title', type: 'text' },
+                        { field: 'City', display: 'City', type: 'text' },
+                        { field: 'Source', display: 'Source', type: 'text' },
+                        { field: 'NoticePeriod', display: 'Notice Period', type: 'text' },
+                        { field: 'Relocation', display: 'Relocation', type: 'text' },
+                        { field: 'CreatedBy', display: 'Created By', type: 'text' }
+                    ],
+                    'clients': [
+                        { field: 'client_id', display: 'ID', type: 'text' },
+                        { field: 'client_name', display: 'Client Name', type: 'text' },
+                        { field: 'company_name', display: 'Company', type: 'text' },
+                        { field: 'email', display: 'Email', type: 'email' },
+                        { field: 'contact_number', display: 'Phone', type: 'text' },
+                        { field: 'location', display: 'Location', type: 'text' }
+                    ],
+                    'vendors': [
+                        { field: 'vendor_id', display: 'ID', type: 'text' },
+                        { field: 'vendor_name', display: 'Vendor Name', type: 'text' },
+                        { field: 'company_name', display: 'Company', type: 'text' },
+                        { field: 'email', display: 'Email', type: 'email' },
+                        { field: 'contact_number', display: 'Phone', type: 'text' },
+                        { field: 'vendor_type', display: 'Type', type: 'text' }
+                    ],
+                    'users': [
+                        { field: 'id', display: 'ID', type: 'text' },
+                        { field: 'username', display: 'Username', type: 'text' },
+                        { field: 'first_name', display: 'First Name', type: 'text' },
+                        { field: 'last_name', display: 'Last Name', type: 'text' },
+                        { field: 'email', display: 'Email', type: 'email' },
+                        { field: 'role', display: 'Role', type: 'text' }
+                    ]
+                };
+                
+                return headers[endpointType] || this.getGenericHeaders(sampleRecord);
+            }
+            
+            // Get generic headers for unknown data types
+            getGenericHeaders(sampleRecord) {
+                if (!sampleRecord) return [];
+                
+                const headers = [];
+                Object.keys(sampleRecord).slice(0, 6).forEach(key => {
+                    headers.push({
+                        field: key,
+                        display: key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                        type: 'text'
+                    });
+                });
+                return headers;
+            }
+            
+            // Get field value from record
+            getFieldValue(record, field) {
+                if (!record) return '';
+                
+                // Handle nested fields (e.g., ClientBillRate.Value, PayRates.MinSalary)
+                if (field.includes('.')) {
+                    const parts = field.split('.');
+                    let value = record;
+                    for (const part of parts) {
+                        value = value?.[part];
+                        if (value === undefined) break;
+                    }
+                    return value;
+                }
+                
+                // Handle common field variations
+                const fieldVariations = {
+                    'first_name': ['first_name', 'FirstName', 'firstname'],
+                    'last_name': ['last_name', 'LastName', 'lastname'],
+                    'job_title': ['job_title', 'JobTitle', 'current_job_title', 'CurrentJobTitle'],
+                    'job_code': ['job_code', 'JobCode'],
+                    'job_status': ['job_status', 'JobStatus'],
+                    'client': ['client', 'client_name', 'ClientName', 'Client'],
+                    'location': ['location', 'Location', 'city', 'City'],
+                    'email': ['email', 'Email'],
+                    'phone': ['phone', 'Phone', 'contact_number', 'mobile_phone'],
+                    'experience_years': ['experience_years', 'ExperienceYears', 'experience'],
+                    'primary_skills': ['primary_skills', 'PrimarySkills', 'skills', 'Skills'],
+                    'created_at': ['created_at', 'CreatedAt', 'createdAt'],
+                    'client_bill_rate__value': ['client_bill_rate__value', 'ClientBillRate.Value', 'ClientBillRate'],
+                    'pay_rates__min_salary': ['pay_rates__min_salary', 'PayRates.MinSalary', 'PayRates'],
+                    'pay_rates__max_salary': ['pay_rates__max_salary', 'PayRates.MaxSalary', 'PayRates'],
+                    'pay_rates': ['pay_rates', 'PayRates'],
+                    'client_bill_rate': ['client_bill_rate', 'ClientBillRate'],
+                    // Candidate-specific field variations
+                    'CidId': ['CidId', 'cid_id', 'id'],
+                    'FirstName': ['FirstName', 'first_name', 'firstname'],
+                    'CurrentJobTitle': ['CurrentJobTitle', 'current_job_title', 'job_title'],
+                    'City': ['City', 'city', 'location'],
+                    'Source': ['Source', 'source'],
+                    'NoticePeriod': ['NoticePeriod', 'notice_period', 'notice_period_days'],
+                    'Relocation': ['Relocation', 'relocation', 'willing_to_relocate'],
+                    'CreatedBy': ['CreatedBy', 'created_by', 'created_by_user']
+                };
+                
+                // First try exact field match
+                if (record[field] !== undefined) {
+                    return record[field];
+                }
+                
+                // Then try field variations
+                if (fieldVariations[field]) {
+                    for (const variation of fieldVariations[field]) {
+                        if (record[variation] !== undefined) {
+                            return record[variation];
+                        }
+                    }
+                }
+                
+                // For nested objects, try to find them in the record
+                if (field.includes('__')) {
+                    const parts = field.split('__');
+                    const objectName = parts[0];
+                    const propertyName = parts[1];
+                    
+                    if (record[objectName] && typeof record[objectName] === 'object') {
+                        return record[objectName][propertyName];
+                    }
+                }
+                
+                return '';
+            }
+            
+            // Format field value based on type
+            formatFieldValue(value, type) {
+                if (value === null || value === undefined || value === '') {
+                    return '<em>N/A</em>';
+                }
+                
+                switch (type) {
+                    case 'date':
+                        return this.formatDate(value);
+                    case 'email':
+                        return `<a href="mailto:${value}">${value}</a>`;
+                    case 'status':
+                        return this.formatStatus(value);
+                    case 'skills':
+                        return this.formatSkills(value);
+                    case 'text':
+                    default:
+                        // Special handling for PayRates object
+                        if (typeof value === 'object' && value !== null) {
+                            if (value.MinSalary && value.MaxSalary) {
+                                return `$${value.MinSalary.toLocaleString()} - $${value.MaxSalary.toLocaleString()}`;
+                            } else if (value.MinSalary) {
+                                return `$${value.MinSalary.toLocaleString()}+`;
+                            } else if (value.MaxSalary) {
+                                return `Up to $${value.MaxSalary.toLocaleString()}`;
+                            }
+                        }
+                        
+                        // Special handling for ClientBillRate object
+                        if (typeof value === 'object' && value !== null && value.Value) {
+                            return `$${value.Value.toLocaleString()}/hr`;
+                        }
+                        return this.truncateText(value, 50);
+                }
+            }
+            
+            // Format date
+            formatDate(dateString) {
+                if (!dateString) return 'N/A';
+                try {
+                    const date = new Date(dateString);
+                    return date.toLocaleDateString();
+                } catch {
+                    return dateString;
+                }
+            }
+            
+            // Format status with color coding
+            formatStatus(status) {
+                if (!status) return 'N/A';
+                
+                const statusColors = {
+                    'active': '#4CAF50',
+                    'open': '#4CAF50',
+                    'closed': '#f44336',
+                    'pending': '#ff9800',
+                    'inactive': '#9e9e9e'
+                };
+                
+                const color = statusColors[status.toLowerCase()] || '#2196F3';
+                return `<span class="status-${status.toLowerCase()}">${status}</span>`;
+            }
+            
+            // Format skills
+            formatSkills(skills) {
+                if (!skills) return 'N/A';
+                
+                if (typeof skills === 'string') {
+                    // Handle comma-separated skills
+                    const skillList = skills.split(',').map(s => s.trim()).filter(s => s.length > 0);
+                    return skillList.slice(0, 3).join(', ') + (skillList.length > 3 ? '...' : '');
+                }
+                
+                return this.truncateText(skills, 30);
+            }
+            
+            // Truncate text
+            truncateText(text, maxLength) {
+                if (!text) return 'N/A';
+                const str = String(text);
+                return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
+            }
+            
+            // Enhanced addMessage to handle JSON data
+            addJsonMessage(data, endpointType) {
+                const html = this.handleJsonData(data, endpointType);
+                this.addMessage(html, 'bot');
+            }
+            
+            showLoggedInState() {
+                this.isLoggedIn = true;
+                this.loginSection.style.display = 'none';
+                this.inputSection.classList.add('active');
+                this.examples.style.display = 'block';
+                this.logoutBtn.style.display = 'inline-block';
+                this.queryInput.focus();
+            }
+            
+            showLoggedOutState() {
+                this.isLoggedIn = false;
+                this.loginSection.style.display = 'block';
+                this.inputSection.classList.remove('active');
+                this.examples.style.display = 'none';
+                this.logoutBtn.style.display = 'none';
+            }
+            
+            showError(message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error';
+                errorDiv.textContent = message;
+                document.querySelector('.container').insertBefore(errorDiv, document.querySelector('.chat-container'));
+                setTimeout(() => errorDiv.remove(), 5000);
+            }
+            
+            showSuccess(message) {
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success';
+                successDiv.textContent = message;
+                document.querySelector('.container').insertBefore(successDiv, document.querySelector('.chat-container'));
+                setTimeout(() => successDiv.remove(), 3000);
+            }
+        }
+        
+        // Initialize chatbot when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new OATSChatbot();
+        });
+    </script>
+</body>
+</html>
